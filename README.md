@@ -1,1 +1,75 @@
 # agent-eval-lab
+
+**Ship agents you can trust.** Build a small agent, then learn to test what it *does*: the tools it picks, the handoffs it makes, and the guardrails it keeps. Then apply the same tests to your own agent.
+
+> **Status: planning.** Nothing below is built yet. See [PLAN.md](PLAN.md) for the full design and milestones. This README will grow as each milestone lands.
+
+## Why this exists
+
+Most evals grade what an agent *says*. But an agent can give the right answer after calling the wrong tool, skipping a guardrail, or using 10x the tokens. Only the trace shows that.
+
+```text
+User: "What's Company X's debt-to-equity ratio?"
+
+Agent A (good path)                     Agent B (bad path, same answer)
+ 1. retrieval → balance sheet passage    1. retrieval → balance sheet passage
+ 2. ratio_calc(debt, equity) → 1.42      2. (does the math in its head) → 1.42
+ 3. answer: 1.42                         3. answer: 1.42
+```
+
+An answer-only eval passes both agents. A trace check catches Agent B.
+
+## What you'll learn
+
+1. **Build** an agent with tools, a handoff, a guardrail, and tracing using the OpenAI Agents SDK.
+2. **Explain** why answer-only evals miss agent failures, and point to the trace evidence.
+3. **Write** trace-based checks for tool choice, handoffs, and guardrails, plus retrieval and groundedness checks.
+4. **Gate** changes in CI, including changes made by a coding agent like Codex.
+5. **Apply** the same process to your own agent.
+
+## The scenario
+
+A **credit research assistant** that answers questions about public companies' SEC 10-K filings. It has:
+
+- a retrieval tool
+- a ratio calculator
+- a risk-summary agent it hands off to
+- a guardrail that declines to give investment advice
+
+Each part exists so one eval check has something to catch.
+
+## Runs for free
+
+| Tier | You need | Cost |
+|---|---|---|
+| **Mock** | Nothing (fully offline) | Free |
+| **Workers AI** (default) | A free Cloudflare account | Free within the daily allowance |
+| **OpenAI** | Your own API key | About $1–2 for a full run on a small model |
+
+The same agent code runs on every tier. You switch tiers with one line in `config/models.yaml`.
+
+## Start here *(coming soon)*
+
+| You are | Go to |
+|---|---|
+| A learner | The self-paced path |
+| A facilitator | `workshop/FACILITATOR.md` |
+| An engineer | `evals/` and `coding-agents/codex/` |
+| A technical leader | `workshop/exec-briefing/` |
+| A team adopting this | `workshop/ADAPT.md` |
+
+## Provider status
+
+| Provider | Status |
+|---|---|
+| Workers AI | Planned (v1) |
+| OpenAI | Planned (v1) |
+| Mock | Planned (v1) |
+| Anthropic | Planned (v1.1) |
+| LangGraph | Planned (v1.2) |
+
+## Related labs
+
+- **Retrieval evaluation:** [rag-eval-lab](https://github.com/ramirez-ai-labs/rag-eval-lab) → [gcp-rag-eval-lab](https://github.com/ramirez-ai-labs/gcp-rag-eval-lab) → [snowflake-rag-eval-lab](https://github.com/ramirez-ai-labs/snowflake-rag-eval-lab)
+- **Answer evaluation:** [ai-vic-eval](https://github.com/ramirez-ai-labs/ai-vic-eval), [chatbot-evaluation-system](https://github.com/ramirez-ai-labs/chatbot-evaluation-system)
+- **Coding-agent evaluation:** [codex-evaluation-benchmark](https://github.com/ramirez-ai-labs/codex-evaluation-benchmark)
