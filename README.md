@@ -48,6 +48,10 @@ Each part exists so one eval check has something to catch.
 
 The same agent code runs on every tier. You switch tiers with one line in `config/models.yaml`.
 
+Everything runs on your machine except the model calls, and nothing gets deployed. That keeps the lab free and easy to follow.
+
+> **Running this in production?** The evals don't change. Swap local search for a vector store, add an AI gateway, and run the same CI gate against your deployed agent.
+
 ## Start here *(coming soon)*
 
 | You are | Go to |

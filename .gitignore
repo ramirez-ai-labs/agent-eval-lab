@@ -221,3 +221,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Raw SEC filings (only extracted sections are committed)
+scenario/raw/

@@ -264,6 +264,17 @@ Each block follows the same order: **concept → hands-on practice → feedback 
 | 2. Pilot | Apply the take-home exercise to one of their own agents: swap the scenario, write 3 checks | Their agent produces traces, and the checks run on them |
 | 3. Operate | Add the CI gate to their own repo, with guardrail hard-fail and a weekly live run | Gate blocks a planted regression in their repo |
 
+**Lab setup vs production.** The lab runs locally on purpose: free Workers AI models, local vector search over committed embeddings, and nothing deployed. That keeps cost at $0 and setup to one token, and everyone runs the same thing. A production system would usually look different:
+
+| Piece | In the lab | In production |
+|---|---|---|
+| Agent | Python process on your machine | A deployed service |
+| Vector search | Cosine similarity over committed vectors | A managed vector store |
+| Model access | Direct API calls | Through an AI gateway (routing, rate limits, logging) |
+| Evals | Same | **Same** |
+
+> *Running this in production? The evals don't change. Swap local search for a vector store, add an AI gateway, and run the same CI gate against your deployed agent.*
+
 **Adapting for your team.** `workshop/ADAPT.md` is a one-page enablement plan template for running this with a specific team:
 - **Use case:** which scenario to swap in, and which tools, handoffs and guardrails it needs
 - **Audience:** builders, platform team, leaders, or a mix
