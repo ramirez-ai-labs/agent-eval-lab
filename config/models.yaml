@@ -2,8 +2,8 @@
 # Reports record these values, so every result says exactly what produced it.
 #
 # Workers AI facts confirmed Nov 21, 2026 from developers.cloudflare.com:
-#   - Responses API (/v1/responses) works only for gpt-oss-120b and gpt-oss-20b,
-#     and only with stream: false.
+#   - Responses API (/v1/responses) is documented only for gpt-oss-120b and
+#     gpt-oss-20b, non-streaming. In practice it rejects function tools (see agent).
 #   - Chat Completions (/v1/chat/completions) works for most text models.
 #   - Free tier: 10,000 Neurons per day per account, reset at 00:00 UTC.
 
@@ -12,13 +12,17 @@ provider: workers-ai
 
 agent:
   # OpenAI's open-weight model. Function calling: yes. Context: 128k.
-  # Uses the Responses API, the same code path as the openai provider.
-  # Runs must be non-streaming (Runner.run, not Runner.run_streamed).
+  # Verified Nov 21, 2026 (tracks/openai/check_endpoint.py):
+  #   - Responses API rejects function tools on Workers AI (400), so
+  #   - Workers AI uses the Chat Completions model class, through
+  #     tracks/openai/workers_ai.py (fixes null assistant content).
+  # The openai provider uses the Responses API. Agent code is the same for both.
   workers_ai_model: "@cf/openai/gpt-oss-120b"
+  workers_ai_api: chat_completions
   workers_ai_fallback: "@cf/openai/gpt-oss-20b"   # about half the cost per case
   openai_model: TODO            # a small, pinned snapshot; pick at the M2 reference run
+  openai_api: responses
   temperature: 0
-  base_url: "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/ai/v1"
 
 judge:
   provider: workers-ai
