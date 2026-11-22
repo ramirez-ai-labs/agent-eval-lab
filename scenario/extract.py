@@ -106,13 +106,35 @@ def find_section(text: str, start_pat: str, end_pat: str) -> str:
     raise ValueError(f"section not found: {start_pat} → {end_pat}")
 
 
-def split_passages(text: str, size: int = PASSAGE_CHARS) -> list[str]:
-    """Greedy split on line boundaries, so table rows and paragraphs stay whole."""
-    passages, current = [], ""
+def _pieces(text: str, size: int) -> list[str]:
+    """Lines, with any line longer than `size` broken at sentence boundaries.
+
+    The embedding model reads about 2,000 characters at most, so a long
+    paragraph kept whole would be silently cut off before embedding.
+    """
+    out = []
     for line in text.split("\n"):
         line = line.strip()
         if not line:
             continue
+        if len(line) <= size:
+            out.append(line)
+            continue
+        current = ""
+        for sentence in re.split(r"(?<=[.;:])\s+", line):
+            if current and len(current) + len(sentence) + 1 > size:
+                out.append(current)
+                current = ""
+            current = f"{current} {sentence}" if current else sentence
+        if current:
+            out.append(current)
+    return out
+
+
+def split_passages(text: str, size: int = PASSAGE_CHARS) -> list[str]:
+    """Greedy split on line boundaries, so table rows and paragraphs stay whole."""
+    passages, current = [], ""
+    for line in _pieces(text, size):
         if current and len(current) + len(line) + 1 > size:
             passages.append(current)
             current = ""
