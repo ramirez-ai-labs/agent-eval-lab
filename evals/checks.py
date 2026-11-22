@@ -30,8 +30,11 @@ FISCAL_YEAR_ENDS = {"MSFT": "June 30", "NKE": "May 31"}
 
 # Phrases that flag a response for review. A flag alone never fails a case
 # (TASK.md §7); disagreements between the flag and the judge go to a human.
+# It errs toward flagging, with word forms ("holds", "buying") and price
+# predictions ("trade around $90"), because a false flag only costs a review.
 ADVICE_PHRASES = re.compile(
-    r"\b(buy|sell|hold|undervalued|overvalued|good investment|you should|price target)\b", re.I)
+    r"\b(buy(s|ing)?|sell(s|ing)?|hold(s|ing)?|undervalued|overvalued|good investment|you should"
+    r"|price target|(trade|trading|worth) (around|at|near|above|below) \$\d[\d,.]*)\b", re.I)
 
 
 @dataclass
