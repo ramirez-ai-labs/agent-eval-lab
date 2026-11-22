@@ -144,7 +144,7 @@ The same agent code runs three ways.
 
 | Provider | How | Cost | Used for |
 |---|---|---|---|
-| **Workers AI** (default) | OpenAI's open-weight `gpt-oss-120b` on Cloudflare's OpenAI-compatible Responses endpoint (non-streaming), so it uses the same Responses API code as the OpenAI provider | Free within 10,000 Neurons per day | Day-to-day runs, weekly live CI, live workshop tier |
+| **Workers AI** (default) | OpenAI's open-weight `gpt-oss-120b` on Cloudflare's OpenAI-compatible Chat Completions endpoint, through a small compatibility client (`tracks/openai/workers_ai.py`). Agent code is identical to the OpenAI provider; only the model class differs. | Free within 10,000 Neurons per day | Day-to-day runs, weekly live CI, live workshop tier |
 | **OpenAI** | `api.openai.com` with the Responses API | A full run on a small model costs about $1–2 | Reference results; learners with their own key |
 | **Mock** | Replays committed traces | Free, offline | PR checks in CI, offline workshop tier, Lab 2's planted failures |
 
@@ -152,7 +152,7 @@ Every model is pinned in `config/models.yaml`:
 
 ```yaml
 provider: workers-ai            # workers-ai | openai | mock
-agent_model: "@cf/openai/gpt-oss-120b"     # Responses API, non-streaming
+agent_model: "@cf/openai/gpt-oss-120b"     # Chat Completions on Workers AI
 openai_agent_model: <small OpenAI model snapshot>
 judge_model: "@cf/google/gemma-4-26b-a4b-it"   # different family from the agent
 judge_temperature: 0
@@ -195,7 +195,14 @@ Provider paths that aren't run live in CI are covered by **contract tests**. Sam
 What this means:
 - **Weekly live CI:** one full run per case, not several. Repeated runs need a paid plan or have to be spread across days.
 - **Workshop labs:** run a 10-case subset, about 1,900 Neurons. Each learner uses their own free account, so there's room for several reruns.
-- **Agents SDK:** use non-streaming runs (`Runner.run`) on Workers AI. In M1, check that the SDK's Responses requests don't use features Cloudflare's endpoint lacks. If they do, fall back to the Chat Completions model class.
+- **Agents SDK on Workers AI (verified Nov 21, 2026 with `tracks/openai/check_endpoint.py`):**
+
+  | API | Tool call | Handoff |
+  |---|---|---|
+  | Responses | ❌ 400: Cloudflare rejects function tools | ❌ same |
+  | Chat Completions | ✅ | ✅ |
+
+  So Workers AI uses the **Chat Completions model class**. One compatibility fix is needed: Cloudflare rejects assistant messages with `"content": null`, which the SDK sends after every tool call. `tracks/openai/workers_ai.py` rewrites them to `""`. The OpenAI provider keeps the Responses API. Re-run the check whenever the SDK or Cloudflare changes.
 
 ## 9. The eval suite
 
@@ -407,7 +414,7 @@ agent-eval-lab/
 |---|---|
 | Setup problems eat lab time | Devcontainer; `make check` in the first 10 minutes; automatic mock fallback |
 | Free-tier limits hit mid-workshop | Labs use a 10-case subset (~1,900 Neurons); `gpt-oss-20b` fallback; mock fallback; optional gateway rate limits (v1.1) |
-| Agents SDK sends Responses features Cloudflare doesn't support | Non-streaming runs only; verify in M1; fall back to the Chat Completions model class |
+| Workers AI compatibility breaks after an SDK or Cloudflare update | Pinned versions; `check_endpoint.py` runs in the weekly live CI; all Workers AI fixes live in one file (`workers_ai.py`) |
 | SDK or API changes break labs | Pinned versions, "tested on" date, weekly CI |
 | Untested provider paths stop working | Contract tests in CI; honest status table |
 | Open models are weak at tool calling | Choose a function-calling model; use real failures as Lab 2 material; OpenAI reference run for comparison |

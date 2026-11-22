@@ -43,6 +43,8 @@ from agents import (
     set_tracing_disabled,
 )
 
+from workers_ai import make_client  # noqa: E402  (same folder)
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -152,23 +154,28 @@ async def main() -> int:
 
     cfg = load_config()
     model_id = args.model or cfg["agent"]["workers_ai_model"]
-    base_url = cfg["agent"]["base_url"].replace("${CF_ACCOUNT_ID}", account_id)
 
     set_tracing_disabled(True)  # traces stay local; no hosted exporter
-    client = AsyncOpenAI(base_url=base_url, api_key=token)
+    client = make_client(account_id, token)  # Workers AI client with the null-content fix
 
     apis = ["responses", "chat"] if args.api == "both" else [args.api]
     summary = {api: await run_api(api, model_id, client) for api in apis}
 
+    # Exit code follows the API the lab is configured to use, so CI only
+    # fails when the path the agent actually depends on breaks.
+    configured = "chat" if cfg["agent"].get("workers_ai_api") == "chat_completions" else "responses"
+    passed = {api: bool(r) and all(r.values()) for api, r in summary.items()}
+
     print("\n== Result")
-    if all(summary.get("responses", {}).values()) and "responses" in summary:
-        print("  Responses API works: Workers AI and OpenAI share one code path.")
-        return 0
-    if all(summary.get("chat", {}).values()) and "chat" in summary:
-        print("  Responses API failed, Chat Completions works: use the Chat Completions model class for Workers AI.")
+    for api, ok in passed.items():
+        mark = " (configured)" if api == configured else ""
+        print(f"  {api:<10} {'works' if ok else 'fails'}{mark}")
+    if passed.get("responses") and configured == "chat":
+        print("  Responses API now works on Workers AI. Consider switching workers_ai_api to responses.")
+    if configured not in passed:
+        print(f"  Configured API '{configured}' was not checked; run with --api {configured} or both.")
         return 1
-    print("  Neither API passed every check. See the errors above.")
-    return 1
+    return 0 if passed[configured] else 1
 
 
 if __name__ == "__main__":
