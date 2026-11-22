@@ -90,7 +90,12 @@ def html_to_text(path: Path) -> str:
             if cells:
                 rows.append(" | ".join(cells))
         table.replace_with("\n" + "\n".join(rows) + "\n")
-    text = soup.get_text("\n")
+    # Line breaks only at block elements. Inline styling spans stay joined,
+    # so "RIS<span>K</span>" reads "RISK", not "RIS\nK".
+    for tag in soup.find_all(["p", "div", "li", "br", "h1", "h2", "h3", "h4", "h5", "h6"]):
+        tag.insert_before("\n")
+        tag.insert_after("\n")
+    text = soup.get_text("")
     text = text.replace("\xa0", " ")
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n\s*\n+", "\n", text)
@@ -131,17 +136,91 @@ def _pieces(text: str, size: int) -> list[str]:
     return out
 
 
-def split_passages(text: str, size: int = PASSAGE_CHARS) -> list[str]:
-    """Greedy split on line boundaries, so table rows and paragraphs stay whole."""
-    passages, current = [], ""
+# --- contextual headers -------------------------------------------------------
+# A chunk from the middle of a balance sheet is just rows of numbers. Without
+# its heading, no search method can tell what it is. Each passage gets a
+# `context` line saying where it came from, used for retrieval alongside the text.
+
+COMPANY = {"MSFT": "Microsoft", "NKE": "Nike", "DUK": "Duke Energy", "F": "Ford Motor"}
+ITEM_NAME = {"item1a": "Item 1A Risk Factors", "item7": "Item 7 MD&A", "item8": "Item 8 Financial Statements"}
+# Duke's combined filing has statements for each registrant.
+REGISTRANT = re.compile(r"^(DUKE ENERGY [A-Z ,.]+|PROGRESS ENERGY, INC\.|PIEDMONT NATURAL GAS COMPANY, INC\.)$")
+NOISE = re.compile(
+    r"FORM 10-K|^PART I|TABLE OF CONTENTS|^\(?IN MILLIONS|^YEARS? ENDED|^DECEMBER 31|^MAY 31|^JUNE 30"
+    r"|^\d+$|^ASSETS$|^LIABILITIES|^EQUITY$|^REPORTS?$|^FINANCIAL STATEMENTS$|AND SUBSIDIARIES$",
+    re.I,
+)
+NOTE = re.compile(r"^(NOTE\s+)?\d{1,2}\.\s+[A-Z][\w ,&’'()\-/]{3,80}$")
+
+
+def _heading(line: str) -> str | None:
+    """A section heading, or None. Uppercase titles and numbered notes count."""
+    if "|" in line or not (4 <= len(line) <= 110) or NOISE.search(line):
+        return None
+    letters = re.sub(r"[^A-Za-z]", "", line)
+    if len(letters) < 6:
+        return None
+    if line.isupper() or NOTE.match(line):
+        return line.rstrip(".")
+    return None
+
+
+SMALL_WORDS = {"Of", "And", "In", "On", "For", "To", "The", "A", "An", "Or", "By", "At"}
+
+
+def _tidy(heading: str) -> str:
+    heading = re.sub(r"\s*\((Continued|continued)\)$", "", heading)
+    letters = [c for c in heading if c.isalpha()]
+    if letters and sum(c.isupper() for c in letters) / len(letters) > 0.8:
+        words = heading.title().split(" ")
+        heading = " ".join(w.lower() if i and w in SMALL_WORDS else w for i, w in enumerate(words))
+        heading = heading.replace("’S", "’s").replace("'S", "'s")
+    return heading
+
+
+def split_passages(text: str, size: int = PASSAGE_CHARS) -> list[tuple[str, str | None, list[str]]]:
+    """Greedy split on line boundaries, so table rows and paragraphs stay whole.
+
+    Returns (text, registrant, headings) per passage. Headings are the one in
+    effect where the passage starts plus any that begin inside it, so a chunk
+    that runs from the end of one statement into the next names both.
+    """
+    passages = []
+    current, start_reg, heads = "", None, []
+    registrant = heading = None
     for line in _pieces(text, size):
         if current and len(current) + len(line) + 1 > size:
-            passages.append(current)
+            passages.append((current, start_reg, heads))
             current = ""
+        if not current:
+            start_reg, heads = registrant, ([heading] if heading else [])
         current = f"{current}\n{line}" if current else line
+        if REGISTRANT.match(line):
+            registrant = line
+            start_reg = start_reg or line
+        elif (h := _heading(line)) is not None:
+            if NOTE.match(h):
+                registrant = None  # notes in a combined filing cover every registrant
+            heading = h
+            if current == line:          # heading opens the passage
+                heads = [h]
+            elif _tidy(h) not in map(_tidy, heads):
+                heads.append(h)
     if current:
-        passages.append(current)
+        passages.append((current, start_reg, heads))
     return passages
+
+
+def context_line(ticker: str, fy: str, sec_id: str, registrant: str | None, headings: list[str]) -> str:
+    parts = [COMPANY[ticker], fy, ITEM_NAME[sec_id]]
+    if registrant:
+        parts.append(_tidy(registrant))
+    kept = [_tidy(h) for h in headings if not h.upper().startswith("ITEM ")]
+    if len(kept) > 2:
+        kept = [kept[0], kept[-1]]  # where the passage starts, and where it ends up
+    if kept:
+        parts.append(" → ".join(kept))
+    return " · ".join(parts)
 
 
 def main() -> int:
@@ -169,13 +248,14 @@ def main() -> int:
                 section = find_section(text, start, end)
             (OUT / ticker / f"{sec_id}.txt").write_text(section + "\n", encoding="utf-8")
             chunks = split_passages(section)
-            for i, chunk in enumerate(chunks, 1):
+            for i, (chunk, registrant, heading) in enumerate(chunks, 1):
                 all_passages.append({
                     "id": f"{ticker}-{meta['fy']}-{sec_id}-{i:03d}",
                     "ticker": ticker,
                     "fiscal_year": meta["fy"],
                     "section": sec_id,
                     "accession": meta["accession"],
+                    "context": context_line(ticker, meta["fy"], sec_id, registrant, heading),
                     "text": chunk,
                 })
             summary.append(f"{sec_id} {len(section) // 1000}k chars / {len(chunks)} passages")

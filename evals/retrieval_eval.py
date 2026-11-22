@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from core.tools import retrieve, workers_ai_embedder  # noqa: E402
+from evals.labels import resolve  # noqa: E402
 
 DATASET = ROOT / "evals" / "datasets" / "retrieval.jsonl"
 CACHE = ROOT / "evals" / "cache" / "query_embeddings.json"
@@ -81,7 +82,8 @@ def main() -> int:
     for case in cases:
         for mode in MODES:
             ranked = retrieve(case["query"], embed, k=MRR_DEPTH, ticker=case["ticker"], mode=mode)["passage_ids"]
-            results[mode].append(score(ranked, set(case["relevant"]), args.k))
+            relevant = set(resolve(case["evidence"], case["ticker"]))
+            results[mode].append(score(ranked, relevant, args.k))
 
     print(f"Retrieval eval: {len(cases)} queries, k={args.k}\n")
     print(f"{'mode':<8} {'Recall@' + str(args.k):>10} {'Hit@' + str(args.k):>8} {'MRR':>6}")

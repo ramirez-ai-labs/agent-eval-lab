@@ -11,47 +11,29 @@ The fundamentals of our business remain strong and allow us to deliver earnings 
 39
 MD&A | DUKE ENERGY
 Financial Results
-(a)
-See Results of Operations below for Duke Energy’s definition of adjusted earnings and adjusted EPS as well as a reconciliation of this non-GAAP financial measure to net income available to Duke Energy and net income available to Duke Energy per basic share.
+(a)See Results of Operations below for Duke Energy’s definition of adjusted earnings and adjusted EPS as well as a reconciliation of this non-GAAP financial measure to net income available to Duke Energy and net income available to Duke Energy per basic share.
 Duke Energy's 2025 Net Income Available to Duke Energy Corporation (GAAP Reported Earnings) increased primarily due to recovery of growing infrastructure investments to serve customers and growth in our service territories, partially offset by higher operation and maintenance expense, interest expense, property taxes and depreciation on a growing asset base. See “Results of Operations” below for a detailed discussion of the consolidated results of operations and the financial results for each of Duke Energy’s reportable business segments, as well as Other.
 2025 Areas of Focus and Accomplishments
-Acting on Investment Opportunities. 
-We operate in some of the most attractive jurisdictions in the country and our service territories continue to experience accelerating investment opportunities driven by a deepening economic development pipeline and significant customer growth. The reliable, low-cost power we provide plays a key role in continuing to bring business and job growth to our region. To efficiently fund this growth and the related capital required in the coming years, we entered into two strategic transactions in the third quarter of 2025. In July 2025, we announced the sale of Piedmont’s Tennessee business to Spire Inc. for $2.48 billion. Subject to regulatory approvals, we expect to complete the Piedmont transaction on March 31, 2026. In August 2025, we entered into an investment agreement to receive $6 billion in exchange for an eventual anticipated 19.7% indirect investment in Duke Energy Florida. The transaction is expected to be completed through a series of closings starting in March 2026 through mid-2028. Proceeds from both transactions will support Duke Energy’s expanded capital plan and replaces certain originally planned long-term debt and common equity issuances. Both of these transactions, along with our unwavering focus on operational excellence and value creation, demonstrate our continued ability to meet the unprecedented long-term growth anticipated across our service territories. See Note 2 to the Consolidated Financial Statements, "Dispositions," for further information.
-Operational Excellence
-.
- The reliable and safe operation of our power generating facilities, electric transmission and distribution systems and natural gas infrastructure in our communities continues to be foundational to serving our customers, our financial results and our credibility with stakeholders. Operational excellence is especially critical to successfully navigate effective storm response and to efficiently provide the continuity of service our customers demand, regardless of weather or circumstance. Our workforce and contract partners work hard to prepare for storm season through drills, material planning, call center readiness, contingency planning and customer communications. In such extreme circumstances, our immediate priority is, and always will be, executing the extensive storm preparation and response work to ensure the safe, timely and efficient restoration of service to impacted customers as quickly as possible. We've seen the benefits of ongoing grid hardening investments, leveraging self-healing technologies and remote restoration capabilities to automate the rerouting of power, more effectively deploy resources and reduce the frequency or duration of outages for many of our customers during severe weather events. Our ability to effectively handle all facets of storm response efforts while making ongoing investments to enhance the reliability and physical security of the grid is a testament to our team’s extensive preparation and coordination, applying lessons learned from previous storms, and on-the-ground management throughout the restoration efforts. Duke Energy is proud to have received 22 Emergency Response Awards since EEI began recognizing storm response in 1998 (including 11 for assisting other utilities), including for the severe storm season of 2024.
+Acting on Investment Opportunities. We operate in some of the most attractive jurisdictions in the country and our service territories continue to experience accelerating investment opportunities driven by a deepening economic development pipeline and significant customer growth. The reliable, low-cost power we provide plays a key role in continuing to bring business and job growth to our region. To efficiently fund this growth and the related capital required in the coming years, we entered into two strategic transactions in the third quarter of 2025. In July 2025, we announced the sale of Piedmont’s Tennessee business to Spire Inc. for $2.48 billion. Subject to regulatory approvals, we expect to complete the Piedmont transaction on March 31, 2026. In August 2025, we entered into an investment agreement to receive $6 billion in exchange for an eventual anticipated 19.7% indirect investment in Duke Energy Florida. The transaction is expected to be completed through a series of closings starting in March 2026 through mid-2028. Proceeds from both transactions will support Duke Energy’s expanded capital plan and replaces certain originally planned long-term debt and common equity issuances. Both of these transactions, along with our unwavering focus on operational excellence and value creation, demonstrate our continued ability to meet the unprecedented long-term growth anticipated across our service territories. See Note 2 to the Consolidated Financial Statements, "Dispositions," for further information.
+Operational Excellence. The reliable and safe operation of our power generating facilities, electric transmission and distribution systems and natural gas infrastructure in our communities continues to be foundational to serving our customers, our financial results and our credibility with stakeholders. Operational excellence is especially critical to successfully navigate effective storm response and to efficiently provide the continuity of service our customers demand, regardless of weather or circumstance. Our workforce and contract partners work hard to prepare for storm season through drills, material planning, call center readiness, contingency planning and customer communications. In such extreme circumstances, our immediate priority is, and always will be, executing the extensive storm preparation and response work to ensure the safe, timely and efficient restoration of service to impacted customers as quickly as possible. We've seen the benefits of ongoing grid hardening investments, leveraging self-healing technologies and remote restoration capabilities to automate the rerouting of power, more effectively deploy resources and reduce the frequency or duration of outages for many of our customers during severe weather events. Our ability to effectively handle all facets of storm response efforts while making ongoing investments to enhance the reliability and physical security of the grid is a testament to our team’s extensive preparation and coordination, applying lessons learned from previous storms, and on-the-ground management throughout the restoration efforts. Duke Energy is proud to have received 22 Emergency Response Awards since EEI began recognizing storm response in 1998 (including 11 for assisting other utilities), including for the severe storm season of 2024.
 The effective execution of our storm response was on full display beginning in late 2024 as a result of a historic storm season that included hurricanes Debby, Helene and Milton. Our preparation, sound execution and a comprehensive communication strategy helped us to respond quickly and build stakeholder support as we completed the important work of rebuilding power infrastructure in the hardest-hit areas of our service territories. This year included fewer large storms but we remained focused on minimizing customer bill impacts from the historic 2024 storm season by seeking insurance recovery and securitization of storm related costs in jurisdictions where permitted. To minimize the financing costs related to these storms, we worked with the state commissions to timely track and recover storm costs under our approved regulatory frameworks, including storm recovery charges in Florida and the securitization of storm costs in the Carolinas so that storm costs are fully recovered across all jurisdictions by early 2026. For more information, see "Liquidity and Capital Resources," and Notes 4 and 7 to the Consolidated Financial Statements, "Regulatory Matters" and "Debt and Credit Facilities."
 40
 MD&A | DUKE ENERGY
 Our generation fleet and electric transmission and distribution systems delivered strong performance throughout the year. In January 2025, Duke Energy Carolinas and Duke Energy Progress achieved a new record for combined peak usage due to 65 hours of freezing or below freezing temperatures and that combined peak was again surpassed in January 2026 as a result of Winter Storm Fern. Additionally, a summer heat wave brought triple-digit temperatures to parts of North Carolina and South Carolina in June 2025, and our customers set a new summertime record for electricity usage, surpassing the previous record set in July 2024. We effectively prepared for the arrival of extreme weather through the identification of potential risks, maintaining adequate short-term planning reserves, leveraging outage scheduling optimization and controlling planned and emergent equipment issues. Effective operations and flexibility by our generation and transmission teams managed tight margins in an efficient manner and ensured the integrity of the grid our customers rely upon. We will continue to practice our forecasting, grid assessment, oversight and governance processes as extreme weather challenges operations from time to time, evaluate lessons learned and enhance our strategy and communications to effectively serve our customers now and in the future. 
 The safety and health of our workforce is a core value and we remain an industry leader in personal safety as measured by the Occupational Safety and Health Administration's (OSHA) Total Incident Case Rate (TICR). We closely tracked 2024's safety results with our 2025 TICR again coming in better than target and finishing 2025 with 100 OSHA recordable injuries. We also anticipate ranking first among North American combined gas and electric companies in an annual industry safety survey for the 11th consecutive year. In addition, we continued to see excellent year-over-year environmental performance as measured by internal metrics and had no significant environmental events.
-Constructive Regulatory and Legislative Outcomes
-. One of our long-term strategic goals has been to achieve effective modernized regulatory constructs across all of our jurisdictions. Modernized regulatory constructs provide a variety of benefits, including more stable pricing and lower financing costs for customers, and improved earnings and cash flows for our utilities through timely recovery of investments. 
+Constructive Regulatory and Legislative Outcomes. One of our long-term strategic goals has been to achieve effective modernized regulatory constructs across all of our jurisdictions. Modernized regulatory constructs provide a variety of benefits, including more stable pricing and lower financing costs for customers, and improved earnings and cash flows for our utilities through timely recovery of investments. 
 In 2025, we continued to utilize these regulatory structures across most of our service territories including PBR and MYRP in North Carolina, MYRP in Florida, and grid investment riders in the Midwest. Additionally, new legislation was finalized this year in Ohio, South Carolina and North Carolina that is expected to provide additional customer benefits and further modernize recovery mechanisms, including an opportunity for a three-year rate plan with forward-looking test periods (HB15 in Ohio), the establishment of an electric rate stabilization mechanism that provides for annual adjustments to electric base rates (Act 41 in South Carolina) and more timely recovery of fuel costs and baseload generation financing costs (SB266 in North Carolina), among other provisions and regulatory recovery enhancements. All of these legislative initiatives are a testament to the strong jurisdictions in which we operate and will help continue to position us to reliably serve our customers in a cost-effective manner while making the needed investments to support our growing communities.
 Overall, 2025 was a very active year for regulatory filings, which reflects the important investments and ongoing energy modernization activity across all of our service territories. We reached comprehensive settlements in many of our proceedings this year and continue to move forward a variety of regulatory initiatives, including the following:
-•
-New rates were effective in January 2025 for Duke Energy Florida's new three-year rate plan. Also in January, Piedmont and Duke Energy Indiana received constructive general rate case orders from the NCUC and IURC, respectively. Duke Energy Kentucky received a constructive order on its electric base rate case with new rates effective in July and also filed a natural gas base rate case, receiving a constructive order in December, with new rates effective in January 2026. Also in December, both Duke Energy Progress and Duke Energy Carolinas received constructive orders from the PSCSC on their South Carolina base rate cases. New rates were effective in February 2026 for Duke Energy Progress and will be effective in March 2026 for Duke Energy Carolinas. In November, Duke Energy Carolinas and Duke Energy Progress filed PBR applications in North Carolina, which includes proposed cost recovery over a two-year MYRP period. Evidentiary hearings are scheduled to commence in the third quarter of 2026. 
-•
-In October 2025, Duke Energy Progress received an order from the NCUC granting the CPCN for the second CC unit in Person County and Duke Energy Indiana received an order from the IURC granting the CPCN for the Cayuga CC project. Also in October 2025, Duke Energy Carolinas filed for a CECPCN with the PSCSC for a new CC unit in Anderson County, South Carolina. In November 2025, Duke Energy Carolinas filed for a CPCN for two new CTs at the existing Buck CC station. These advanced natural gas plants, along with our other planned CTs, will provide critical generation as we continue to modernize our energy infrastructure in the coming years.
-•
-As highlighted above, we reached key milestones to recover costs related to critical storm restoration activities from the 2024 historic storm season while also seeking to minimize customer bill impacts resulting from hurricanes Debby, Helene and Milton. In February 2025, the FPSC voted to approve Duke Energy Florida's storm cost recovery over 12 months beginning in March 2025. In the Carolinas, Duke Energy Carolinas and Duke Energy Progress reached constructive settlements and
- financing orders were issued by both the NCUC and PSCSC. 
-We issued North Carolina storm recovery bonds in September 2025 and South Carolina storm recovery bonds in November 2025, fully recovering these unprecedented storm costs in an efficient and cost-effective manner for our customers under existing regulatory mechanisms.
-•
-Our nuclear sites continue to positively impact the customers we serve by safely producing clean, reliable and low-cost electricity, as well as providing economic benefits for our local communities with thousands of well-paying jobs and significant tax benefits. During 2025, our advocacy efforts were critical to ensure the OBBBA preserved nuclear PTCs and related transferability markets and we continued to sell nuclear PTCs to further reduce the cost of electricity for our customers. In March 2025, the NRC issued a subsequent license renewal for Oconee that allows an additional 20 years of operation through 2054. Oconee is the first Duke Energy nuclear facility to reach this significant approval milestone to permit extension of its operations to 80 years. In April 2025, we submitted an application to the NRC for Robinson to extend the plant's operations an additional 20 years through 2050.
-•
-In July 2025, Duke Energy Carolinas filed a license application with the FERC to extend the operating license for the Bad Creek Pumped Storage Hydroelectric Station. Located in South Carolina, Bad Creek is designed to produce significant amounts of energy when our customers need it most, performing a vital role on the company's system since 1991. If approved, the application would extend plant operations for an additional 50 years through 2077.
+•New rates were effective in January 2025 for Duke Energy Florida's new three-year rate plan. Also in January, Piedmont and Duke Energy Indiana received constructive general rate case orders from the NCUC and IURC, respectively. Duke Energy Kentucky received a constructive order on its electric base rate case with new rates effective in July and also filed a natural gas base rate case, receiving a constructive order in December, with new rates effective in January 2026. Also in December, both Duke Energy Progress and Duke Energy Carolinas received constructive orders from the PSCSC on their South Carolina base rate cases. New rates were effective in February 2026 for Duke Energy Progress and will be effective in March 2026 for Duke Energy Carolinas. In November, Duke Energy Carolinas and Duke Energy Progress filed PBR applications in North Carolina, which includes proposed cost recovery over a two-year MYRP period. Evidentiary hearings are scheduled to commence in the third quarter of 2026. 
+•In October 2025, Duke Energy Progress received an order from the NCUC granting the CPCN for the second CC unit in Person County and Duke Energy Indiana received an order from the IURC granting the CPCN for the Cayuga CC project. Also in October 2025, Duke Energy Carolinas filed for a CECPCN with the PSCSC for a new CC unit in Anderson County, South Carolina. In November 2025, Duke Energy Carolinas filed for a CPCN for two new CTs at the existing Buck CC station. These advanced natural gas plants, along with our other planned CTs, will provide critical generation as we continue to modernize our energy infrastructure in the coming years.
+•As highlighted above, we reached key milestones to recover costs related to critical storm restoration activities from the 2024 historic storm season while also seeking to minimize customer bill impacts resulting from hurricanes Debby, Helene and Milton. In February 2025, the FPSC voted to approve Duke Energy Florida's storm cost recovery over 12 months beginning in March 2025. In the Carolinas, Duke Energy Carolinas and Duke Energy Progress reached constructive settlements and financing orders were issued by both the NCUC and PSCSC. We issued North Carolina storm recovery bonds in September 2025 and South Carolina storm recovery bonds in November 2025, fully recovering these unprecedented storm costs in an efficient and cost-effective manner for our customers under existing regulatory mechanisms.
+•Our nuclear sites continue to positively impact the customers we serve by safely producing clean, reliable and low-cost electricity, as well as providing economic benefits for our local communities with thousands of well-paying jobs and significant tax benefits. During 2025, our advocacy efforts were critical to ensure the OBBBA preserved nuclear PTCs and related transferability markets and we continued to sell nuclear PTCs to further reduce the cost of electricity for our customers. In March 2025, the NRC issued a subsequent license renewal for Oconee that allows an additional 20 years of operation through 2054. Oconee is the first Duke Energy nuclear facility to reach this significant approval milestone to permit extension of its operations to 80 years. In April 2025, we submitted an application to the NRC for Robinson to extend the plant's operations an additional 20 years through 2050.
+•In July 2025, Duke Energy Carolinas filed a license application with the FERC to extend the operating license for the Bad Creek Pumped Storage Hydroelectric Station. Located in South Carolina, Bad Creek is designed to produce significant amounts of energy when our customers need it most, performing a vital role on the company's system since 1991. If approved, the application would extend plant operations for an additional 50 years through 2077.
 41
 MD&A | DUKE ENERGY
-•
-In August 2025, 
-we filed
- applications to combine our utilities that operate in the Carolinas by which Duke Energy Progress will merge into Duke Energy Carolinas. If approved, the proposed transaction would result in a single electric utility serving our 
-North Carolina and S
-outh Carolina service territories. The single utility’s ability to plan, execute and operate resources more efficiently is expected to result in substantial cost savings to benefit customers by reducing the overall costs to serve. We received FERC approval in January 2026 and the targeted effective date of the transaction is January 1, 2027, subject to remaining regulatory approvals from both the NCUC and PSCSC.
+•In August 2025, we filed applications to combine our utilities that operate in the Carolinas by which Duke Energy Progress will merge into Duke Energy Carolinas. If approved, the proposed transaction would result in a single electric utility serving our North Carolina and South Carolina service territories. The single utility’s ability to plan, execute and operate resources more efficiently is expected to result in substantial cost savings to benefit customers by reducing the overall costs to serve. We received FERC approval in January 2026 and the targeted effective date of the transaction is January 1, 2027, subject to remaining regulatory approvals from both the NCUC and PSCSC.
 See Notes 4 and 24 to the Consolidated Financial Statements, "Regulatory Matters" and "Income Taxes," respectively, for further information.
-Energy Modernization
-. It was a dynamic year for our company as we continued to execute on our strategic priorities while the industry experiences significant change in anticipation of long-term sales growth not seen for decades. 
+Energy Modernization. It was a dynamic year for our company as we continued to execute on our strategic priorities while the industry experiences significant change in anticipation of long-term sales growth not seen for decades. 
 Building a Smarter Energy Future
 We continue to expect increases in demand for electricity in our service territories and our focus remains on meeting the growing and evolving energy needs of our customers through a long-range, enterprise strategy that involves modernizing our assets with reliability and focus on customer value. Although our path will not be linear as we integrate new resources, evaluate coal generation and meet the rising energy needs driven by economic and hyperscale load growth, we have already made strong progress in reducing carbon emissions from electricity generation with a 43% reduction from 2005 levels. Subject to not compromising reliability and affordability, obtaining required state and federal regulatory approvals, the availability of new technologies and substantive permitting reform, we expect to continue on a path to net-zero carbon emissions from electricity generation by 2050.
 Over the next decade, we expect to deploy between approximately $200 billion and $220 billion of capital into our regulated businesses. Our energy modernization investments are designed to ensure reliable and cost-effective energy while meeting expected growth in long-term energy demand and already include approximately 7,500 MW of new natural gas generation projects under construction or seeking regulatory approval across our service territories. We're making decisions rooted in value for our customers and these investments will maintain reliability, drive economic benefits for the communities we serve, deliver cleaner energy and increase fuel diversity. We have filed and refined comprehensive IRPs consistent with this strategy in multiple jurisdictions, including updates to the systemwide Carolinas resource plan in late 2025, allowing us to make the necessary investments to meet an expected increase in demand, strengthen grid resiliency, evaluate coal plant retirements, and enable advanced natural gas generation facilities, renewables and energy storage. We are also leveraging new technology, including AI and digital tools and data analytics across the business in response to a transforming landscape. AI is being leveraged across the organization to improve reliability, optimize grid operations, enhance customer service and accelerate business transformation. This year, we deployed a personal productivity generative AI tool to approximately 10,000 employees across the enterprise and we continue to assess and prioritize high-impact investment opportunities including the development of agentic AI tools.
@@ -59,15 +41,12 @@ As we move forward to the year 2050, further technological advancement will be n
 Modernizing the Power Grid and Natural Gas Infrastructure
 Our grid improvement programs continue to be a key component of our growth strategy. In 2025, we developed and implemented a standardized data center delivery design that is repeatable, scalable and minimizes risk to meet capacity demands for AI expansion and economic growth. Further modernization of the electric grid, including smart meters, storm hardening, self-healing and targeted undergrounding, also helps to ensure the system is better prepared for severe weather, improves the system's reliability and flexibility, and provides better information and services for our customers. In 2025, smart, self-healing technology helped to avoid approximately 2.2 million customer outages across Duke Energy’s six-state service territory, saving around 5.2 million hours of total outage time. Around one-third of those benefits were achieved during major storms, providing a powerful tool for field crews working to restore power in the wake of severe weather. As of December 31, 2025, nearly 75% of our electric customers now benefit from self-healing technology on main power distribution lines – more than double the number served by this innovative technology just three years ago.
 Investments in integrity management of our natural gas infrastructure continue to be important to ensure reliable, safe and increasingly clean delivery of natural gas to our customers. Our LDC business remains focused on reducing methane emissions, leveraging our partnerships, emissions platform, sensors and other technologies to find and fix leaks in near real time. We also use cross compression to avoid releasing natural gas into the atmosphere during certain operational activities.
-Macroeconomic Environment
-. As the investment needs of our utilities accelerate, customer value remains front and center and we are committed to addressing the needs of all of our customers – from large industrials competing against a global market to residential customers managing their household budgets. Duke Energy has a demonstrated track record of driving efficiencies and productivity into our business while executing on our business plans. Despite elevated interest rates and impacts of inflation, supply chain disruptions and tariff uncertainty, we achieved financial results above the midpoint of our adjusted EPS guidance range and continued our cost-management journey with a focus on driving productivity, increasing flexibility and prioritizing spend based on risk and strategic value to our customers and investors. We've built a culture of continuous improvement and continue to identify ways to reduce operating costs, remaining focused on organization simplification, automation and continued operational excellence.
+Macroeconomic Environment. As the investment needs of our utilities accelerate, customer value remains front and center and we are committed to addressing the needs of all of our customers – from large industrials competing against a global market to residential customers managing their household budgets. Duke Energy has a demonstrated track record of driving efficiencies and productivity into our business while executing on our business plans. Despite elevated interest rates and impacts of inflation, supply chain disruptions and tariff uncertainty, we achieved financial results above the midpoint of our adjusted EPS guidance range and continued our cost-management journey with a focus on driving productivity, increasing flexibility and prioritizing spend based on risk and strategic value to our customers and investors. We've built a culture of continuous improvement and continue to identify ways to reduce operating costs, remaining focused on organization simplification, automation and continued operational excellence.
 42
 MD&A | DUKE ENERGY
 While interest rates and inflation have moderated to a degree, we continue to successfully navigate supply chain challenges to acquire major generation and grid equipment components. We've executed longer supply agreements for solar panels and continue to proactively secure equipment in advance of hurricane season. In response to accelerated load growth and capital investment plans, our supply chain organization has prioritized the use of framework agreements with key suppliers to secure critical equipment and services. These actions and agreements are designed to enhance agility, reduce procurement risk and ensure cost and schedule certainty in an increasingly volatile supply environment, particularly as labor markets become further constrained and changes in tariffs and trade policies, along with potential global supply chain disruptions, impact material costs. Our procurement teams continue to execute on action plans to enhance planning, augment supply, amend operations and leverage our scale to continue to mitigate these risks to the extent possible.
 Recent macroeconomic headwinds aside, the level of economic development success and growth experienced in our service territories continues to be significantly above what we have experienced over the last two decades. We successfully worked with our state partners to win 87 economic development projects in 2025, representing over $30 billion in new capital investment and approximately 29,000 new jobs within our service territories. These projects include transformational manufacturing, logistics, energy, and life sciences facilities as well as data centers, including Amazon's planned $10 billion investment to launch a new high-tech cloud computing and AI innovation campus in Richmond County, North Carolina. The site selected for this project was included in Duke Energy's Site Readiness Program in 2019, a program that helps state, regional and local economic development partners increase the competitiveness of potential industrial land. The investment is expected to be among the largest in North Carolina's history. Supporting the increased generation load demands expected from projects like these is an immense opportunity for our Company and a testament to the impactful and ongoing work of continuing to bring economic development success to the communities we proudly serve.
-Customer Satisfaction
-.
- Duke Energy continues to transform the customer experience through the use of customer data to inform operational priorities and performance levels. This data-driven approach allows us to identify investments that are most important to the customer experience. While customer satisfaction across our industry continues to be impacted by inflationary pressures and the impact of ongoing rate case activity on customer bills, our work continues to be recognized by customers through strong customer satisfaction scores in several jurisdictions including Duke Energy Carolinas, Duke Energy Progress, Duke Energy Florida and Piedmont as measured by J.D. Power. Additionally, with a growing national narrative on the impact of data centers and the build out of electric utility infrastructure in support of AI we remain focused on prioritizing what matters most to our customers, which is reliable service at a reasonable cost and transparent solutions that allow for informed choices and provide observable value.
+Customer Satisfaction. Duke Energy continues to transform the customer experience through the use of customer data to inform operational priorities and performance levels. This data-driven approach allows us to identify investments that are most important to the customer experience. While customer satisfaction across our industry continues to be impacted by inflationary pressures and the impact of ongoing rate case activity on customer bills, our work continues to be recognized by customers through strong customer satisfaction scores in several jurisdictions including Duke Energy Carolinas, Duke Energy Progress, Duke Energy Florida and Piedmont as measured by J.D. Power. Additionally, with a growing national narrative on the impact of data centers and the build out of electric utility infrastructure in support of AI we remain focused on prioritizing what matters most to our customers, which is reliable service at a reasonable cost and transparent solutions that allow for informed choices and provide observable value.
 Duke Energy Objectives – 2026 and Beyond
 At Duke Energy, our business strategy centers on meeting rapidly growing energy needs and powering the modern economy, while delivering reliable and cost-effective energy and value to our customers and communities. To meet these goals, we are safely transforming and readying our system by investing in innovative technologies, replacing aging and less efficient generating resources, modernizing our gas and electric infrastructure and integrating efficiency, resiliency and demand management programs. The deployment of more modern critical infrastructure will meet our customers’ rapidly evolving energy demands and reduce emissions.
 As we transition our business to meet anticipated increased long-term demand, we are also focused on creating sustainable value for our customers and shareholders by leveraging business transformation to exceed customer expectations, optimizing investments to drive attractive shareholder returns and providing new product offerings and solutions that deliver growth and customer value. Our approach enables us to meet our customers’ needs while also mitigating our impact on the environment. As we continue to execute on our energy modernization strategy, and target net-zero carbon emissions from electric generation by 2050, our progress will not be linear. To achieve these objectives, we are partnering with stakeholders, championing public policy that advances innovation, and continuing to leverage regulatory models that support the delivery of reliable energy, ensure timely cost recovery and promote cost stability for customers.
@@ -93,16 +72,11 @@ Non-GAAP Measures
 Management evaluates financial performance in part based on non-GAAP financial measures, including adjusted earnings and adjusted EPS. Adjusted earnings and adjusted EPS represent income from continuing operations available to Duke Energy common stockholders in dollar and basic per share amounts, adjusted for the dollar and per share impact of special items. Special items represent certain charges and credits, which management believes are not indicative of Duke Energy's ongoing performance. However, management believes the presentation of adjusted earnings and adjusted EPS provides useful information to investors as an additional relevant comparison of Duke Energy’s performance across periods. 
 Management uses adjusted earnings and adjusted EPS for planning, forecasting and to report financial results to the Duke Energy Board of Directors, employees, and stockholders, as well as analysts and investors. Adjusted EPS is also used as a basis to determine employee incentive bonuses. The most directly comparable GAAP measures for adjusted earnings and adjusted EPS are GAAP Reported Earnings and EPS Available to Duke Energy Corporation common stockholders (GAAP Reported EPS), respectively. 
 Special items included within the financial statement periods presented, which management does not believe are reflective of ongoing costs, are described below:
-•
-Regulatory Matters primarily represents net impairment charges related to Duke Energy Carolinas' and Duke Energy Progress' 2024 South Carolina rate case orders and charges related to Duke Energy Indiana post-retirement benefits.
-•
-System Post-Implementation Costs represents the net impact of charges related to nonrecurring customer billing adjustments as a result of implementation of a new customer system.
-•
-Preferred Redemption Costs represents charges related to the redemption of Series B Preferred Stock.
-•
-Noncore Asset Sales and Net Impairments primarily represents charges related to certain joint venture electric transmission projects and certain renewable natural gas investments.
-•
-Captive Storm Deductible represents charges related to an insurance deductible for Hurricane Helene property losses.
+•Regulatory Matters primarily represents net impairment charges related to Duke Energy Carolinas' and Duke Energy Progress' 2024 South Carolina rate case orders and charges related to Duke Energy Indiana post-retirement benefits.
+•System Post-Implementation Costs represents the net impact of charges related to nonrecurring customer billing adjustments as a result of implementation of a new customer system.
+•Preferred Redemption Costs represents charges related to the redemption of Series B Preferred Stock.
+•Noncore Asset Sales and Net Impairments primarily represents charges related to certain joint venture electric transmission projects and certain renewable natural gas investments.
+•Captive Storm Deductible represents charges related to an insurance deductible for Hurricane Helene property losses.
 Discontinued operations primarily represents the results from Duke Energy's Commercial Renewables Disposal Groups.
 Duke Energy’s adjusted earnings and adjusted EPS may not be comparable to similarly titled measures of another company because other companies may not calculate the measures in the same manner.
 44
@@ -122,12 +96,9 @@ Captive Storm Deductible (e) | — | — | 18 | 0.02
 Discontinued Operations (f) | (1) | — | (7) | (0.01)
 Adjusted Earnings/Adjusted EPS | 4,911 | 6.31 | 4,542 | 5.90
 Note: Total EPS may not foot due to rounding.
-(a) 
-Net of tax benefits of $15 million. $42 million recorded within Impairment of assets and other charges, $29 million recorded within Operating revenues, $2 million within Operation, maintenance and other, $11 million reduction recorded within Interest Expense, and a $4 million reduction within NCI for the year ended December 31, 2024.
-(b) Net of tax benefit of $5 million. 
-$17 million recorded within Operating Revenues, $1 million recorded within Operation, maintenance and other, and $3 million recorded within Other income and expenses.
-(c) 
-Recorded within Preferred Redemption Costs.
+(a) Net of tax benefits of $15 million. $42 million recorded within Impairment of assets and other charges, $29 million recorded within Operating revenues, $2 million within Operation, maintenance and other, $11 million reduction recorded within Interest Expense, and a $4 million reduction within NCI for the year ended December 31, 2024.
+(b) Net of tax benefit of $5 million. $17 million recorded within Operating Revenues, $1 million recorded within Operation, maintenance and other, and $3 million recorded within Other income and expenses.
+(c) Recorded within Preferred Redemption Costs.
 (d) Net of $11 million tax benefit. $69 million recorded within Equity in (losses) earnings of unconsolidated affiliates and $4 million recorded within Gains on sales of other assets and other, net. 
 (e) Net of $5 million tax benefit. $23 million recorded within Operation, maintenance and other.
 (f) Recorded in Income (Loss) from Discontinued Operations, net of tax, and Net Income Attributable to NCI.
@@ -166,66 +137,28 @@ Duke Energy Indiana GWh sales | 32,386 | 30,685 | 1,701
 Total Electric Utilities and Infrastructure GWh sales | 264,008 | 258,668 | 5,340
 Net proportional MW capacity in operation | 55,713 | 55,139 | 574
 Year Ended December 31, 2025, as compared to 2024 
-EU&I’s
- results were driven by higher revenues from rate cases across multiple jurisdictions,
- higher weather-normal retail sales volumes and higher transmission revenues, partially offset by higher operation and maintenance and depreciation expenses
-.
- The following is a detailed discussion of the variance drivers by line item.
-Operating Revenues. 
-The variance was driven primarily by:
-•
-a $951 million increase due to higher pricing from jurisdictional rate cases primarily at Duke Energy Carolinas, Duke Energy Indiana, Duke Energy Florida and Duke Energy Progress;
-•
-a $753 million increase in storm recovery revenues at Duke Energy Florida;
-•
-a $223 million
- increase in weather-normal retail sales volumes;
-•
-a
- $161 million increase in rider revenues primarily due to the SPP at Duke Energy Florida, 
-an increase in EE due to program performance at Duke Energy Carolinas, various riders at Duke Energy Indiana
- and the Uncollectible Expense Riders and Distribution Capital Investment Rider at Duke Energy Ohio;
-•
-a $105 million increase in other revenues due to higher transmission revenues across all jurisdictions and higher Clean Energy Connection subscription revenues at Duke Energy Florida; 
-and
-•
-a $74 million increase in retail sales due to improved weather compared to the prior year.
+EU&I’s results were driven by higher revenues from rate cases across multiple jurisdictions, higher weather-normal retail sales volumes and higher transmission revenues, partially offset by higher operation and maintenance and depreciation expenses. The following is a detailed discussion of the variance drivers by line item.
+Operating Revenues. The variance was driven primarily by:
+•a $951 million increase due to higher pricing from jurisdictional rate cases primarily at Duke Energy Carolinas, Duke Energy Indiana, Duke Energy Florida and Duke Energy Progress;
+•a $753 million increase in storm recovery revenues at Duke Energy Florida;
+•a $223 million increase in weather-normal retail sales volumes;
+•a $161 million increase in rider revenues primarily due to the SPP at Duke Energy Florida, an increase in EE due to program performance at Duke Energy Carolinas, various riders at Duke Energy Indiana and the Uncollectible Expense Riders and Distribution Capital Investment Rider at Duke Energy Ohio;
+•a $105 million increase in other revenues due to higher transmission revenues across all jurisdictions and higher Clean Energy Connection subscription revenues at Duke Energy Florida; and
+•a $74 million increase in retail sales due to improved weather compared to the prior year.
 Partially offset by:
-•
-a $1,119 million decrease in fuel revenues primarily due to lower rates in the current year, partially offset by higher volumes.
-Operating Expenses
-. 
-The variance was driven primarily by:
-•
-a $1,229 million increase in operation, maintenance and other primarily driven by higher storm amortization at Duke Energy Florida, 
-incre
-ased litigation and environmental costs a
-t Duke Energy Carolinas, an 
-increase in TDSIC rider amortizations and plant maintenance at Duke Energy Indiana, increased customer products and services program costs and higher employee-related expenses across all jurisdictions, partially offset by lower storm costs in the current year at Duke Energy Progress and Duke Energy Carolinas;
+•a $1,119 million decrease in fuel revenues primarily due to lower rates in the current year, partially offset by higher volumes.
+Operating Expenses. The variance was driven primarily by:
+•a $1,229 million increase in operation, maintenance and other primarily driven by higher storm amortization at Duke Energy Florida, increased litigation and environmental costs at Duke Energy Carolinas, an increase in TDSIC rider amortizations and plant maintenance at Duke Energy Indiana, increased customer products and services program costs and higher employee-related expenses across all jurisdictions, partially offset by lower storm costs in the current year at Duke Energy Progress and Duke Energy Carolinas;
 46
 MD&A | SEGMENT RESULTS - ELECTRIC UTILITIES AND INFRASTRUCTURE
-•
-a $477 million increase in depreciation and amortization primarily due to higher depreciable base across all jurisdictions and higher depreciation rates driven by rate cases; and
-•
-a $113 million increase in property and other taxes due to a higher base on which property taxes are levied.
+•a $477 million increase in depreciation and amortization primarily due to higher depreciable base across all jurisdictions and higher depreciation rates driven by rate cases; and
+•a $113 million increase in property and other taxes due to a higher base on which property taxes are levied.
 Partially offset by:
-•
-a $1,147 million decrease in fuel used in electric generation and purchased power primarily due to lower recovery of fuel costs and lower purchased power 
-driven by the expiration of contracts 
-in the prior year at Duke Energy Florida and higher recovery of fuel costs in the prior year at Duke Energy Carolinas, partially offset by higher volumes and natural gas prices at Duke Energy Carolinas and Duke Energy Progress and higher purchased power at Duke Energy Ohio; and
-•
-a $46 million decrease in impairment of assets and other charges primarily related to prior year charges from 
-the 2024 South Carolina rate case order
- at Duke Energy Carolinas and Duke Energy Progress. 
-Other Income and Expense. 
-The increase was primarily driven by 
-higher AFUDC equity base and rates compared to the prior year across all jurisdictions.
-Interest Expense. 
-The increase was primarily driven by higher outstanding debt balances, current year return on deferred nuclear PTC liability, absence of prior year return on deferred South Carolina grid costs, partially offset by
- lower intercompany interest expense and 
-current year return on deferred storm costs at Duke Energy Carolinas and Duke Energy Progress.
-Income Tax Expense.
- The increase in tax expense was primarily due to an increase in pretax income, partially offset by an increase in the amortization of EDIT and nuclear PTCs. The ETRs for the years ending December 31, 2025, and 2024, were 13.7% and 14.4%, respectively.
+•a $1,147 million decrease in fuel used in electric generation and purchased power primarily due to lower recovery of fuel costs and lower purchased power driven by the expiration of contracts in the prior year at Duke Energy Florida and higher recovery of fuel costs in the prior year at Duke Energy Carolinas, partially offset by higher volumes and natural gas prices at Duke Energy Carolinas and Duke Energy Progress and higher purchased power at Duke Energy Ohio; and
+•a $46 million decrease in impairment of assets and other charges primarily related to prior year charges from the 2024 South Carolina rate case order at Duke Energy Carolinas and Duke Energy Progress. 
+Other Income and Expense. The increase was primarily driven by higher AFUDC equity base and rates compared to the prior year across all jurisdictions.
+Interest Expense. The increase was primarily driven by higher outstanding debt balances, current year return on deferred nuclear PTC liability, absence of prior year return on deferred South Carolina grid costs, partially offset by lower intercompany interest expense and current year return on deferred storm costs at Duke Energy Carolinas and Duke Energy Progress.
+Income Tax Expense. The increase in tax expense was primarily due to an increase in pretax income, partially offset by an increase in the amortization of EDIT and nuclear PTCs. The ETRs for the years ending December 31, 2025, and 2024, were 13.7% and 14.4%, respectively.
 Gas Utilities and Infrastructure
 Years Ended December 31,
 (in millions) | 2025 | 2024 | Variance
@@ -246,40 +179,22 @@ Segment Income | 559 | 454 | 105
 Piedmont Local Distribution Company (LDC) throughput (Dth) | 614,062,646 | 616,724,667 | (2,662,021)
 Duke Energy Midwest LDC throughput (MCF) | 90,651,428 | 77,923,033 | 12,728,395
 Year Ended December 31, 2025, as compared to 2024
-GU&I’s results were impacted primarily by 
-higher revenues from the 2024 Piedmont North Carolina rate case and lower impairments on
- certain renewable natural gas investments 
-in the current year, 
-partially offset by higher operation and maintenance and depreciation expenses. The following is a detailed discussion of the variance drivers by line item.
-Operating Revenues.
-The variance was driven primarily by:
-•
-a $429 million increase in cost of natural gas revenues primarily due to higher commodity prices;
-•
-a $98 million increase due to higher pricing from the 2024 Piedmont North Carolina rate case; 
-•
-a $21 million increase in Midwest rider revenue; and
-•
-a $13 million increase due to improved weather in the Midwest.
+GU&I’s results were impacted primarily by higher revenues from the 2024 Piedmont North Carolina rate case and lower impairments on certain renewable natural gas investments in the current year, partially offset by higher operation and maintenance and depreciation expenses. The following is a detailed discussion of the variance drivers by line item.
+Operating Revenues. The variance was driven primarily by:
+•a $429 million increase in cost of natural gas revenues primarily due to higher commodity prices;
+•a $98 million increase due to higher pricing from the 2024 Piedmont North Carolina rate case; 
+•a $21 million increase in Midwest rider revenue; and
+•a $13 million increase due to improved weather in the Midwest.
 47
 MD&A | SEGMENT RESULTS - GAS UTILITIES AND INFRASTRUCTURE
-Operating Expenses.
-The variance was driven primarily by:
-•
-a $418 million increase in the cost of natural gas primarily due to higher commodity prices, partially offset by lower storage balancing charges in the current year;
-•
-a $40 million increase in operation, maintenance and other primarily due to higher customer information technology (IT) system costs, employee-related expenses, and environmental costs;
-•
-a $35 million increase in depreciation and amortization primarily due to higher depreciable base, partially offset by lower Tennessee depreciation due to assets meeting the held for sale criteria; and
-•
-a $15 million increase in property and other taxes due to a higher base on which property taxes are levied.
-Other Income and Expenses, net.
-The increase was primarily due to impairments for investments in SustainRNG projects in the prior year.
-Interest Expense.
- The variance was primarily due to higher outstanding debt balances, partially offset by lower intercompany interest.
-Income Tax Expense
-.
- The increase in tax expense was primarily due to an increase in pretax income. The ETRs for the years ended December 31, 2025, and 2024, were 20.7% and 17.9%, respectively. The increase in the ETR was primarily due to a decrease in the amortization of EDIT.
+Operating Expenses. The variance was driven primarily by:
+•a $418 million increase in the cost of natural gas primarily due to higher commodity prices, partially offset by lower storage balancing charges in the current year;
+•a $40 million increase in operation, maintenance and other primarily due to higher customer information technology (IT) system costs, employee-related expenses, and environmental costs;
+•a $35 million increase in depreciation and amortization primarily due to higher depreciable base, partially offset by lower Tennessee depreciation due to assets meeting the held for sale criteria; and
+•a $15 million increase in property and other taxes due to a higher base on which property taxes are levied.
+Other Income and Expenses, net. The increase was primarily due to impairments for investments in SustainRNG projects in the prior year.
+Interest Expense. The variance was primarily due to higher outstanding debt balances, partially offset by lower intercompany interest.
+Income Tax Expense. The increase in tax expense was primarily due to an increase in pretax income. The ETRs for the years ended December 31, 2025, and 2024, were 20.7% and 17.9%, respectively. The increase in the ETR was primarily due to a decrease in the amortization of EDIT.
 Other
 Years Ended December 31,
 (in millions) | 2025 | 2024 | Variance
@@ -296,27 +211,18 @@ Less: Preferred Redemption Costs | — | 16 | (16)
 Net Loss | (985) | (829) | (156)
 Year Ended December 31, 2025, as compared to 2024 
 Other's results were primarily driven by lower interest income, higher interest expense, higher contributions to the Duke Energy Foundation and lower equity earnings from the NMC investment, partially offset by impacts from the redemption of the Company’s Series B Preferred Stock in the prior year.
-Operating Expenses.
- The increase was driven by higher contributions to the Duke Energy Foundation.
-Other Income and Expenses, net.
- The decrease was primarily driven by lower money pool interest income, lower equity earnings from the NMC investment and lower return on investments that fund certain employee benefit obligations.
-Interest Expense.
- The increase was primarily due to higher outstanding debt balances and higher money pool interest expense, partially offset by lower short-term commercial paper borrowings and interest rates.
-Income Tax Benefit. 
-The increase in the tax benefit was primarily due to an increase in pretax losses. The ETRs for the years ended December 31, 2025, and 2024, were 28.3% and 31.8%, respectively. The decrease in the ETR was primarily due to tax benefits recognized in the prior year related to the utilization of previously valued carryforward attributes. 
-Preferred Dividends.
- The decrease was due to the redemption of the Company’s Series B Preferred Stock in the prior year.
-Preferred Redemption Costs
-. The decrease was due to the redemption of the Company’s Series B Preferred Stock in the prior year.
+Operating Expenses. The increase was driven by higher contributions to the Duke Energy Foundation.
+Other Income and Expenses, net. The decrease was primarily driven by lower money pool interest income, lower equity earnings from the NMC investment and lower return on investments that fund certain employee benefit obligations.
+Interest Expense. The increase was primarily due to higher outstanding debt balances and higher money pool interest expense, partially offset by lower short-term commercial paper borrowings and interest rates.
+Income Tax Benefit. The increase in the tax benefit was primarily due to an increase in pretax losses. The ETRs for the years ended December 31, 2025, and 2024, were 28.3% and 31.8%, respectively. The decrease in the ETR was primarily due to tax benefits recognized in the prior year related to the utilization of previously valued carryforward attributes. 
+Preferred Dividends. The decrease was due to the redemption of the Company’s Series B Preferred Stock in the prior year.
+Preferred Redemption Costs. The decrease was due to the redemption of the Company’s Series B Preferred Stock in the prior year.
 INCOME FROM DISCONTINUED OPERATIONS, NET OF TAX
 Years Ended December 31,
 (in millions) | 2025 | 2024 | Variance
 Income From Discontinued Operations, net of tax | 1 | 10 | (9)
 Year Ended December 31, 2025, as compared to 2024
-The variance was primarily driven by results of the Commercial Renewables Disposal Groups in the prior year
-. See Note 
-2
- to the Consolidated Financial Statements, "Dispositions," for further information.
+The variance was primarily driven by results of the Commercial Renewables Disposal Groups in the prior year. See Note 2 to the Consolidated Financial Statements, "Dispositions," for further information.
 48
 MD&A | DUKE ENERGY CAROLINAS
 SUBSIDIARY REGISTRANTS
@@ -351,49 +257,26 @@ Joint dispatch sales | 27.0
 Total sales | 2.0
 Average number of customers | 1.9
 Year Ended December 31, 2025, as compared to 2024 
-Operating Revenues.
-The variance was driven primarily by:
-•
-a $563 million decrease in fuel revenues due to lower fuel rates, partially offset by higher volumes, including JDA sales.
+Operating Revenues. The variance was driven primarily by:
+•a $563 million decrease in fuel revenues due to lower fuel rates, partially offset by higher volumes, including JDA sales.
 Partially offset by:
-•
-a $327 million increase due to higher pricing from the 2024 South Carolina rate case and Year 2 of the North Carolina MYRP;
-•
-a $109 million increase in weather-normal retail sales volumes; 
-•
-a $42 million increase in rider revenues primarily due to an increase in EE program performance, partially offset by the return of nuclear PTC benefit to North Carolina customers beginning in January 2025 and increased South Carolina EDIT return to customers compared to prior year;
-•
-a $32 million increase in retail sales due to improved weather compared to the prior yea
-r; 
-•
-a $21 million increase in transmission revenues due to network demand and rates; and
-•
-a $20 million increase in wholesale power revenues primarily due to higher capacity volumes.
+•a $327 million increase due to higher pricing from the 2024 South Carolina rate case and Year 2 of the North Carolina MYRP;
+•a $109 million increase in weather-normal retail sales volumes; 
+•a $42 million increase in rider revenues primarily due to an increase in EE program performance, partially offset by the return of nuclear PTC benefit to North Carolina customers beginning in January 2025 and increased South Carolina EDIT return to customers compared to prior year;
+•a $32 million increase in retail sales due to improved weather compared to the prior year; 
+•a $21 million increase in transmission revenues due to network demand and rates; and
+•a $20 million increase in wholesale power revenues primarily due to higher capacity volumes.
 49
 MD&A | DUKE ENERGY CAROLINAS
-Operating Expenses
-.
- The variance was driven primarily by:
-•
-a $602 million decrease in fuel used in electric generation and purchased power primarily due to the increased recovery of fuel cost in the prior year, partially offset by higher purchased power costs, including JDA, natural gas prices and volumes; and
-•
-a $42 million decrease in impairment of assets and other charges primarily related to prior year charges from the 2024 South Carolina rate case order.
+Operating Expenses. The variance was driven primarily by:
+•a $602 million decrease in fuel used in electric generation and purchased power primarily due to the increased recovery of fuel cost in the prior year, partially offset by higher purchased power costs, including JDA, natural gas prices and volumes; and
+•a $42 million decrease in impairment of assets and other charges primarily related to prior year charges from the 2024 South Carolina rate case order.
 Partially offset by:
-•
-a $262 million increase in operation, maintenance and other primarily due to higher costs related to customer products and services programs, employee-related expenses, legal and environmental and IT, 
-partially offset by lower storm costs in the current year
-; and
-•
-a $135 million increase in depreciation and amortization primarily due to higher net amortizations and depreciation rates driven by the 2024 South Carolina rate case and Year 2 of the North Carolina MYRP.
-Other Income and Expenses, net. 
-The increase was primarily due 
-to higher AFUDC equity rate and base compared to the prior year, partially offset by l
-ower return on pension plan assets in the current year.
-Interest Expense. 
-The increase was primarily due to higher outstanding debt balances, current year return on deferred nuclear PTC liability and absence of prior year return on deferred South Carolina grid costs, partially offset by current year return on deferred storm costs.
-Income Tax Expense
-.
-The decrease in tax expense was primarily due to an increase in the amortization of nuclear PTCs, ITCs and EDIT partially offset by an increase in pretax income.
+•a $262 million increase in operation, maintenance and other primarily due to higher costs related to customer products and services programs, employee-related expenses, legal and environmental and IT, partially offset by lower storm costs in the current year; and
+•a $135 million increase in depreciation and amortization primarily due to higher net amortizations and depreciation rates driven by the 2024 South Carolina rate case and Year 2 of the North Carolina MYRP.
+Other Income and Expenses, net. The increase was primarily due to higher AFUDC equity rate and base compared to the prior year, partially offset by lower return on pension plan assets in the current year.
+Interest Expense. The increase was primarily due to higher outstanding debt balances, current year return on deferred nuclear PTC liability and absence of prior year return on deferred South Carolina grid costs, partially offset by current year return on deferred storm costs.
+Income Tax Expense. The decrease in tax expense was primarily due to an increase in the amortization of nuclear PTCs, ITCs and EDIT partially offset by an increase in pretax income.
 PROGRESS ENERGY
 Results of Operations
 Years Ended December 31,
@@ -414,43 +297,25 @@ Income Before Income Taxes | 2,900 | 2,597 | 303
 Income Tax Expense | 485 | 426 | 59
 Net Income | 2,415 | 2,171 | 244
 Year Ended December 31, 2025, as compared to 2024 
-Operating Revenues. 
-The variance was driven primarily by:
-•
-a $753 million increase in storm recovery revenues at Duke Energy Florida;
-•
-a $343 million increase due to higher pricing from the 2024 Duke Energy Florida rate case and Duke Energy Progress impacts of new rate years implemented for the North Carolina MYRP;
-•
-an $88 million increase in rider revenues primarily due to higher rates for the SPP at Duke Energy Florida;
-•
-a $70 million increase in other revenues due to higher transmission revenues at Duke Energy Florida and Duke Energy Progress and higher Clean Energy Connection subscription revenues at Duke Energy Florida; and
-•
-a $51 million increase in weather-normal retail sales volumes.
+Operating Revenues. The variance was driven primarily by:
+•a $753 million increase in storm recovery revenues at Duke Energy Florida;
+•a $343 million increase due to higher pricing from the 2024 Duke Energy Florida rate case and Duke Energy Progress impacts of new rate years implemented for the North Carolina MYRP;
+•an $88 million increase in rider revenues primarily due to higher rates for the SPP at Duke Energy Florida;
+•a $70 million increase in other revenues due to higher transmission revenues at Duke Energy Florida and Duke Energy Progress and higher Clean Energy Connection subscription revenues at Duke Energy Florida; and
+•a $51 million increase in weather-normal retail sales volumes.
 Partially offset by: 
-•
-a $465 million decrease in fuel revenues primarily due to lower fuel and capacity rates billed to retail customers at Duke Energy Florida and Duke Energy Progress, partially offset by higher volumes at Duke Energy Progress.
+•a $465 million decrease in fuel revenues primarily due to lower fuel and capacity rates billed to retail customers at Duke Energy Florida and Duke Energy Progress, partially offset by higher volumes at Duke Energy Progress.
 50
 MD&A | PROGRESS ENERGY
-Operating Expenses. 
-The variance was driven primarily by:
-•
-an $872 million increase in operation, maintenance and other primarily due to higher storm amortization at Duke Energy Florida and higher costs related to employee-related expenses, customer products and services programs and IT, partially offset by lower storm costs in the current year at Duke Energy Progress;
-•
-a $150 million increase in depreciation and amortization due to higher depreciable base at Duke Energy Florida and Duke Energy Progress and the impacts of new rate years implemented for the North Carolina MYRP at Duke Energy Progress; and
-•
-a $40 million increase in property and other taxes primarily due to higher base upon which property taxes are levied and higher gross receipts tax at Duke Energy Florida.
+Operating Expenses. The variance was driven primarily by:
+•an $872 million increase in operation, maintenance and other primarily due to higher storm amortization at Duke Energy Florida and higher costs related to employee-related expenses, customer products and services programs and IT, partially offset by lower storm costs in the current year at Duke Energy Progress;
+•a $150 million increase in depreciation and amortization due to higher depreciable base at Duke Energy Florida and Duke Energy Progress and the impacts of new rate years implemented for the North Carolina MYRP at Duke Energy Progress; and
+•a $40 million increase in property and other taxes primarily due to higher base upon which property taxes are levied and higher gross receipts tax at Duke Energy Florida.
 Partially offset by:
-•
-a $488 million decrease in fuel used in electric generation and purchased power primarily due to lower recovery of fuel costs and lower purchased power costs driven by the expiration of contracts in the prior year at Duke Energy Florida and increased recovery of fuel costs in the prior year at Duke Energy Progress, partially offset by higher volumes and higher natural gas prices. 
-Other Income and expenses, net. 
-The increase was primarily due to higher AFUDC equity rate and base compared to the prior year and intercompany interest income at Duke Energy Progress.
-Interest Expense. 
-The increase was primarily due to higher outstanding debt balances at Duke Energy Progress and Duke Energy Florida, 
-partially offset by 
-lower intercompany interest expense and 
-current year return on deferred storm costs at Duke Energy Progress.
-Income Tax Expense. 
-The increase in tax expense was primarily due to an increase in pretax income, partially offset by an increase in solar PTCs.
+•a $488 million decrease in fuel used in electric generation and purchased power primarily due to lower recovery of fuel costs and lower purchased power costs driven by the expiration of contracts in the prior year at Duke Energy Florida and increased recovery of fuel costs in the prior year at Duke Energy Progress, partially offset by higher volumes and higher natural gas prices. 
+Other Income and expenses, net. The increase was primarily due to higher AFUDC equity rate and base compared to the prior year and intercompany interest income at Duke Energy Progress.
+Interest Expense. The increase was primarily due to higher outstanding debt balances at Duke Energy Progress and Duke Energy Florida, partially offset by lower intercompany interest expense and current year return on deferred storm costs at Duke Energy Progress.
+Income Tax Expense. The increase in tax expense was primarily due to an increase in pretax income, partially offset by an increase in solar PTCs.
 DUKE ENERGY PROGRESS
 Results of Operations
 Years Ended December 31,
@@ -482,38 +347,20 @@ Average number of customers | 1.6
 51
 MD&A | DUKE ENERGY PROGRESS
 Year Ended December 31, 2025, as compared to 2024 
-Operating Revenues. 
-The variance was driven primarily by:
-•
-a $126 million increase due to higher pricing from the impacts of new rate years implemented for the North Carolina MYRP;
-•
-a $118 million increase in fuel revenues due to higher volumes, partially offset by lower retail rates; 
-•
-a $32 million increase in weather-normal retail sales volumes;
-•
-a $20 million increase due to transmission revenues from higher network demand and rates; 
-•
-a $19 million increase in wholesale revenues, net of fuel, due to higher capacity volumes, partially offset by lower capacity rates; and
-•
-a $12 million increase in retail sales due to improved weather compared to the prior year.
-Operating Expenses
-. The variance was driven primarily by:
-•
-a $109 million increase in fuel used in electric generation and purchased power primarily due to higher volumes, including JDA purchases, and natural gas prices, partially offset by increased recovery of fuel cost in the prior year; 
-•
-a $70 million increase in depreciation and amortization prim
-arily due to the impact of new rate years implemented for
- the North Carolina MYRP and higher depreciable base; and
-•
-a $67 million increase in operation, maintenance and other primarily due to higher costs related to employee-related expenses, customer products and services programs and IT, partially offset by lower storm costs in the current year.
-Other Income and expenses, net. 
-The increase was primarily due to higher AFUDC equity rate and base compared to the prior year and intercompany interest income.
-Interest Expense. 
-The increase was primarily due to higher outstanding debt balances, partially offset by lower intercompany interest expense and the 
-current year return on deferred storm costs
-. 
-Income Tax Expense.
-The increase in tax expense was primarily due to an increase in pretax income.
+Operating Revenues. The variance was driven primarily by:
+•a $126 million increase due to higher pricing from the impacts of new rate years implemented for the North Carolina MYRP;
+•a $118 million increase in fuel revenues due to higher volumes, partially offset by lower retail rates; 
+•a $32 million increase in weather-normal retail sales volumes;
+•a $20 million increase due to transmission revenues from higher network demand and rates; 
+•a $19 million increase in wholesale revenues, net of fuel, due to higher capacity volumes, partially offset by lower capacity rates; and
+•a $12 million increase in retail sales due to improved weather compared to the prior year.
+Operating Expenses. The variance was driven primarily by:
+•a $109 million increase in fuel used in electric generation and purchased power primarily due to higher volumes, including JDA purchases, and natural gas prices, partially offset by increased recovery of fuel cost in the prior year; 
+•a $70 million increase in depreciation and amortization primarily due to the impact of new rate years implemented for the North Carolina MYRP and higher depreciable base; and
+•a $67 million increase in operation, maintenance and other primarily due to higher costs related to employee-related expenses, customer products and services programs and IT, partially offset by lower storm costs in the current year.
+Other Income and expenses, net. The increase was primarily due to higher AFUDC equity rate and base compared to the prior year and intercompany interest income.
+Interest Expense. The increase was primarily due to higher outstanding debt balances, partially offset by lower intercompany interest expense and the current year return on deferred storm costs. 
+Income Tax Expense. The increase in tax expense was primarily due to an increase in pretax income.
 DUKE ENERGY FLORIDA
 Results of Operations
 Years Ended December 31,
@@ -543,38 +390,23 @@ Average number of customers | 1.4
 52
 MD&A | DUKE ENERGY FLORIDA
 Year Ended December 31, 2025, as compared to 2024 
-Operating Revenues. 
-The variance was driven primarily by:
-•
-a $753 million increase in storm recovery revenues;
-•
-a $217 million increase due to higher pricing from the 2024 Florida rate case;
-•
-a $79 million increase in rider revenues primarily due to higher rates for the SPP;
-•
-a $48 million increase in other revenues due to higher transmission revenues primarily from higher demand and rates and higher Clean Energy Connection subscription revenues; and
-•
-a $19 million increase in weather-normal retail sales volumes. 
+Operating Revenues. The variance was driven primarily by:
+•a $753 million increase in storm recovery revenues;
+•a $217 million increase due to higher pricing from the 2024 Florida rate case;
+•a $79 million increase in rider revenues primarily due to higher rates for the SPP;
+•a $48 million increase in other revenues due to higher transmission revenues primarily from higher demand and rates and higher Clean Energy Connection subscription revenues; and
+•a $19 million increase in weather-normal retail sales volumes. 
 Partially offset by:
-•
-a $583 million decrease in fuel revenues primarily due to lower fuel and capacity rates; and
-•
-a $36 million decrease in wholesale base revenues primarily due to lower capacity volumes and the expiration of contracts in the prior year.
-Operating Expenses. 
-The variance was driven primarily by:
-•
-an $810 million increase in operation, maintenance and other primarily due to higher storm amortization;
-•
-an $80 million increase in depreciation and amortization primarily due to higher depreciable base; and
-•
-a $46 million increase in property and other taxes primarily due to higher base upon which property taxes are levied and higher gross receipts tax driven by higher revenues.
+•a $583 million decrease in fuel revenues primarily due to lower fuel and capacity rates; and
+•a $36 million decrease in wholesale base revenues primarily due to lower capacity volumes and the expiration of contracts in the prior year.
+Operating Expenses. The variance was driven primarily by:
+•an $810 million increase in operation, maintenance and other primarily due to higher storm amortization;
+•an $80 million increase in depreciation and amortization primarily due to higher depreciable base; and
+•a $46 million increase in property and other taxes primarily due to higher base upon which property taxes are levied and higher gross receipts tax driven by higher revenues.
 Partially offset by:
-•
-a $597 million decrease in fuel used in electric generation and purchased power primarily due to lower fuel cost recovery and lower purchased power costs driven by the expiration of contracts in the prior year, partially offset by higher fuel costs driven by higher natural gas prices.
-Interest Expense. 
-The increase was primarily due to higher outstanding debt balances.
-Income Tax Expense.
-The increase in tax expense was primarily due to an increase in pretax income, partially offset by an increase in solar PTCs.
+•a $597 million decrease in fuel used in electric generation and purchased power primarily due to lower fuel cost recovery and lower purchased power costs driven by the expiration of contracts in the prior year, partially offset by higher fuel costs driven by higher natural gas prices.
+Interest Expense. The increase was primarily due to higher outstanding debt balances.
+Income Tax Expense. The increase in tax expense was primarily due to an increase in pretax income, partially offset by an increase in solar PTCs.
 DUKE ENERGY OHIO
 Results of Operations
 Years Ended December 31,
@@ -610,30 +442,18 @@ Other natural gas sales | n/a | (2.5)
 Total sales | 1.6 | 16.3
 Average number of customers | 0.7 | 0.4
 Year Ended December 31, 2025, as compared to 2024 
-Operating Revenues
-. The variance was driven primarily by:
-•
-a $132 million increase in fuel-related revenues primarily due to higher natural gas costs passed through to customers and higher full-service retail sales volumes;
-•
-a $27 million increase in retail revenue riders primarily due to the Ohio CEP Rider, Uncollectible Expense Riders and Distribution Capital Investment Rider, partially offset by a decrease in the Distribution Storm Rider;
-•
-a $21 million increase primarily due to higher pricing from the 2024 Duke Energy Kentucky electric rate case;
-•
-a $20 million increase in weather-normal retail sales volumes;
-•
-a $19 million increase in revenues related to OVEC sales into PJM; and
-•
-a $16 million increase in retail sales due to improved weather compared to the prior year.
-Operating Expenses. 
-The variance was driven primarily by:
-•
-a $145 million increase in fuel expense primarily driven by higher retail prices for natural gas and purchased power;
-•
-a $63 million increase in depreciation and amortization primarily driven by an increase in distribution plant in service and higher amortization related to increased collections of the Uncollectible Expense Riders; and
-•
-a $32 million increase in property and other taxes primarily due to a higher base upon which property taxes are levied and higher franchise taxes.
-Interest Expense.
- The increase was primarily due to higher outstanding debt balances. 
+Operating Revenues. The variance was driven primarily by:
+•a $132 million increase in fuel-related revenues primarily due to higher natural gas costs passed through to customers and higher full-service retail sales volumes;
+•a $27 million increase in retail revenue riders primarily due to the Ohio CEP Rider, Uncollectible Expense Riders and Distribution Capital Investment Rider, partially offset by a decrease in the Distribution Storm Rider;
+•a $21 million increase primarily due to higher pricing from the 2024 Duke Energy Kentucky electric rate case;
+•a $20 million increase in weather-normal retail sales volumes;
+•a $19 million increase in revenues related to OVEC sales into PJM; and
+•a $16 million increase in retail sales due to improved weather compared to the prior year.
+Operating Expenses. The variance was driven primarily by:
+•a $145 million increase in fuel expense primarily driven by higher retail prices for natural gas and purchased power;
+•a $63 million increase in depreciation and amortization primarily driven by an increase in distribution plant in service and higher amortization related to increased collections of the Uncollectible Expense Riders; and
+•a $32 million increase in property and other taxes primarily due to a higher base upon which property taxes are levied and higher franchise taxes.
+Interest Expense. The increase was primarily due to higher outstanding debt balances. 
 DUKE ENERGY INDIANA
 Results of Operations
 Years Ended December 31,
@@ -662,32 +482,19 @@ Wholesale power sales | 15.2
 Total sales | 5.5
 Average number of customers | 1.4
 Year Ended December 31, 2025, as compared to 2024 
-Operating Revenues. 
-The variance was driven primarily by:
-•
-a $260 million increase primarily due to higher pricing from the 2024 Indiana rate case, net of certain rider revenues moving to base;
-•
-a $99 million increase in fuel revenues primarily due to higher retail fuel rates and non-firm revenues;
-•
-a $46 million increase in weather-normal retail sales volumes; 
-•
-a $38 million increase in retail sales due to improved weather compared to the prior year;
-•
-a $29 million increase in retail revenues due to a prior year increase of a regulatory liability associated with certain employee post-retirement benefits; and
-•
-a $23 million increase in rider revenues.
-Operating Expenses. 
-The variance was driven primarily by:
-•
-a $147 million increase in depreciation and amortization primarily due to higher depreciation rates from the 2024 Indiana rate case; 
-•
-a $140 million increase in operation, maintenance and other primarily due to an increase in the amortization of riders, higher employee-related expenses and plant maintenance; and
-•
-a $101 million increase in fuel used in electric generation and purchased power primarily due to higher purchased power expense and higher natural gas and coal costs.
-Interest Expense. 
-The increase is primarily due to higher outstanding debt balances and interest rates.
-Income Tax Expense.
-The increase in tax expense was primarily due to an increase in pretax income, partially offset by an increase in the amortization of EDIT.
+Operating Revenues. The variance was driven primarily by:
+•a $260 million increase primarily due to higher pricing from the 2024 Indiana rate case, net of certain rider revenues moving to base;
+•a $99 million increase in fuel revenues primarily due to higher retail fuel rates and non-firm revenues;
+•a $46 million increase in weather-normal retail sales volumes; 
+•a $38 million increase in retail sales due to improved weather compared to the prior year;
+•a $29 million increase in retail revenues due to a prior year increase of a regulatory liability associated with certain employee post-retirement benefits; and
+•a $23 million increase in rider revenues.
+Operating Expenses. The variance was driven primarily by:
+•a $147 million increase in depreciation and amortization primarily due to higher depreciation rates from the 2024 Indiana rate case; 
+•a $140 million increase in operation, maintenance and other primarily due to an increase in the amortization of riders, higher employee-related expenses and plant maintenance; and
+•a $101 million increase in fuel used in electric generation and purchased power primarily due to higher purchased power expense and higher natural gas and coal costs.
+Interest Expense. The increase is primarily due to higher outstanding debt balances and interest rates.
+Income Tax Expense. The increase in tax expense was primarily due to an increase in pretax income, partially offset by an increase in the amortization of EDIT.
 PIEDMONT
 Results of Operations
 Years Ended December 31,
@@ -718,27 +525,16 @@ Total throughput deliveries | (0.4)
 Secondary market volumes | 70.0
 Average number of customers | 1.7
 Year Ended December 31, 2025, as compared to 2024 
-Operating Revenues.
-The variance was driven primarily by:
-•
-a $361 million increase in cost of natural gas revenues primarily due to higher commodity prices; and
-•
-a $98 million increase due to higher pricing from th
-e 2024 North Carolina rate case.
-Operating Expenses.
-The variance was driven primarily by:
-•
-a $361 million increase in the cost of natural gas primarily due to higher commodity prices;
-•
-a $49 million increase in operation, maintenance and other primarily due to higher customer IT system costs, employee-related expenses and Tennessee divestiture fees;
-•
-a $21 million increase in depreciation and amortization due to higher depreciable base and higher rates due to the 2024 North Carolina rate case, partially offset by lower Tennessee depreciation due to assets meeting the held for sale criteria; and
-•
-a $12 million increase in property and other taxes due to a higher base on which property taxes are levied.
-Other Income and Expenses, net.
- The decrease was primarily due to lower AFUDC equity and higher non-service pension costs.
-Income Tax Expense. 
-The increase in tax expense was primarily due to an increase in pretax income and a decrease in the amortization of EDIT.
+Operating Revenues. The variance was driven primarily by:
+•a $361 million increase in cost of natural gas revenues primarily due to higher commodity prices; and
+•a $98 million increase due to higher pricing from the 2024 North Carolina rate case.
+Operating Expenses. The variance was driven primarily by:
+•a $361 million increase in the cost of natural gas primarily due to higher commodity prices;
+•a $49 million increase in operation, maintenance and other primarily due to higher customer IT system costs, employee-related expenses and Tennessee divestiture fees;
+•a $21 million increase in depreciation and amortization due to higher depreciable base and higher rates due to the 2024 North Carolina rate case, partially offset by lower Tennessee depreciation due to assets meeting the held for sale criteria; and
+•a $12 million increase in property and other taxes due to a higher base on which property taxes are levied.
+Other Income and Expenses, net. The decrease was primarily due to lower AFUDC equity and higher non-service pension costs.
+Income Tax Expense. The increase in tax expense was primarily due to an increase in pretax income and a decrease in the amortization of EDIT.
 CRITICAL ACCOUNTING POLICIES AND ESTIMATES
 Preparation of financial statements requires the application of accounting policies, judgments, assumptions and estimates that can significantly affect the reported results of operations, cash flows or the amounts of assets and liabilities recognized in the financial statements. Judgments made include the likelihood of success of particular projects, possible legal and regulatory challenges, earnings assumptions on pension and other benefit fund investments and anticipated recovery of costs, especially through regulated operations. 
 Management discusses these policies, estimates and assumptions with senior members of management on a regular basis and provides periodic updates on management decisions to the Audit Committee. Management believes the areas described below require significant judgment in the application of accounting policy or in making estimates and assumptions that are inherently uncertain and that may change in subsequent periods.
@@ -746,18 +542,12 @@ For further information, see Note 1 to the Consolidated Financial Statements, "S
 Regulated Operations Accounting
 Substantially all of Duke Energy’s regulated operations meet the criteria for application of regulated operations accounting treatment. As a result, Duke Energy is required to record assets and liabilities that would not be recorded for nonregulated entities. Regulatory assets generally represent incurred costs that have been deferred because such costs are probable of future recovery in customer rates. Regulatory liabilities are recorded when it is probable that a regulator will require Duke Energy to make refunds to customers or reduce rates to customers for previous collections or deferred revenue for costs that have yet to be incurred. 
 Management continually assesses whether recorded regulatory assets are probable of future recovery by considering factors such as:
-•
-applicable regulatory environment changes;
-•
-historical regulatory treatment for similar costs in Duke Energy’s jurisdictions;
-•
-litigation of rate orders;
-•
-recent rate orders to other regulated entities;
-•
-levels of actual return on equity compared to approved rates of return on equity; and
-•
-the status of any pending or potential deregulation legislation. 
+•applicable regulatory environment changes;
+•historical regulatory treatment for similar costs in Duke Energy’s jurisdictions;
+•litigation of rate orders;
+•recent rate orders to other regulated entities;
+•levels of actual return on equity compared to approved rates of return on equity; and
+•the status of any pending or potential deregulation legislation. 
 56
 MD&A | CRITICAL ACCOUNTING POLICIES AND ESTIMATES
 If future recovery of costs ceases to be probable, asset write-offs would be recognized in operating income. Additionally, regulatory agencies can provide flexibility in the manner and timing of the depreciation of property, plant and equipment, recognition of asset retirement costs and amortization of regulatory assets, or may disallow recovery of all or a portion of certain assets.
@@ -779,16 +569,13 @@ For further information, see Notes 4, 5 and 10 to the Consolidated Financial Sta
 MD&A | LIQUIDITY AND CAPITAL RESOURCES
 LIQUIDITY AND CAPITAL RESOURCES
 Sources and Uses of Cash
-Duke Energy relies primarily upon cash flows from operations, debt and equity issuances and its existing cash and cash equivalents to fund its liquidity and capital requirements. Duke Energy’s capital requirements arise primarily from capital and investment expenditures, repaying long-term debt and paying dividends to shareholders. Additionally, due to its existing tax attributes and projected tax credits to be generated, Duke Energy does not expect to be a significant federal cash taxpayer until around 2030. Duke Energy Carolinas, Duke Energy Progress and Duke Energy Florida are monetizing tax credits in the transferability markets established by the IRA and
- are working with the state utility commissions on the appropriate regulatory process to pass the net realizable value back to customers over time. 
-See Note 24 to the Consolidated Financial Statements, "Income Taxes," for further information.
+Duke Energy relies primarily upon cash flows from operations, debt and equity issuances and its existing cash and cash equivalents to fund its liquidity and capital requirements. Duke Energy’s capital requirements arise primarily from capital and investment expenditures, repaying long-term debt and paying dividends to shareholders. Additionally, due to its existing tax attributes and projected tax credits to be generated, Duke Energy does not expect to be a significant federal cash taxpayer until around 2030. Duke Energy Carolinas, Duke Energy Progress and Duke Energy Florida are monetizing tax credits in the transferability markets established by the IRA and are working with the state utility commissions on the appropriate regulatory process to pass the net realizable value back to customers over time. See Note 24 to the Consolidated Financial Statements, "Income Taxes," for further information.
 In 2025, Duke Energy executed several equity forward sales agreements as part of the prior ATM program. Settlement of the forward sales agreements is expected to occur by December 31, 2026. See Note 20 to the Consolidated Financial Statements, “Stockholders’ Equity,” for further details. 
 See Note 2 to the Consolidated Financial Statements, "Dispositions," for the timing and use of final proceeds received in April 2025 from the sale of certain Commercial Renewables assets to an affiliate of Brookfield Renewable Partners L.P.
 In July, Piedmont entered into an agreement with Spire Inc. to sell Piedmont’s Tennessee business for $2.48 billion. Subject to TPUC approval, Piedmont expects to complete the sale on March 31, 2026. Proceeds are expected to be used for debt reduction at Piedmont and to efficiently fund Duke Energy's capital plan, primarily by displacing the issuance of common equity in the near term. See Note 2 to the Consolidated Financial Statements, "Dispositions," for further details.
 In August 2025, Duke Energy, Progress Energy and Florida Progress entered into an investment agreement for Florida Progress to receive $6 billion in exchange for an eventual anticipated 19.7% indirect investment in Duke Energy Florida. The transaction is expected to be completed through a series of closings through June 30, 2028. The parties intend for the first closing to occur in March 2026, with expected proceeds of $2.8 billion (subject to adjustment). Proceeds from the minority interest investment are expected to be used to efficiently fund Duke Energy’s growing capital and investment expenditures plan, primarily by displacing certain previously planned issuances of long-term debt and common equity. See Note 2 to the Consolidated Financial Statements, "Dispositions," for information on the timing and use of proceeds related to the transaction.
 Capital Expenditures
-Duke Energy continues to focus on effectively managing risk and positioning its business for future success and will invest principally in its strongest business secto
-rs. Duke Energy’s projected capital and investment expenditures, including AFUDC debt and capitalized interest, for the next three fiscal years are included in the table below.
+Duke Energy continues to focus on effectively managing risk and positioning its business for future success and will invest principally in its strongest business sectors. Duke Energy’s projected capital and investment expenditures, including AFUDC debt and capitalized interest, for the next three fiscal years are included in the table below.
 (in millions) | 2026 | 2027 | 2028
 Electric Generation (a) | 7,650 | 8,975 | 10,825
 Electric Transmission | 2,700 | 2,975 | 2,825
@@ -798,51 +585,36 @@ Total EU&I | 16,275 | 18,000 | 18,925
 GU&I (b) | 1,125 | 1,150 | 1,900
 Other | 350 | 350 | 375
 Total projected capital and investment expenditures | 17,750 | 19,500 | 21,200
-(a) Includes nuclear fuel of approximat
-e
-ly $1.8 billion in 2026-2028.
+(a) Includes nuclear fuel of approximately $1.8 billion in 2026-2028.
 (b) Includes no capital expenditures related to Piedmont's Tennessee Business subsequent to the expected sale in March 2026.
 Debt
 Long-term debt maturities and the interest payable on long-term debt each represent a significant cash requirement for the Duke Energy Registrants. See Note 7 to the Consolidated Financial Statements, “Debt and Credit Facilities,” for information regarding the Duke Energy Registrants' long-term debt at December 31, 2025, the weighted average interest rate applicable to each long-term debt category, a schedule of long-term debt maturities over the next five years and information on executed term loans.
-From August through October 2024, a series of major storm events occurred that resulted in significant damage to utility infrastructure within our service territories and primarily impacted Duke Energy Carolinas', Duke Energy Progress' and Duke Energy Florida's electric utility operations. As discussed in Note 
-4
-, to the Consolidated Financial Statements, "Regulatory Matters," hurricanes Debby, Helene and Milton caused widespread outages and included unprecedented damage to certain assets, including the hardest-hit areas on the western coast of Florida and certain regions in western North Carolina and upstate South Carolina. Funding restoration activities and, in some cases, the complete rebuild of critical infrastructure, for a series of sequential events of this magnitude resulted in incremental financing needs. See Note 
-7
- to the Consolidated Financial Statements, "Debt and Credit Facilities," for information regarding term loans executed and repaid in response to these major storm events.
+From August through October 2024, a series of major storm events occurred that resulted in significant damage to utility infrastructure within our service territories and primarily impacted Duke Energy Carolinas', Duke Energy Progress' and Duke Energy Florida's electric utility operations. As discussed in Note 4, to the Consolidated Financial Statements, "Regulatory Matters," hurricanes Debby, Helene and Milton caused widespread outages and included unprecedented damage to certain assets, including the hardest-hit areas on the western coast of Florida and certain regions in western North Carolina and upstate South Carolina. Funding restoration activities and, in some cases, the complete rebuild of critical infrastructure, for a series of sequential events of this magnitude resulted in incremental financing needs. See Note 7 to the Consolidated Financial Statements, "Debt and Credit Facilities," for information regarding term loans executed and repaid in response to these major storm events. 
 See Note 18 to the Consolidated Financial Statements, "Variable Interest Entities," for information on the termination and repayment of outstanding borrowings for CRC, DERF, DEPR and DEFR.
 58
 MD&A | LIQUIDITY AND CAPITAL RESOURCES
 Fuel and Purchased Power
-Fuel and purchased power includes firm capacity payments that provide Duke Energy with uninterrupted firm access to electricity transmission 
-capacity and natural gas transportation contracts, as well as undesignated contracts and contracts that qualify as NPNS. Duke Energy’s contractual cash obligations for fuel and purchased power as of December 31, 2025, are as follows:
+Fuel and purchased power includes firm capacity payments that provide Duke Energy with uninterrupted firm access to electricity transmission capacity and natural gas transportation contracts, as well as undesignated contracts and contracts that qualify as NPNS. Duke Energy’s contractual cash obligations for fuel and purchased power as of December 31, 2025, are as follows:
 Payments Due by Period
 (in millions) | Total | Less than 1 year (2026) | 2-3 years (2027 & 2028) | 4-5 years (2029 & 2030) | More than 5 years (2031 & beyond)
 Fuel and purchased power | 23,457 | 5,772 | 6,856 | 3,692 | 7,137
 Other Purchase Obligations
-Other purchase obligations includes contracts for software, telephone, data and consulting or advisory services, contractual obligations for Engineering, Procurement, and Construction agreement costs for new generation plants, solar facilities, plant refurbishments, maintenance and 
-day-to-day contract work and commitments to buy certain products. Amount excludes certain open purchase orders for services that are provided on demand for which the timing of the purchase cannot be determined. Total cash commitments for related other purchase obligation expenditures are $16,547 million, with $16,338 million ex
-p
-ected to be paid in the next 12 m
-onths. 
+Other purchase obligations includes contracts for software, telephone, data and consulting or advisory services, contractual obligations for Engineering, Procurement, and Construction agreement costs for new generation plants, solar facilities, plant refurbishments, maintenance and day-to-day contract work and commitments to buy certain products. Amount excludes certain open purchase orders for services that are provided on demand for which the timing of the purchase cannot be determined. Total cash commitments for related other purchase obligation expenditures are $16,547 million, with $16,338 million expected to be paid in the next 12 months. 
 See Note 6 to the Consolidated Financial Statements, “Leases” for a schedule of both finance lease and operating lease payments over the next five years. See Note 10 to the Consolidated Financial Statements, “Asset Retirement Obligations” for information on nuclear decommissioning trust funding obligations and the closure of ash impoundments.
 Duke Energy performs ongoing assessments of its respective guarantee obligations to determine whether any liabilities have been incurred as a result of potential increased nonperformance risk by third parties for which Duke Energy has issued guarantees. See Note 8 to the Consolidated Financial Statements, “Guarantees and Indemnifications,” for further details of the guarantee arrangements. Issuance of these guarantee arrangements is not required for the majority of Duke Energy’s operations. Thus, if Duke Energy discontinued issuing these guarantees, there would not be a material impact to the consolidated results of operations, cash flows or financial position. In 2025, Duke Energy executed ATM equity issuances pursuant to forward contracts. Settlement of the equity forward contracts is expected by December 31, 2026. See Note 20 to the Consolidated Financial Statements, “Stockholders’ Equity” for further details. Other than the guarantee arrangements discussed in Note 8, the equity forward contracts discussed in Note 20 and off-balance sheet debt related to non-consolidated VIEs, Duke Energy does not have any material off-balance sheet financing entities or structures. For additional information, also see Note 18 to the Consolidated Financial Statements, "Variable Interest Entities."
 Cash and Liquidity
 The Subsidiary Registrants generally maintain minimal cash balances and use short-term borrowings to meet their working capital needs and other cash requirements. The Subsidiary Registrants, excluding Progress Energy, support their short-term borrowing needs through participation with Duke Energy and certain of its other subsidiaries in a money pool arrangement. The companies with short-term funds may provide short-term loans to affiliates participating under this arrangement. See Note 7 to the Consolidated Financial Statements, “Debt and Credit Facilities,” for additional information on the money pool arrangement.
 Duke Energy and the Subsidiary Registrants, excluding Progress Energy, may also use short-term debt, including commercial paper and the money pool, as a bridge to long-term debt financings. The levels of borrowing may vary significantly over the course of the year due to the timing of long-term debt financings and the impact of fluctuations in cash flows from operations. From time to time, Duke Energy’s current liabilities exceed current assets resulting from the use of short-term debt as a funding source to meet scheduled maturities of long-term debt, as well as cash needs, which can fluctuate due to the seasonality of its businesses.
-As of December 31, 2025, Duke Energy had $245 million of cash on hand and $7.8 billion available under its Master Credit Facility. 
-Duke Energy expects to have sufficient liquidity in the form of cash on hand, cash from operations and available credit capacity to support its funding needs. Refer to Notes 7 and 20 to the Consolidated Financial Statements, "Debt and Credit Facilities" and "Stockholders' Equity," respectively, for information regarding Duke Energy's debt and equity issuances, debt maturities and available credit facilities including the Master Credit Facility.
+As of December 31, 2025, Duke Energy had $245 million of cash on hand and $7.8 billion available under its Master Credit Facility. Duke Energy expects to have sufficient liquidity in the form of cash on hand, cash from operations and available credit capacity to support its funding needs. Refer to Notes 7 and 20 to the Consolidated Financial Statements, "Debt and Credit Facilities" and "Stockholders' Equity," respectively, for information regarding Duke Energy's debt and equity issuances, debt maturities and available credit facilities including the Master Credit Facility.
 Credit Facilities and Registration Statements
 See Note 7 to the Consolidated Financial Statements, "Debt and Credit Facilities," for further information regarding credit facilities and shelf registration statements available to Duke Energy and the Duke Energy Registrants. 
 Dividend Payments
 In 2025, Duke Energy paid quarterly cash dividends for the 99th consecutive year and expects to continue its policy of paying regular cash dividends in the future. There is no assurance as to the amount of future dividends because they depend on future earnings, capital requirements, financial condition and are subject to the discretion of the Board of Directors.
-Duke Energy targets a dividend payout ratio of between 60% and 70%, based upon adjusted EPS. Duke Energy increased the dividend by approximately 2% annually
- in both 2025 and 2024, and the Company remains committed to continued growth of the dividend.
+Duke Energy targets a dividend payout ratio of between 60% and 70%, based upon adjusted EPS. Duke Energy increased the dividend by approximately 2% annually in both 2025 and 2024, and the Company remains committed to continued growth of the dividend.
 59
 MD&A | LIQUIDITY AND CAPITAL RESOURCES
 Dividend and Other Funding Restrictions of Duke Energy Subsidiaries
-As discussed in Note 4 to the Consolidated Financial Statements, “Regulatory Matters,” Duke Energy’s public utility operating companies have restrictions on the amount of funds that can be transferred to Duke Energy through dividends, advances or loans as a result of conditions imposed by various regulators in conjunction with merger transactions. Duke Energy Progress and Duke Energy Florida also have restrictions imposed by their first mortgage bond indentures and Articles of Incorporation, which in certain circumstances, limit their ability to make cash dividends or distributions on common stock. Additionally, certain other Duke Energy subsidiaries have other restrictions, such as minimum working ca
-pital and tangible net worth requirements pursuant to debt and other agreements that limit the amount of funds that can be transferred to Duke Energy. At December 31, 2025, the amount of restricted net assets of subsidiaries of Duke Energy that may not be distributed to Duke Energy in the form of a loan or dividend does not exceed a material amount of Duke Energy’s net assets
-. Other than a prohibition from declaring common stock dividends should dividend payments be deferred on the Series A Preferred Stock, Duke Energy does not have any legal or other restrictions on paying common stock dividends to shareholders out of its consolidated equity accounts. Although these restrictions cap the amount of funding the various operating subsidiaries can provide to Duke Energy, management does not believe these restrictions will have a significant impact on Duke Energy’s ability to access cash to meet its payment of dividends on common stock and other future funding obligations.
+As discussed in Note 4 to the Consolidated Financial Statements, “Regulatory Matters,” Duke Energy’s public utility operating companies have restrictions on the amount of funds that can be transferred to Duke Energy through dividends, advances or loans as a result of conditions imposed by various regulators in conjunction with merger transactions. Duke Energy Progress and Duke Energy Florida also have restrictions imposed by their first mortgage bond indentures and Articles of Incorporation, which in certain circumstances, limit their ability to make cash dividends or distributions on common stock. Additionally, certain other Duke Energy subsidiaries have other restrictions, such as minimum working capital and tangible net worth requirements pursuant to debt and other agreements that limit the amount of funds that can be transferred to Duke Energy. At December 31, 2025, the amount of restricted net assets of subsidiaries of Duke Energy that may not be distributed to Duke Energy in the form of a loan or dividend does not exceed a material amount of Duke Energy’s net assets. Other than a prohibition from declaring common stock dividends should dividend payments be deferred on the Series A Preferred Stock, Duke Energy does not have any legal or other restrictions on paying common stock dividends to shareholders out of its consolidated equity accounts. Although these restrictions cap the amount of funding the various operating subsidiaries can provide to Duke Energy, management does not believe these restrictions will have a significant impact on Duke Energy’s ability to access cash to meet its payment of dividends on common stock and other future funding obligations.
 Cash Flows From Operating Activities
 Cash flows from operations of EU&I and GU&I are primarily driven by sales of electricity and natural gas, respectively, and costs of operations. These cash flows from operations are relatively stable and comprise a substantial portion of Duke Energy’s operating cash flows. Weather conditions, working capital and commodity price fluctuations and unanticipated expenses including unplanned plant outages, storms, legal costs and related settlements can affect the timing and level of cash flows from operations.
 As part of Duke Energy’s continued effort to improve its cash flows from operations and liquidity, Duke Energy works with vendors to improve terms and conditions, including the extension of payment terms. To support this effort, Duke Energy has a voluntary supply chain finance program (the “program”) under which suppliers, at their sole discretion, may sell their receivables from Duke Energy to the participating financial institution. The financial institution administers the program. Duke Energy does not issue any guarantees with respect to the program and does not participate in negotiations between suppliers and the financial institution. Duke Energy does not have an economic interest in the supplier’s decision to participate in the program and receives no interest, fees or other benefit from the financial institution based on supplier participation in the program. Suppliers’ decisions on which invoices are sold do not impact Duke Energy’s payment terms, which are based on commercial terms negotiated between Duke Energy and the supplier regardless of program participation. A significant deterioration in the credit quality of Duke Energy, economic downturn or changes in the financial markets could limit the financial institutions willingness to participate in the program. Duke Energy does not believe such risk would have a material impact on our cash flows from operations or liquidity, as substantially all our payments are made outside the program.
@@ -855,9 +627,7 @@ Projected 2026 | Actual 2025 | Actual 2024
 Equity | 39 | 37 | 38
 Debt | 61 | 63 | 62
 Restrictive Debt Covenants
-Duke Energy’s debt and credit agreements contain various financial and other covenants. Duke Energy's Master Credit Facility contains a covenant requiring the debt-to-total capitalization ratio to not exceed 65% for each borrower, excluding Piedmont, and 70% for Piedmont. Failure to meet those covenants beyond applicable grace periods could result in accelerated due dates and/or termination of the agreements or sublimits thereto. The Duke Energy Registrants were in compliance with all other covenants related to their debt agreements as of December 31, 2025. 
-I
-n addition, some credit agreements may allow for acceleration of payments or termination of the agreements due to nonpayment, or acceleration of other significant indebtedness of the borrower or some of its subsidiaries. None of the debt or credit agreements contain material adverse change clauses.
+Duke Energy’s debt and credit agreements contain various financial and other covenants. Duke Energy's Master Credit Facility contains a covenant requiring the debt-to-total capitalization ratio to not exceed 65% for each borrower, excluding Piedmont, and 70% for Piedmont. Failure to meet those covenants beyond applicable grace periods could result in accelerated due dates and/or termination of the agreements or sublimits thereto. The Duke Energy Registrants were in compliance with all other covenants related to their debt agreements as of December 31, 2025. In addition, some credit agreements may allow for acceleration of payments or termination of the agreements due to nonpayment, or acceleration of other significant indebtedness of the borrower or some of its subsidiaries. None of the debt or credit agreements contain material adverse change clauses.
 60
 MD&A | LIQUIDITY AND CAPITAL RESOURCES
 Credit Ratings
@@ -914,13 +684,10 @@ Working capital | (886) | 1,853 | (2,739)
 Other assets and Other liabilities | 270 | (702) | 972
 Net cash provided by operating activities | 12,330 | 12,328 | 2
 The variance was driven primarily by:
-•
-a $1,733 million increase in net income, after adjustment for non-cash items, primarily due to recovery of growing infrastructure investments to serve customers, including Duke Energy Florida's storm recovery surcharge, and higher cash proceeds from the sale of tax credits, partially offset by higher operation and maintenance expense, interest expense and property taxes; and 
-•
-a $36 million decrease in ARO payments.
+•a $1,733 million increase in net income, after adjustment for non-cash items, primarily due to recovery of growing infrastructure investments to serve customers, including Duke Energy Florida's storm recovery surcharge, and higher cash proceeds from the sale of tax credits, partially offset by higher operation and maintenance expense, interest expense and property taxes; and 
+•a $36 million decrease in ARO payments.
 Partially offset by:
-•
-a $1,767 million decrease in cash inflow due to net working capital and changes in other assets and liabilities, primarily due to lower recovery of deferred fuel costs and the timing of accruals and payments, including higher current year payments related to restoration activities from the 2024 storm season.
+•a $1,767 million decrease in cash inflow due to net working capital and changes in other assets and liabilities, primarily due to lower recovery of deferred fuel costs and the timing of accruals and payments, including higher current year payments related to restoration activities from the 2024 storm season.
 INVESTING CASH FLOWS
 The following table summarizes key components of Duke Energy’s investing cash flows for the two most recently completed fiscal years.
 Years Ended December 31,
@@ -953,15 +720,11 @@ Contributions from noncontrolling interests | — | 47 | (47)
 Other financing items | 114 | (52) | 166
 Net cash provided by financing activities | 1,950 | 859 | 1,091
 The variance was driven primarily by:
-•
-a $1,000 million increase due to the prior year redemption of Series B preferred stock;
-•
-a $640 million increase driven by timing of issuances of long-term debt, net of redemptions.
+•a $1,000 million increase due to the prior year redemption of Series B preferred stock;
+•a $640 million increase driven by timing of issuances of long-term debt, net of redemptions.
 Partially offset by:
-•
-a $389 million decrease in proceeds due to lower issuances of common stock; and
-•
-a $192 million decrease driven by higher net repayments of notes payable and commercial paper.
+•a $389 million decrease in proceeds due to lower issuances of common stock; and
+•a $192 million decrease driven by higher net repayments of notes payable and commercial paper.
 QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK
 Risk Management Policies
 The Enterprise Risk Management policy framework at Duke Energy includes strategic, operational, project execution and financial or transaction related risks. Enterprise Risk Management includes market risk as part of the financial and transaction related risks in its framework. 
@@ -977,8 +740,7 @@ For the EU&I segment, the generation portfolio not utilized to serve retail oper
 MD&A | QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK
 Hedging Strategies
 Duke Energy monitors risks associated with commodity price changes on its future operations and, where appropriate, uses various commodity instruments such as electricity, coal and natural gas hedging contracts and options to mitigate the effect of such fluctuations on operations. Duke Energy’s primary use of energy commodity derivatives is to hedge against exposure to the prices of power, fuel for generation and natural gas for customers.
-Duke Energy also manages its exposure to basis risk through the use of congestion hedge products in RTOs such as financial transmission rights (PJM and MISO),
-which result in payments based on differentials in locational marginal prices. The majority of instruments used to manage Duke Energy’s commodity price exposure are either not designated as hedges or do not qualify for hedge accounting. These instruments are referred to as undesignated contracts. Mark-to-market changes for undesignated contracts entered into by regulated businesses are reflected as regulatory assets or liabilities on the Consolidated Balance Sheets.
+Duke Energy also manages its exposure to basis risk through the use of congestion hedge products in RTOs such as financial transmission rights (PJM and MISO), which result in payments based on differentials in locational marginal prices. The majority of instruments used to manage Duke Energy’s commodity price exposure are either not designated as hedges or do not qualify for hedge accounting. These instruments are referred to as undesignated contracts. Mark-to-market changes for undesignated contracts entered into by regulated businesses are reflected as regulatory assets or liabilities on the Consolidated Balance Sheets.
 Duke Energy may also enter into other contracts that qualify for the NPNS exception. When a contract meets the criteria to qualify as NPNS, Duke Energy applies such exception. Income recognition and realization related to NPNS contracts generally coincide with the physical delivery of the commodity. For contracts qualifying for the NPNS exception, no recognition of the contract’s fair value in the Consolidated Financial Statements is required until settlement of the contract as long as the transaction remains probable of occurring.
 Interest Rate Risk
 Duke Energy is exposed to risk resulting from changes in interest rates as a result of its issuance or anticipated issuance of variable and fixed-rate debt and commercial paper. Duke Energy manages interest rate exposure by limiting variable-rate exposures to a percentage of total debt and by monitoring the effects of market changes in interest rates. Duke Energy also enters into financial derivative instruments, which may include instruments such as, but not limited to, interest rate swaps, swaptions and U.S. Treasury lock agreements to manage and mitigate interest rate risk exposure. See Notes 1, 7, 15 and 17 to the Consolidated Financial Statements, “Summary of Significant Accounting Policies,” “Debt and Credit Facilities,” “Derivatives and Hedging” and “Fair Value Measurements.”
@@ -1020,100 +782,48 @@ On February 5, 2025, the EPA requested the Court to withhold issuing an opinion 
 On June 17, 2025, the EPA published a proposed rule to repeal EPA Rule 111 based on a finding that fossil fuel-fired power plants “do not contribute significantly to dangerous air pollution” under the meaning of section 111 of the Clean Air Act. The EPA also published an alternative proposal to repeal a narrower set of requirements leaving in place only GHG emission standards for new and reconstructed stationary combustion turbine electric generating units. Comments on the proposed rule were due by August 7, 2025. The Duke Energy Registrants will continue to monitor the rule as issued and actions of the court and will evaluate the impacts of any final rule or EPA actions once available.
 Coal Combustion Residuals
 In April 2015, the EPA published the 2015 CCR Rule to regulate the disposal of CCR from electric utilities as solid waste. The federal regulation classifies CCR as nonhazardous waste and allows for beneficial use of CCR with some restrictions. The regulation applies to all new and existing landfills, new and existing surface impoundments receiving CCR and existing surface impoundments located at stations generating electricity (regardless of fuel source), which were no longer receiving CCR but contained liquids as of the effective date of the rule. The rule established requirements regarding design and operating criteria, groundwater monitoring and corrective action, closure requirements and post-closure care, and recordkeeping, notifications, and internet posting requirements to ensure the safe disposal and management of CCR.
-In April 2024, the EPA issued the 2024 CCR Rule which significantly expands the scope of the 2015 CCR Rule by establishing regulatory requirements for inactive surface impoundments at retired generating facilities (Legacy CCR Surface Impoundments). The final rule also imposes a subset of the 2015 CCR Rule’s requirements, including groundwater monitoring, corrective action (where necessary), and in certain cases, closure, and post-closure care requirements, on previously unregulated coal ash sources at regulated facilities (CCR Management Units). CCR Management Units may include surface impoundments and landfills that closed prior to the effectiv
-e date of the 2015 CCR Rule, inactive CCR landfills, and other areas where CCR is managed directly on the land at Duke Energy facilitie
-s. Duke Energy, as part of a group of similarly affected electric utilities, filed a petition to challenge the 2024 CCR Rule in the U.S. Court of Appeals for the District of Columbia Circuit (the Court) on August 6, 2024. On February 13, 2025, the EPA requested the Court to withhold issuing an opinion and place the case in a 120-day abeyance to allow time for new EPA leadership to review the issues and the 2024 CCR Rule and determine how they wish to proceed. On that same day, the Court granted EPA’s motion to hold the case in abeyance pending further order of the Court. On June 13, 2025, the EPA requested, and the Court granted, a 60-day extension of the abeyance to give the agency time to “decide the full scope of reconsideration.” On August 11, 2025, the EPA filed a motion to govern further proceedings in the legacy CCR surface impoundments rule litigation, and on August 13, 2025, the Court granted an abeyance in the case until December 15, 2025. On December 15, 2025, the EPA filed a motion with the Court requesting a continuing abeyance while it reconsiders certain aspects of the 2024 CCR Rule for both Legacy CCR Surface Impoundments and CCR Management Units. On December 16, 2025, the Court granted the EPA’s motion and ordered that the litigation continue to remain in abeyance pending further order of the Court. Based on the EPA's motions to date, a proposed rule for notice and comment is anticipated in the first quarter of 2026 with final EPA action expected by October 2026. The Duke Energy Registrants will continue to monitor the rule as issued and actions of the court and will evaluate the impacts of any final rule or EPA actions once available.
+In April 2024, the EPA issued the 2024 CCR Rule which significantly expands the scope of the 2015 CCR Rule by establishing regulatory requirements for inactive surface impoundments at retired generating facilities (Legacy CCR Surface Impoundments). The final rule also imposes a subset of the 2015 CCR Rule’s requirements, including groundwater monitoring, corrective action (where necessary), and in certain cases, closure, and post-closure care requirements, on previously unregulated coal ash sources at regulated facilities (CCR Management Units). CCR Management Units may include surface impoundments and landfills that closed prior to the effective date of the 2015 CCR Rule, inactive CCR landfills, and other areas where CCR is managed directly on the land at Duke Energy facilities. Duke Energy, as part of a group of similarly affected electric utilities, filed a petition to challenge the 2024 CCR Rule in the U.S. Court of Appeals for the District of Columbia Circuit (the Court) on August 6, 2024. On February 13, 2025, the EPA requested the Court to withhold issuing an opinion and place the case in a 120-day abeyance to allow time for new EPA leadership to review the issues and the 2024 CCR Rule and determine how they wish to proceed. On that same day, the Court granted EPA’s motion to hold the case in abeyance pending further order of the Court. On June 13, 2025, the EPA requested, and the Court granted, a 60-day extension of the abeyance to give the agency time to “decide the full scope of reconsideration.” On August 11, 2025, the EPA filed a motion to govern further proceedings in the legacy CCR surface impoundments rule litigation, and on August 13, 2025, the Court granted an abeyance in the case until December 15, 2025. On December 15, 2025, the EPA filed a motion with the Court requesting a continuing abeyance while it reconsiders certain aspects of the 2024 CCR Rule for both Legacy CCR Surface Impoundments and CCR Management Units. On December 16, 2025, the Court granted the EPA’s motion and ordered that the litigation continue to remain in abeyance pending further order of the Court. Based on the EPA's motions to date, a proposed rule for notice and comment is anticipated in the first quarter of 2026 with final EPA action expected by October 2026. The Duke Energy Registrants will continue to monitor the rule as issued and actions of the court and will evaluate the impacts of any final rule or EPA actions once available.
 In addition to the requirements of the federal CCR rules, CCR landfills and surface impoundments will continue to be regulated by the states. Cost recovery for future expenditures will be pursued through the normal ratemaking process with federal and state utility commissions and via wholesale contracts, which permit recovery of reasonable and prudently incurred costs associated with Duke Energy’s regulated operations. For more information, see Notes 4 and 10 to the Consolidated Financial Statements, "Regulatory Matters" and "Asset Retirement Obligations," respectively. 
 66
 MD&A | OTHER MATTERS
 Coal Ash Act
 AROs recorded on the Duke Energy Carolinas and Duke Energy Progress Consolidated Balance Sheets as of December 31, 2025, and December 31, 2024, include the legal obligation for closure of coal ash basins and the disposal of related ash as a result of the Coal Ash Act, the federal CCR rules and other agreements. The Coal Ash Act includes a variance procedure for compliance deadlines and other issues surrounding the management of CCR and CCR surface impoundments and prohibits cost recovery in customer rates for unlawful discharge of ash impoundment waters occurring after January 1, 2014. The Coal Ash Act leaves the decision on cost recovery determinations related to closure of ash impoundments to the normal ratemaking processes before utility regulatory commissions. 
 On December 31, 2019, Duke Energy Carolinas and Duke Energy Progress entered into a settlement agreement with NCDEQ and certain community groups under which Duke Energy Carolinas and Duke Energy Progress agreed to excavate six of the nine remaining coal ash basins with ash moved to on-site lined landfills, including two at Allen, one at Mayo, one at Roxboro, and two at Rogers. At the three remaining basins at Belews Creek, Marshall and Roxboro, uncapped basin ash will be excavated and moved to lined landfills. Those portions of the basins at Belews Creek, Marshall and Roxboro, which were previously filled with ash and on which permitted facilities were constructed, will be addressed as required under the 2024 CCR Rule and state regulations.
-The estimated total cost to permanently close all coal ash basins in North Carolina and South Carolina is estimated to be approximately $8 billion to $9 billion of which approximately $4.8 billion has been spent through 2025. The majority of the remaining spend is primarily expected to occur over the next 10 years. Du
-ke Energy has completed excavation of all coal ash at the Riverbend, Dan River, Asheville, Sutton and Robinson plants.
+The estimated total cost to permanently close all coal ash basins in North Carolina and South Carolina is estimated to be approximately $8 billion to $9 billion of which approximately $4.8 billion has been spent through 2025. The majority of the remaining spend is primarily expected to occur over the next 10 years. Duke Energy has completed excavation of all coal ash at the Riverbend, Dan River, Asheville, Sutton and Robinson plants.
 For further information on coal ash basins and recovery, see Notes 4 and 10 to the Consolidated Financial Statements, "Regulatory Matters" and “Asset Retirement Obligations,” respectively.
 Other Environmental Regulations
 The Duke Energy Registrants are also subject to various federal, state and local laws regarding air and water quality, hazardous and solid waste disposal and other environmental matters. Duke Energy continues to comply with enacted environmental statutes and regulations even as certain of these regulations are in various stages of clarification, revision or legal challenge. The Duke Energy Registrants cannot predict the outcome of these matters.
 Global Climate Change and Regulation of GHG Emissions
-On January 20, 2025, the new presidential administration signed an executive order directing the United States to again withdraw from the Paris Agreement and signed a letter to the United Nations notifying the world body of the planned withdrawal from the Paris Agreement. The withdrawal from the Paris Agre
-ement became official one year after the submission of the letter.
- On January 7, 2026, a presidential memorandum was issued directing all executive departments and agencies to take immediate steps to effectively withdraw the United States from organizations including the Intergovernmental Panel on Climate Change and the United Nations Framework Convention on Climate Change. In 2021, the previous presidential administration had recommitted to the Paris Agreement and announced a target of 50% to 52% reduction in economywide net GHG emissions from 2005 levels by 2030. The U.S. submittal to support this Paris target included a goal for 100% carbon-free electricity by 2035. These actions were supplemented by a number of executive orders and a number of proposed and final rules from federal regulatory agencies, including the EPA, that would have imposed additional regulations on CO
-2
- and methane emissions, which could impact Duke Energy. The current administration has proposed or moved to propose repeal of almost all the proposed and final rules regarding climate change issued by the previous administration. The Duke Energy Registrants are monitoring these matters and any potential changes in commitments, regulations or additional executive actions as a result of the new presidential administration and cannot predict the outcome, however, there could be a material impact on our energy modernization.
-EU&I CO
-2
- Emissions Reductions
-The Duke Energy Registrants’ direct GHG emissions consist primarily of CO
-2
- that results primarily from operating a fleet of coal-fired and natural gas-fired power plants to serve its customers reliably while keeping costs as low as possible for our customers. Duke Energy is targeting net-zero carbon emissions from electricity generation by 2050. 
-The Duke Energy Registrants have taken actions that have resulted in a reduction of CO
-2
- emissions over time
-. Between 2005 and 2025, the Duke Energy Registrants have collectively lowered the CO
-2
- emissions from their electricity generation by 43%. Tim
-elines and initiatives, as well as implementation of new technologies, for future GHG emission reductions will vary in each state in which the Company operates and will involve collaboration with regulators, customers and other stakeholders. Duke Energy's actions taken to reduce CO
-2
- emissions potentially lower the exposure to any future mandatory CO
-2
- emission reduction requirements, whether as a result of federal legislation, EPA regulation, state regulation or other as yet unknown emission reduction requirements. 
-Actions to reduce CO
-2
- emissions have included the retirement of 58 coal-fired electric generating units with a combined generating capacity of over 8,000 MW, whil
-e investing in renewables and energy storage and state-of-the-art highly efficient natural gas-fired generation that produces far fewer CO
-2
- emissions per unit of electricity generated than coal. Duke Energy also has made investments to increase EE offerings and ensure continued operations of its zero-CO
-2
- emissions hydropower and nuclear plants. These efforts have diversified our electric generating system and significantly reduced CO
-2
- emissions. 
+On January 20, 2025, the new presidential administration signed an executive order directing the United States to again withdraw from the Paris Agreement and signed a letter to the United Nations notifying the world body of the planned withdrawal from the Paris Agreement. The withdrawal from the Paris Agreement became official one year after the submission of the letter. On January 7, 2026, a presidential memorandum was issued directing all executive departments and agencies to take immediate steps to effectively withdraw the United States from organizations including the Intergovernmental Panel on Climate Change and the United Nations Framework Convention on Climate Change. In 2021, the previous presidential administration had recommitted to the Paris Agreement and announced a target of 50% to 52% reduction in economywide net GHG emissions from 2005 levels by 2030. The U.S. submittal to support this Paris target included a goal for 100% carbon-free electricity by 2035. These actions were supplemented by a number of executive orders and a number of proposed and final rules from federal regulatory agencies, including the EPA, that would have imposed additional regulations on CO2 and methane emissions, which could impact Duke Energy. The current administration has proposed or moved to propose repeal of almost all the proposed and final rules regarding climate change issued by the previous administration. The Duke Energy Registrants are monitoring these matters and any potential changes in commitments, regulations or additional executive actions as a result of the new presidential administration and cannot predict the outcome, however, there could be a material impact on our energy modernization.
+EU&I CO2 Emissions Reductions
+The Duke Energy Registrants’ direct GHG emissions consist primarily of CO2 that results primarily from operating a fleet of coal-fired and natural gas-fired power plants to serve its customers reliably while keeping costs as low as possible for our customers. Duke Energy is targeting net-zero carbon emissions from electricity generation by 2050. 
+The Duke Energy Registrants have taken actions that have resulted in a reduction of CO2 emissions over time. Between 2005 and 2025, the Duke Energy Registrants have collectively lowered the CO2 emissions from their electricity generation by 43%. Timelines and initiatives, as well as implementation of new technologies, for future GHG emission reductions will vary in each state in which the Company operates and will involve collaboration with regulators, customers and other stakeholders. Duke Energy's actions taken to reduce CO2 emissions potentially lower the exposure to any future mandatory CO2 emission reduction requirements, whether as a result of federal legislation, EPA regulation, state regulation or other as yet unknown emission reduction requirements. 
+Actions to reduce CO2 emissions have included the retirement of 58 coal-fired electric generating units with a combined generating capacity of over 8,000 MW, while investing in renewables and energy storage and state-of-the-art highly efficient natural gas-fired generation that produces far fewer CO2 emissions per unit of electricity generated than coal. Duke Energy also has made investments to increase EE offerings and ensure continued operations of its zero-CO2 emissions hydropower and nuclear plants. These efforts have diversified our electric generating system and significantly reduced CO2 emissions. 
 67
 MD&A | OTHER MATTERS
-Duke Energy will continue to explore the use of currently available and commercially demonstrated technology, as well as developing technologies, to meet growing customer demand reliably and while keeping costs as low as possible for our customers and reducing CO
-2
- emissions to comply with any future regulations. These technologies include efficient new natural gas power plants, EE, wind, solar and storage, as well as evolving technologies like carbon capture, utilization and storage, the use of hydrogen and other low-carbon fuels, long-duration energy storage and advanced nuclear. Duke Energy plans to adjust to and incorporate these evolving and innovative technologies in a way that balances the reliability of energy while meeting regulatory requirements and keeping costs as low as possible for our customers. Under any future scenario involving mandatory CO
-2
- limitations, the Duke Energy Registrants would plan to seek recovery of their compliance costs through appropriate regulatory mechanisms. Future levels of CO
-2
- emissions by the Duke Energy Registrants will be influenced by variables that include customer growth and capacity needs in the jurisdictions in which they operate, public policy, tax incentives, economic conditions that affect electricity demand, weather conditions, fuel prices, market prices, availability of resources and labor, compliance with new or existing regulations, the ability to make enhancements to transmission and distribution systems to support increased deployment of renewables and behind-the-meter technologies and the existence of new technologies that can be deployed to generate the electricity necessary to meet customer demand.
-Currently, the Duke Energy Registrants do not purchase carbon credits or offsets for use in connection with the Company's path to net-zero CO
-2
- emissions. Though they may purchase carbon credits or offsets for such uses in the future, the amount or cost of which is not expected to be material at this time.
+Duke Energy will continue to explore the use of currently available and commercially demonstrated technology, as well as developing technologies, to meet growing customer demand reliably and while keeping costs as low as possible for our customers and reducing CO2 emissions to comply with any future regulations. These technologies include efficient new natural gas power plants, EE, wind, solar and storage, as well as evolving technologies like carbon capture, utilization and storage, the use of hydrogen and other low-carbon fuels, long-duration energy storage and advanced nuclear. Duke Energy plans to adjust to and incorporate these evolving and innovative technologies in a way that balances the reliability of energy while meeting regulatory requirements and keeping costs as low as possible for our customers. Under any future scenario involving mandatory CO2 limitations, the Duke Energy Registrants would plan to seek recovery of their compliance costs through appropriate regulatory mechanisms. Future levels of CO2 emissions by the Duke Energy Registrants will be influenced by variables that include customer growth and capacity needs in the jurisdictions in which they operate, public policy, tax incentives, economic conditions that affect electricity demand, weather conditions, fuel prices, market prices, availability of resources and labor, compliance with new or existing regulations, the ability to make enhancements to transmission and distribution systems to support increased deployment of renewables and behind-the-meter technologies and the existence of new technologies that can be deployed to generate the electricity necessary to meet customer demand.
+Currently, the Duke Energy Registrants do not purchase carbon credits or offsets for use in connection with the Company's path to net-zero CO2 emissions. Though they may purchase carbon credits or offsets for such uses in the future, the amount or cost of which is not expected to be material at this time.
 Generation Portfolio Planning Process
 The Duke Energy Registrants annually, biennially or triennially prepare lengthy, forward-looking IRPs. These detailed, highly technical plans are based on the Company’s thorough analysis of numerous factors that can impact the demand for electricity as well as the cost of producing and delivering electricity that influence long-term generation resource planning decisions. The IRP process helps to evaluate a range of options, taking into account stakeholder input as well as forecasts of future electricity demand, fuel prices, transmission improvements, new generating capacity, integration of renewables, energy storage, EE and demand response initiatives. The IRP process also helps evaluate potential environmental and regulatory scenarios to better mitigate policy and economic risks. The IRPs we file with regulators look out 10 to 20 years depending on the jurisdiction.
 State Legislation
 HB951
-In 2021, the state of North Carolina passed HB951, which among other things, directed the NCUC to develop and approve a carbon reduction plan that would target a 70% reduction in CO
-2
- emissions from Duke Energy Progress' and Duke Energy Carolinas' electric generation in the state by 2030 and carbon neutrality by 2050, considering all resource options and the latest technology. In December 2022, the NCUC issued an order adopting the first Carbon Plan as directed by HB951 with the Carbon Plan to be updated every two years thereafter.
+In 2021, the state of North Carolina passed HB951, which among other things, directed the NCUC to develop and approve a carbon reduction plan that would target a 70% reduction in CO2 emissions from Duke Energy Progress' and Duke Energy Carolinas' electric generation in the state by 2030 and carbon neutrality by 2050, considering all resource options and the latest technology. In December 2022, the NCUC issued an order adopting the first Carbon Plan as directed by HB951 with the Carbon Plan to be updated every two years thereafter.
 North Carolina Power Bill Reduction Act
 On July 29, 2025, the North Carolina Power Bill Reduction Act (SB266), was passed into law which retained HB951's 2050 carbon neutrality goal but eliminated the state's interim 2030 carbon reduction target and implemented other actions designed to reduce electricity costs for customers including enhanced cost recovery mechanisms for baseload generation by establishing an annual CWIP recovery for baseload generation and refining the generation construction monitoring process. SB266 also provides more timely recovery of fuel costs, allows for the recovery of CTs in MYRP proceedings and authorizes the prudent continued use of securitization for certain costs and investments serving North Carolina retail electric customers, including increasing the eligible securitization amounts for sub-critical coal assets up to 100% of their respective net book value upon retirement.
 South Carolina Energy Security Act
 Act 41, also referred to as the South Carolina Energy Security Act, was signed into law on May 12, 2025. The law promotes evaluating new generation resources, including hydro pumped storage, hydrogen-capable natural gas, and advanced nuclear, while streamlining siting, permitting and construction of certain new resources located in South Carolina. Act 41 establishes a new process for evaluating new potential generation projects over 75 MW located in North Carolina that are planned to serve South Carolina retail customers. This legislation also establishes an electric rate stabilization mechanism for electric utilities to elect into a framework that provides for annual adjustments to base rates, including for CWIP and other cost categories. Electric utilities electing the mechanism must file a general rate case at least every five years.
 Integrated Resource Plans
-In August 2023,
- Duke Energy Carolinas and Duke Energy Progress filed their 2023 systemwide Carolinas Resource Plan (the 2023 Plan) with the NCUC and PSCS
-C. In January 2024, d
-ue to substantially increased load forecast resulting from increased economic development in the Carolinas occurring since the 2023 Plan was prepared, the companies filed supplemental modeling and analysis with the NCUC and PSCSC demonstrating the need for additional resources beyond the initial set of resources identified in their initial plan. The NCUC issued an order in November 2024 emphasizing the critical importance of reliability and maintaining low costs, while taking balanced actions to meet forecasted load growth. In November 2024, the PSCSC issued an order approving the 2023 Plan.
+In August 2023, Duke Energy Carolinas and Duke Energy Progress filed their 2023 systemwide Carolinas Resource Plan (the 2023 Plan) with the NCUC and PSCSC. In January 2024, due to substantially increased load forecast resulting from increased economic development in the Carolinas occurring since the 2023 Plan was prepared, the companies filed supplemental modeling and analysis with the NCUC and PSCSC demonstrating the need for additional resources beyond the initial set of resources identified in their initial plan. The NCUC issued an order in November 2024 emphasizing the critical importance of reliability and maintaining low costs, while taking balanced actions to meet forecasted load growth. In November 2024, the PSCSC issued an order approving the 2023 Plan.
 In November 2024, Duke Energy Indiana submitted its updated IRP, which balances reliability and maintaining low costs while meeting customer and economic development growth.
 On October 1, 2025, Duke Energy Carolinas and Duke Energy Progress filed their systemwide 2025 Carolinas Resource Plan (the 2025 Plan) with the NCUC that builds upon the approved dual-state 2023 Plan. The 2025 Plan seeks to maximize the value of existing resources, enhance grid flexibility and add new supply-side resources to reliably meet growing energy demands in the most reasonable and cost-effective manner in a period of unprecedented load growth. The evidentiary hearing has been scheduled for June 2026 and an order from the NCUC is expected to be issued by December 31, 2026. Information related to the updated systemwide plan was filed with the PSCSC on November 25, 2025, and an order from the PSCSC is expected to be issued in April 2026.
 68
 MD&A | OTHER MATTERS
 The 2025 Plan seeks to maximize benefits from the existing nuclear fleet, including power uprate projects and the pursuit of subsequent license renewals for existing nuclear units, as well as the continued evaluation of potential new advanced nuclear resources to meet growing demand. On December 30, 2025, Duke Energy submitted an early site permit (ESP) application to the NRC for a site near Duke Energy Carolinas' Belews Creek Steam Station (Belews Creek). The ESP is technology neutral and provides future optionality, allowing Duke Energy to receive the permit and select a technology later in the development process. Any decision on advanced nuclear, including technology, will be made in the future after evaluating, among other things, financial and technical risk factors. The NRC's review and approval process is anticipated to take approximately 18 months. If the permit is received, it will remain valid for 20 years and may be renewed for up to 20 more years.
-GU&I CO
-2
- and Methane Emissions Reductions
-In addition to CO
-2
- emissions resulting primarily from our operations of coal-fired and natural gas-fired power plants, the Duke Energy Registrants are also responsible for certain methane emissions from the distribution of natural gas to customers. The Duke Energy Registrants have taken actions that have resulted in methane emission reductions, including the replacement of cast iron and bare steel pipelines and associated services with plastic or coated steel, advanced methane leak detection efforts, reducing time to repair nonhazardous leaks and operational releases of methane, and investment in renewable natural gas. Timelines and initiatives, as well as implementation of new technologies, for future reductions of methane emissions will vary in each state in which the Company’s natural gas distribution business operates and will involve collaboration with regulators, customers and other stakeholders.
-Certain local governments, none within the jurisdictions in which the Duke Energy Registrants operate, have enacted or are considering initiatives to 
-eliminate natural gas use in new buildings and focus on electrification. Enactment of similar regulations in the areas in which the Duke Energy Registrants' natural gas distribution operates could have a significant impact on the natural gas distribution business and its operations. At this time, such impacts are not able to be quantified; however, our methane emission reduction efforts for the natural gas distribution business
- potentially lowers the exposure to any future mandatory GHG emission reduction requirements. The Duke Energy Registrants would plan to seek recovery of their compliance costs with any new regulations through the regulatory process.
+GU&I CO2 and Methane Emissions Reductions
+In addition to CO2 emissions resulting primarily from our operations of coal-fired and natural gas-fired power plants, the Duke Energy Registrants are also responsible for certain methane emissions from the distribution of natural gas to customers. The Duke Energy Registrants have taken actions that have resulted in methane emission reductions, including the replacement of cast iron and bare steel pipelines and associated services with plastic or coated steel, advanced methane leak detection efforts, reducing time to repair nonhazardous leaks and operational releases of methane, and investment in renewable natural gas. Timelines and initiatives, as well as implementation of new technologies, for future reductions of methane emissions will vary in each state in which the Company’s natural gas distribution business operates and will involve collaboration with regulators, customers and other stakeholders.
+Certain local governments, none within the jurisdictions in which the Duke Energy Registrants operate, have enacted or are considering initiatives to eliminate natural gas use in new buildings and focus on electrification. Enactment of similar regulations in the areas in which the Duke Energy Registrants' natural gas distribution operates could have a significant impact on the natural gas distribution business and its operations. At this time, such impacts are not able to be quantified; however, our methane emission reduction efforts for the natural gas distribution business potentially lowers the exposure to any future mandatory GHG emission reduction requirements. The Duke Energy Registrants would plan to seek recovery of their compliance costs with any new regulations through the regulatory process.
 Physical Impacts of Climate Change
-The Duke Energy Registrants recognize that scientists associate severe weather events with increasing levels of GHGs in the atmosphere. It is possible that these weather events could have a material impact on future results of operations should they occur more frequently and with greater severity. However, the uncertain nature of potential changes in extreme weather events (such as increased frequency, duration and severity), the long period of time over which any potential changes might take place and the inability to predict potential changes with any degree of accuracy, make estimating with any certainty any potential future financial risk to the Duke Energy Registrants’ operations difficult. Additionally, 
-the Duke Energy Registrants would plan to continue to seek recovery of storm costs through the appropriate regulatory mechanisms. For more information on storm securitization and storm cost recovery, see Note 
-4
- to the Consolidated Financial Statements, "Regulatory Matters."
+The Duke Energy Registrants recognize that scientists associate severe weather events with increasing levels of GHGs in the atmosphere. It is possible that these weather events could have a material impact on future results of operations should they occur more frequently and with greater severity. However, the uncertain nature of potential changes in extreme weather events (such as increased frequency, duration and severity), the long period of time over which any potential changes might take place and the inability to predict potential changes with any degree of accuracy, make estimating with any certainty any potential future financial risk to the Duke Energy Registrants’ operations difficult. Additionally, the Duke Energy Registrants would plan to continue to seek recovery of storm costs through the appropriate regulatory mechanisms. For more information on storm securitization and storm cost recovery, see Note 4 to the Consolidated Financial Statements, "Regulatory Matters."
 The Duke Energy Registrants routinely take steps to assess and reduce the potential impact of severe weather events on their electric transmission and distribution systems and natural gas facilities. The steps include modernizing the electric grid through smart meters, storm hardening, self-healing systems, targeted undergrounding and applying lessons learned from previous storms to restoration efforts. The Duke Energy Registrants’ electric generating facilities and natural gas facilities are designed to withstand extreme weather events without significant damage. The Duke Energy Registrants maintain inventories of coal, oil and liquified natural gas to mitigate the effects of any potential short-term disruption in fuel supply so they can continue to provide customers with an uninterrupted supply of electricity and/or natural gas. 
 New Accounting Standards
 See Note 1 to the Consolidated Financial Statements, “Summary of Significant Accounting Policies,” for a discussion of the impact of any new accounting standards adopted by the Duke Energy Registrants.

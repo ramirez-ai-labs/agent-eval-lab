@@ -45,9 +45,11 @@ Tables become one line per row, with cells separated by ` | `, so the financial 
 - **Ford:** Item 8 only points to the statements, which follow the signature pages. The extractor starts at the last auditor's report heading.
 - **Duke Energy:** the combined filing makes Item 8 large (about 560k characters), because it includes statements for each subsidiary. Labels point only to passages from Duke Energy Corporation's own statements.
 
-**Passage IDs:** each Item is split into passages of about 1,500 characters on line boundaries, so table rows stay whole. A paragraph longer than that is broken at sentence boundaries, because the embedding model reads only about 2,000 characters. IDs follow `{ticker}-{fy}-{section}-{nnn}`, for example `F-FY2025-item8-042`, and all passages are in `scenario/filings/passages.jsonl`. Labels in the dataset point to these IDs.
+**Passage IDs:** each Item is split into passages of about 1,500 characters on line boundaries, so table rows stay whole. A paragraph longer than that is broken at sentence boundaries, because the embedding model reads only about 2,000 characters. IDs follow `{ticker}-{fy}-{section}-{nnn}`, for example `F-FY2025-item8-042`, and all passages are in `scenario/filings/passages.jsonl`. The same filing and the same settings always produce the same IDs.
 
-**Keep IDs stable.** The same filing and the same settings always produce the same IDs. **After the dataset is labeled, don't change the passage size or the extraction rules.** If you must, relabel the dataset.
+**Context line:** each passage also has a `context` field naming where it came from, for example `Duke Energy · FY2025 · Item 8 Financial Statements · Duke Energy Corporation · Consolidated Balance Sheets`. It's shown to the agent and used in citations. It is **not** indexed for search: testing showed that embedding it hurt retrieval (see `evals/README.md`).
+
+**Labels use evidence, not IDs.** Dataset cases store the exact text that answers them, and `evals/labels.py` resolves that text to passage IDs at eval time. You can change chunking or extraction rules without relabeling; if a piece of evidence can no longer be found, the eval fails loudly.
 
 ## 4. Ratio formulas
 

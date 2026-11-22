@@ -60,6 +60,9 @@ def main() -> int:
     chunks = []
     for i in range(0, len(passages), BATCH):
         batch = passages[i : i + BATCH]
+        # Text only. Embedding the context line too dropped vector Recall@5
+        # from 0.55 to 0.26: the shared prefix made hundreds of vectors look
+        # alike. See evals/README.md.
         chunks.append(embed_texts([p["text"] for p in batch], model, account_id, token))
         print(f"  embedded {min(i + BATCH, len(passages))}/{len(passages)}", end="\r")
         time.sleep(0.1)
