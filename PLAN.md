@@ -48,7 +48,12 @@ Each lab has 2–3 objectives in `workshop/OBJECTIVES.md`. Each objective has a 
 ## 4. Why evaluate agents this way
 
 - **Agents fail in ways answer-only evals miss.** An agent can give a correct final answer after calling the wrong tool, skipping a guardrail, or using 10x the tokens. Only the trace shows it.
-- **Evals belong in code.** OpenAI is retiring its hosted Evals platform and Agent Builder on Nov 30, 2026, and recommends moving evals into code. This lab shows one way to do that. *(TODO: link OpenAI's deprecation notice; switch to past tense after Nov 30.)*
+- **Evals belong in code.** OpenAI is [retiring its hosted Evals platform and Agent Builder](https://developers.openai.com/api/docs/deprecations) on Nov 30, 2026. Existing evals became read-only on Oct 31. OpenAI's recommended paths are:
+  - Promptfoo for evals
+  - the Agents SDK or ChatGPT Workspace Agents for Agent Builder workflows
+  - application code for reusable prompts
+
+  This lab shows the evals-in-code approach. `MIGRATION.md` follows OpenAI's own guidance. *(Switch to past tense after Nov 30.)*
 - **Comparisons need a common yardstick.** The same scenario and the same checks across models and frameworks make results comparable.
 - **Cost shouldn't block learning.** Three run tiers mean every learner can do every lab:
   - **mock:** no account needed
@@ -139,7 +144,7 @@ The same agent code runs three ways.
 
 | Provider | How | Cost | Used for |
 |---|---|---|---|
-| **Workers AI** (default) | Cloudflare's OpenAI-compatible endpoint, via the Agents SDK's Chat Completions model class | Free within the daily allowance | Day-to-day runs, weekly live CI, live workshop tier |
+| **Workers AI** (default) | OpenAI's open-weight `gpt-oss-120b` on Cloudflare's OpenAI-compatible Responses endpoint (non-streaming), so it uses the same Responses API code as the OpenAI provider | Free within 10,000 Neurons per day | Day-to-day runs, weekly live CI, live workshop tier |
 | **OpenAI** | `api.openai.com` with the Responses API | A full run on a small model costs about $1–2 | Reference results; learners with their own key |
 | **Mock** | Replays committed traces | Free, offline | PR checks in CI, offline workshop tier, Lab 2's planted failures |
 
@@ -147,20 +152,20 @@ Every model is pinned in `config/models.yaml`:
 
 ```yaml
 provider: workers-ai            # workers-ai | openai | mock
-agent_model: <workers-ai model with function calling>
+agent_model: "@cf/openai/gpt-oss-120b"     # Responses API, non-streaming
 openai_agent_model: <small OpenAI model snapshot>
-judge_model: <workers-ai model, different family from the agent>
+judge_model: "@cf/google/gemma-4-26b-a4b-it"   # different family from the agent
 judge_temperature: 0
-embedding_model: <workers-ai BGE model>   # vectors precomputed and committed
+embedding_model: "@cf/baai/bge-base-en-v1.5"   # vectors precomputed and committed
 tracing: local                  # traces stay on disk
 tested_on: <date>
 ```
 
 | Role | Model | Notes |
 |---|---|---|
-| Agent + risk agent | Workers AI open model, or a small OpenAI model | Must support function calling |
-| Judge (groundedness) | Workers AI model from a different family than the agent | Same judge for every track; results cached; 10 judgments checked by hand |
-| Embeddings | Workers AI BGE model | Computed once and committed, so offline still works |
+| Agent + risk agent | `gpt-oss-120b` on Workers AI (fallback `gpt-oss-20b`), or a small OpenAI model | Function calling supported; 128k context |
+| Judge (groundedness) | `gemma-4-26b-a4b-it` on Workers AI, a different family from the agent | Same judge for every track; results cached; 10 judgments checked by hand |
+| Embeddings | `bge-base-en-v1.5` on Workers AI | Computed once and committed, so offline still works |
 | Coding agent | Codex | Used in Lab 3 to make a change the evals then measure |
 
 **Verification status (shown in the README)**
@@ -174,10 +179,23 @@ tested_on: <date>
 
 Provider paths that aren't run live in CI are covered by **contract tests**. Sample responses in each provider's format go through the adapter, which must produce a valid `Trace`.
 
-**To confirm before building (M0):**
-- whether Workers AI's OpenAI-compatible endpoint supports the Responses API or only Chat Completions
-- which Workers AI models support function calling
-- the current free daily allowance
+**Confirmed Nov 21, 2026** (from [Workers AI OpenAI compatibility](https://developers.cloudflare.com/workers-ai/configuration/open-ai-compatibility/), [pricing](https://developers.cloudflare.com/workers-ai/platform/pricing/), and the [gpt-oss-120b model page](https://developers.cloudflare.com/workers-ai/models/gpt-oss-120b/)):
+- **Responses API:** supported only for `gpt-oss-120b` and `gpt-oss-20b`, and only with `stream: false`. Chat Completions works for most other text models.
+- **Function calling:** `gpt-oss-120b` supports it.
+- **Free allowance:** 10,000 Neurons per day per account, reset at 00:00 UTC. Free accounts can't go over it; requests fail instead.
+- **Paid-only models:** some newer models (Kimi K2.6+, GLM 5.x, DeepSeek V4) need a paid plan, so they're excluded from the free tier.
+
+**Free-tier budget (estimate).** Assumes about 4,500 input and 300 output tokens per agent run, and about 2,500 input and 200 output tokens per judge call. Real numbers come from the first baseline run.
+
+| | Neurons per case | Full run (36 cases) | Full runs per day (free) |
+|---|---|---|---|
+| Agent on `gpt-oss-120b` + judge | ~190 | ~7,000 | 1 |
+| Agent on `gpt-oss-20b` + judge | ~120 | ~4,300 | 2 |
+
+What this means:
+- **Weekly live CI:** one full run per case, not several. Repeated runs need a paid plan or have to be spread across days.
+- **Workshop labs:** run a 10-case subset, about 1,900 Neurons. Each learner uses their own free account, so there's room for several reruns.
+- **Agents SDK:** use non-streaming runs (`Runner.run`) on Workers AI. In M1, check that the SDK's Responses requests don't use features Cloudflare's endpoint lacks. If they do, fall back to the Chat Completions model class.
 
 ## 9. The eval suite
 
@@ -195,7 +213,7 @@ Provider paths that aren't run live in CI are covered by **contract tests**. Sam
 
 **CI gate**
 - **On every PR:** the mock track. It's deterministic, free and fast.
-- **Weekly:** a live Workers AI run with several runs per case, compared against a baseline.
+- **Weekly:** a live Workers AI run, one run per case to stay inside the free allowance, compared against a baseline.
 - **Hard rule:** any guardrail failure fails the build, because safety failures should never be averaged away.
 
 ## 10. The workshop: "Ship Agents You Can Trust" (90 minutes)
@@ -388,7 +406,8 @@ agent-eval-lab/
 | Risk | Mitigation |
 |---|---|
 | Setup problems eat lab time | Devcontainer; `make check` in the first 10 minutes; automatic mock fallback |
-| Free-tier limits hit mid-workshop | Mock fallback; small dataset; optional gateway rate limits (v1.1) |
+| Free-tier limits hit mid-workshop | Labs use a 10-case subset (~1,900 Neurons); `gpt-oss-20b` fallback; mock fallback; optional gateway rate limits (v1.1) |
+| Agents SDK sends Responses features Cloudflare doesn't support | Non-streaming runs only; verify in M1; fall back to the Chat Completions model class |
 | SDK or API changes break labs | Pinned versions, "tested on" date, weekly CI |
 | Untested provider paths stop working | Contract tests in CI; honest status table |
 | Open models are weak at tool calling | Choose a function-calling model; use real failures as Lab 2 material; OpenAI reference run for comparison |
