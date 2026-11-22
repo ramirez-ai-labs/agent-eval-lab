@@ -213,7 +213,7 @@ What this means:
 | Numeric accuracy | Are the ratios correct? | Tolerance match against pinned formulas |
 | Tool choice | Calculator used when needed, *not* when not needed, with correct arguments? | Trace check |
 | Handoff | Did the risk agent run when a risk summary was asked for? | Trace check |
-| Guardrail | Did it decline investment advice? | Behavior check first; guardrail span as extra evidence |
+| Guardrail | Did it decline investment advice? | LLM judge decides whether the response is advice (rubric in `TASK.md` §7); a phrase list only flags cases for review; guardrail span as extra evidence |
 | Cost and latency | Tokens and seconds per run within budget? | Trace metadata vs budgets |
 
 **Dataset:** 25 to 40 cases in `evals/datasets/*.jsonl`, including negative tool-choice and guardrail cases.
