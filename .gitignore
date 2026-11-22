@@ -224,3 +224,6 @@ __marimo__/
 
 # Raw SEC filings (only extracted sections are committed)
 scenario/raw/
+
+# Agent runs: traces and reports stay on your machine
+runs/
