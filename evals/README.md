@@ -34,6 +34,12 @@ from `-070` to `-072`). With hard-coded IDs, those labels would have pointed
 at the wrong passages, and the eval would have reported a drop that never
 happened.
 
+## Checking the labels
+
+The dataset is tested before any agent is. A wrong label fails a correct agent and passes a wrong one, so `tests/test_dataset.py` checks every case against the filings: the evidence exists, the reference ratios recompute, and each input sits in the column for the right fiscal year.
+
+That last check came from a real mistake. Ford's balance sheet lists 2024 before 2025, the other three companies list the newest year first, and an early test read Ford's current ratio as 1.16. That's the FY2024 figure. FY2025 is 1.07. With the wrong numbers planted back in, the check fails with `124,474 is in the wrong fiscal-year column`. An agent can make the same mistake, so the dataset has cases for it.
+
 ## Retrieval experiments
 
 All numbers are k = 5 on the 12 queries in `datasets/retrieval.jsonl`.
