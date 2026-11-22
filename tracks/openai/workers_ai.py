@@ -49,6 +49,33 @@ class _CompatTransport(httpx.AsyncBaseTransport):
         await self._inner.aclose()
 
 
+def explain_error(error: Exception) -> str | None:
+    """A plain-language explanation for common Workers AI setup errors, or None.
+
+    These are the errors learners actually hit, so the lab explains them
+    instead of showing a bare status code.
+    """
+    # The OpenAI client's error text is often just "Error code: 429"; Cloudflare's
+    # actual message is in the response body, so read that too.
+    response = getattr(error, "response", None)
+    parts = [str(error), str(getattr(error, "body", "") or "")]
+    try:
+        parts.append(response.text if response is not None else "")
+    except Exception:
+        pass
+    text = " ".join(parts)
+    status = getattr(error, "status_code", None) or getattr(response, "status_code", None)
+    if "4006" in text or "daily free allocation" in text:
+        return ("The Workers AI free allowance (10,000 Neurons per day) is used up. It resets at "
+                "00:00 UTC. Until then, use the mock track: it runs offline and costs nothing.")
+    if status == 401 or "Authentication error" in text:
+        return ("Cloudflare rejected the API token. Check that CF_API_TOKEN in .env is a token with the "
+                "Workers AI permission (Read and Edit). A valid token without that permission also fails this way.")
+    if status == 403:
+        return "The token is valid but can't access this account. Check that CF_ACCOUNT_ID matches the token's account."
+    return None
+
+
 def make_client(account_id: str, api_token: str) -> AsyncOpenAI:
     """An AsyncOpenAI client pointed at Workers AI, with the compatibility fix."""
     return AsyncOpenAI(

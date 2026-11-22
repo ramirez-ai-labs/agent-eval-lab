@@ -187,6 +187,8 @@ Provider paths that aren't run live in CI are covered by **contract tests**. Sam
 
 **Free-tier budget (estimate).** Assumes about 4,500 input and 300 output tokens per agent run, and about 2,500 input and 200 output tokens per judge call. Real numbers come from the first baseline run.
 
+> **Measured, Nov 22, 2026:** three full embedding runs of about 1,400 passages used up the whole 10,000-Neuron daily allowance, so roughly 3,300 Neurons per run, not the ~3,000 estimated. Number-heavy table text produces more tokens per character than prose. **Rules:** at most one full re-embed per day, and measure Neuron use rather than estimating it. When the allowance runs out, the lab says so in plain language and points to the mock track.
+
 | | Neurons per case | Full run (36 cases) | Full runs per day (free) |
 |---|---|---|---|
 | Agent on `gpt-oss-120b` + judge | ~190 | ~7,000 | 1 |

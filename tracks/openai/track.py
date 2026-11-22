@@ -30,6 +30,7 @@ from core.trace import Trace, validate_trace, write_trace  # noqa: E402
 from tracks.openai.adapter import TraceRecorder  # noqa: E402
 from tracks.openai.agent import REFUSAL, RunContext, build  # noqa: E402
 from tracks.openai.models import load_config, make_model  # noqa: E402
+from tracks.openai.workers_ai import explain_error  # noqa: E402
 
 SAMPLE_QUESTIONS = [
     ("sample-fact-msft", "What was Microsoft's total revenue in its most recent fiscal year?"),
@@ -54,21 +55,33 @@ class OpenAITrack:
         set_tracing_disabled(True)  # traces stay local; this adapter writes them
 
     async def run(self, question: str, case_id: str) -> Trace:
-        recorder = TraceRecorder()
-        ctx = RunContext(embed=self.embed, recorder=recorder)
-        try:
-            result = await Runner.run(self.agent, question, context=ctx, hooks=recorder, max_turns=12)
-            final_answer, refused = str(result.final_output), False
-        except InputGuardrailTripwireTriggered:
-            final_answer, refused = REFUSAL, True
-        trace = Trace(
-            case_id=case_id, track=self.name, provider=self.provider, model=self.model_id,
-            spans=recorder.spans, final_answer=final_answer, refused=refused,
-        )
-        problems = validate_trace(dict(trace))
-        if problems:
-            raise ValueError(f"invalid trace for {case_id}: {problems}")
-        return trace
+        return await run_agent(self.agent, question, case_id, self.embed,
+                               track=self.name, provider=self.provider, model_id=self.model_id)
+
+
+async def run_agent(agent, question: str, case_id: str, embed, *, track: str, provider: str,
+                    model_id: str, max_turns: int = 12) -> Trace:
+    """Run one question through an agent and return a validated Trace.
+
+    Separate from OpenAITrack so offline tests can pass a scripted agent and
+    a fake embedder without any credentials.
+    """
+    set_tracing_disabled(True)  # traces stay local; never sent to a hosted dashboard
+    recorder = TraceRecorder()
+    ctx = RunContext(embed=embed, recorder=recorder)
+    try:
+        result = await Runner.run(agent, question, context=ctx, hooks=recorder, max_turns=max_turns)
+        final_answer, refused = str(result.final_output), False
+    except InputGuardrailTripwireTriggered:
+        final_answer, refused = REFUSAL, True
+    trace = Trace(
+        case_id=case_id, track=track, provider=provider, model=model_id,
+        spans=recorder.spans, final_answer=final_answer, refused=refused,
+    )
+    problems = validate_trace(dict(trace))
+    if problems:
+        raise ValueError(f"invalid trace for {case_id}: {problems}")
+    return trace
 
 
 def summarize(trace: Trace) -> str:
@@ -102,7 +115,10 @@ async def main() -> int:
         try:
             trace = await track.run(question, case_id)
         except Exception as e:  # show the failure, keep going with the other cases
-            print(f"  ERROR {type(e).__name__}: {str(e)[:300]}")
+            hint = explain_error(e)
+            print(f"  ERROR {type(e).__name__}: {hint or str(e)[:300]}")
+            if hint and "free allowance" in hint:
+                break  # every remaining case would fail the same way
             continue
         write_trace(trace, out)
         print(f"  {summarize(trace)}")

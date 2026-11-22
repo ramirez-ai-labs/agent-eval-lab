@@ -143,12 +143,16 @@ REFUSAL = (
 # ------------------------------------------------------------------ agents
 
 
-def build(model, temperature: float = 0.0) -> Agent[RunContext]:
-    """Build the main agent, with its handoff and guardrail, on the given model."""
+def build(model, temperature: float = 0.0, guardrail_model=None, risk_model=None) -> Agent[RunContext]:
+    """Build the main agent, with its handoff and guardrail, on the given model.
+
+    guardrail_model and risk_model default to `model`. Offline tests pass
+    separate scripted models so each agent's turns can be scripted on their own.
+    """
     settings = ModelSettings(temperature=temperature)
 
     classifier = Agent(name="investment_advice_classifier", instructions=GUARDRAIL_INSTRUCTIONS,
-                       model=model, model_settings=settings)
+                       model=guardrail_model or model, model_settings=settings)
 
     # run_in_parallel=False: the agent waits for the verdict, so a refused
     # question never reaches the tools (no wasted calls, no misleading spans).
@@ -176,7 +180,7 @@ def build(model, temperature: float = 0.0) -> Agent[RunContext]:
         handoff_description="Writes a risk summary for one company from its 10-K.",
         instructions=RISK_INSTRUCTIONS,
         tools=[retrieve, ratio_calc],
-        model=model,
+        model=risk_model or model,
         model_settings=settings,
     )
     return Agent[RunContext](
