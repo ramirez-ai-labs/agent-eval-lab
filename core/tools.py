@@ -9,7 +9,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import os
+import re
+from collections import Counter
 from functools import lru_cache
 from pathlib import Path
 from typing import Callable, Literal
@@ -80,35 +83,96 @@ def workers_ai_embedder(model: str = "@cf/baai/bge-base-en-v1.5") -> Embedder:
     return embed
 
 
+_TOKEN = re.compile(r"[a-z0-9]+")
+
+
+def _tokens(text: str) -> list[str]:
+    return _TOKEN.findall(text.lower())
+
+
+class _BM25:
+    """Okapi BM25 keyword search, built in memory from the passages (~0.5 s)."""
+
+    def __init__(self, docs: list[str], k1: float = 1.5, b: float = 0.75) -> None:
+        self.k1, self.b = k1, b
+        self.tfs = [Counter(_tokens(d)) for d in docs]
+        self.lengths = np.array([sum(tf.values()) for tf in self.tfs], dtype=np.float32)
+        self.avg_len = float(self.lengths.mean())
+        df = Counter(term for tf in self.tfs for term in tf)
+        n = len(docs)
+        self.idf = {t: math.log(1 + (n - f + 0.5) / (f + 0.5)) for t, f in df.items()}
+
+    def scores(self, query: str) -> np.ndarray:
+        out = np.zeros(len(self.tfs), dtype=np.float32)
+        norm = self.k1 * (1 - self.b + self.b * self.lengths / self.avg_len)
+        for term in set(_tokens(query)):
+            idf = self.idf.get(term)
+            if idf is None:
+                continue
+            tf = np.array([d.get(term, 0) for d in self.tfs], dtype=np.float32)
+            out += idf * tf * (self.k1 + 1) / (tf + norm)
+        return out
+
+
+@lru_cache(maxsize=1)
+def _load_bm25() -> _BM25:
+    _, passages = _load_index()
+    return _BM25([p["text"] for p in passages])
+
+
+RRF_K = 60  # standard reciprocal rank fusion constant
+
+
+def _rank(scores: np.ndarray, candidates: np.ndarray) -> list[int]:
+    return [int(i) for i in candidates[np.argsort(-scores[candidates], kind="stable")]]
+
+
 def retrieve(
     query: str,
-    embed: Embedder,
+    embed: Embedder | None = None,
     k: int = 5,
     ticker: str | None = None,
+    mode: Literal["hybrid", "vector", "bm25"] = "hybrid",
 ) -> dict:
     """Return the top-k passages for a query, optionally for one company.
+
+    Modes:
+      vector  semantic search: good at meaning, weak on number-heavy tables
+      bm25    keyword search: good at exact terms like "Total current assets"
+      hybrid  both, merged with reciprocal rank fusion (the default)
 
     The output always includes "passage_ids". The trace schema requires it,
     because the Recall@k and MRR checks read it.
     """
     vectors, passages = _load_index()
-    q = embed(query)
-    q = q / np.linalg.norm(q)
-    scores = vectors @ q
-    order = np.argsort(-scores)
-    hits = []
-    for i in order:
-        p = passages[i]
-        if ticker and p["ticker"] != ticker.upper():
-            continue
-        hits.append({
-            "id": p["id"],
-            "ticker": p["ticker"],
-            "fiscal_year": p["fiscal_year"],
-            "section": p["section"],
-            "score": round(float(scores[i]), 4),
-            "text": p["text"],
-        })
-        if len(hits) == k:
-            break
+    if ticker:
+        candidates = np.array([i for i, p in enumerate(passages) if p["ticker"] == ticker.upper()])
+    else:
+        candidates = np.arange(len(passages))
+    if len(candidates) == 0:
+        return {"passage_ids": [], "passages": []}
+
+    rankings: list[list[int]] = []
+    if mode in ("vector", "hybrid"):
+        if embed is None:
+            raise ValueError(f"mode '{mode}' needs an embed function")
+        q = embed(query)
+        rankings.append(_rank(vectors @ (q / np.linalg.norm(q)), candidates))
+    if mode in ("bm25", "hybrid"):
+        rankings.append(_rank(_load_bm25().scores(query), candidates))
+
+    fused: dict[int, float] = {}
+    for ranking in rankings:
+        for rank, i in enumerate(ranking, 1):
+            fused[i] = fused.get(i, 0.0) + 1.0 / (RRF_K + rank)
+    top = sorted(fused, key=lambda i: (-fused[i], i))[:k]
+
+    hits = [{
+        "id": passages[i]["id"],
+        "ticker": passages[i]["ticker"],
+        "fiscal_year": passages[i]["fiscal_year"],
+        "section": passages[i]["section"],
+        "score": round(fused[i], 5),
+        "text": passages[i]["text"],
+    } for i in top]
     return {"passage_ids": [h["id"] for h in hits], "passages": hits}
