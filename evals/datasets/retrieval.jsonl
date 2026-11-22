@@ -1,0 +1,12 @@
+{"id": "ret-duk-ltd", "query": "Duke Energy long-term debt on the consolidated balance sheet", "ticker": "DUK", "relevant": ["DUK-FY2025-item8-012"], "note": "Parent-company balance sheet; other Long-Term Debt rows are subsidiaries"}
+{"id": "ret-duk-cur-debt", "query": "Duke Energy current maturities of long-term debt", "ticker": "DUK", "relevant": ["DUK-FY2025-item8-012"], "note": "Parent-company balance sheet"}
+{"id": "ret-duk-equity", "query": "Duke Energy total stockholders' equity", "ticker": "DUK", "relevant": ["DUK-FY2025-item8-013"], "note": "Total Duke Energy Corporation stockholders' equity"}
+{"id": "ret-duk-wildfire", "query": "Does Duke Energy mention wildfire risk?", "ticker": "DUK", "relevant": ["DUK-FY2025-item1a-022", "DUK-FY2025-item1a-032"], "note": "Filing spells it 'wild fires'"}
+{"id": "ret-nke-interest", "query": "Nike interest expense", "ticker": "NKE", "relevant": ["NKE-FY2026-item8-013", "NKE-FY2026-item8-084"], "note": "Reported as 'Interest (income) expense, net' and it is net income"}
+{"id": "ret-nke-ltd", "query": "Nike long-term debt", "ticker": "NKE", "relevant": ["NKE-FY2026-item8-014"], "note": "Balance sheet"}
+{"id": "ret-nke-cur-liab", "query": "Nike total current liabilities", "ticker": "NKE", "relevant": ["NKE-FY2026-item8-014"], "note": "Balance sheet"}
+{"id": "ret-msft-revenue", "query": "Microsoft total revenue fiscal year 2026", "ticker": "MSFT", "relevant": ["MSFT-FY2026-item8-001", "MSFT-FY2026-item7-011", "MSFT-FY2026-item7-013", "MSFT-FY2026-item8-070"], "note": "Income statement and MD&A tables"}
+{"id": "ret-msft-cur-assets", "query": "Microsoft total current assets", "ticker": "MSFT", "relevant": ["MSFT-FY2026-item8-002"], "note": "Balance sheet"}
+{"id": "ret-f-equity", "query": "Ford total equity attributable to Ford Motor Company", "ticker": "F", "relevant": ["F-FY2025-item8-017"], "note": "Balance sheet"}
+{"id": "ret-f-debt-exfc", "query": "Ford debt payable within one year excluding Ford Credit", "ticker": "F", "relevant": ["F-FY2025-item8-017"], "note": "Balance sheet splits Company excluding Ford Credit vs Ford Credit"}
+{"id": "ret-f-interest-exfc", "query": "Ford interest expense on Company debt excluding Ford Credit", "ticker": "F", "relevant": ["F-FY2025-item8-015", "F-FY2025-item7-091"], "note": "Income statement and MD&A segment table"}

@@ -43,13 +43,13 @@ def _passage_vector(passage_id: str) -> np.ndarray:
 
 def test_retrieve_returns_exact_match_first():
     target = "F-FY2025-item8-042"
-    result = retrieve("ignored", embed=lambda _: _passage_vector(target), k=3)
+    result = retrieve("ignored", embed=lambda _: _passage_vector(target), k=3, mode="vector")
     assert result["passage_ids"][0] == target
     assert len(result["passage_ids"]) == 3
 
 
 def test_retrieve_ticker_filter():
-    result = retrieve("ignored", embed=lambda _: _passage_vector("F-FY2025-item8-042"), k=5, ticker="msft")
+    result = retrieve("ignored", embed=lambda _: _passage_vector("F-FY2025-item8-042"), k=5, ticker="msft", mode="vector")
     assert all(pid.startswith("MSFT-") for pid in result["passage_ids"])
 
 

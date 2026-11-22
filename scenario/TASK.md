@@ -65,6 +65,7 @@ The calculator tool implements exactly these formulas. The numeric-accuracy chec
 - **Total shareholders' equity** = equity attributable to the company. It excludes noncontrolling interests.
 - **Consolidated by default.** Use consolidated figures unless the question names a segment.
 - **Ford rule:** "Ford's debt-to-equity" means consolidated, *including* Ford Credit. "Ford's automotive debt" or "excluding Ford Credit" means the Automotive segment figures from the segment or debt note.
+- **Nike rule:** Nike reports `Interest (income) expense, net` as a negative number, because it earned more interest than it paid. Interest coverage isn't meaningful for Nike. For an interest-coverage question about Nike, the correct answer explains this rather than dividing by a negative number. It goes in the dataset as a trap case.
 
 **Precision and tolerance**
 - Inputs are taken as reported, in the units the filing uses (usually millions of USD).
