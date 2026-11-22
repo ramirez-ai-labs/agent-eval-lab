@@ -1,0 +1,29 @@
+# Every model and provider this lab uses, in one place.
+# Reports record these values, so every result says exactly what produced it.
+#
+# Fill in the TODOs in M0 after confirming what Workers AI supports.
+
+# Which provider the agent runs on: workers-ai | openai | mock
+provider: workers-ai
+
+agent:
+  workers_ai_model: TODO        # must support function calling
+  openai_model: TODO            # a small, pinned snapshot
+  temperature: 0
+
+judge:
+  provider: workers-ai
+  model: TODO                   # a different model family from the agent
+  temperature: 0
+
+embeddings:
+  provider: workers-ai
+  model: TODO                   # a BGE model; vectors are precomputed and committed
+
+tracing: local                  # traces are written to runs/; no hosted exporter
+
+budgets:                        # per case; used by the cost and latency check
+  max_tokens: TODO
+  max_latency_ms: TODO
+
+tested_on: TODO                 # date of the last live run on each provider

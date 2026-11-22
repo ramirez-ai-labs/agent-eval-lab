@@ -1,0 +1,77 @@
+{
+  "_note": "Illustrative only. The numbers are made up to show the shape of a trace; they are not from any filing.",
+  "case_id": "ratio-duk-001",
+  "track": "openai",
+  "provider": "workers-ai",
+  "model": "example-model",
+  "spans": [
+    {
+      "id": "s1",
+      "parent_id": null,
+      "type": "guardrail",
+      "name": "investment_advice",
+      "input": {"question": "What is Duke Energy's debt-to-equity ratio?"},
+      "output": {"tripped": false},
+      "tokens_in": 40,
+      "tokens_out": 5,
+      "latency_ms": 180
+    },
+    {
+      "id": "s2",
+      "parent_id": null,
+      "type": "llm",
+      "name": "credit_research_agent",
+      "input": {"messages": 1},
+      "output": {"tool_calls": ["retrieve"]},
+      "tokens_in": 620,
+      "tokens_out": 45,
+      "latency_ms": 900
+    },
+    {
+      "id": "s3",
+      "parent_id": "s2",
+      "type": "tool_call",
+      "name": "retrieve",
+      "input": {"query": "Duke Energy total debt and shareholders' equity", "k": 5},
+      "output": {"passage_ids": ["DUK-FY2025-item8-bs-003", "DUK-FY2025-item8-debt-001"]},
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "latency_ms": 40
+    },
+    {
+      "id": "s4",
+      "parent_id": null,
+      "type": "llm",
+      "name": "credit_research_agent",
+      "input": {"messages": 3},
+      "output": {"tool_calls": ["ratio_calc"]},
+      "tokens_in": 1450,
+      "tokens_out": 60,
+      "latency_ms": 1100
+    },
+    {
+      "id": "s5",
+      "parent_id": "s4",
+      "type": "tool_call",
+      "name": "ratio_calc",
+      "input": {"ratio": "debt_to_equity", "numerator": 80000.0, "denominator": 50000.0},
+      "output": {"ratio": "debt_to_equity", "value": 1.6},
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "latency_ms": 2
+    },
+    {
+      "id": "s6",
+      "parent_id": null,
+      "type": "llm",
+      "name": "credit_research_agent",
+      "input": {"messages": 5},
+      "output": {"text": "final answer"},
+      "tokens_in": 1520,
+      "tokens_out": 70,
+      "latency_ms": 1000
+    }
+  ],
+  "final_answer": "For fiscal year 2025, Duke Energy's debt-to-equity ratio is 1.60, based on total debt and total shareholders' equity reported in its 10-K.",
+  "refused": false
+}
