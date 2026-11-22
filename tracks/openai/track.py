@@ -1,0 +1,115 @@
+"""The OpenAI Agents SDK track: run one question, get back a validated Trace.
+
+Usage:
+    uv run python -m tracks.openai.track                  # the 5 sample questions
+    uv run python -m tracks.openai.track "What is Ford's current ratio?"
+    uv run python -m tracks.openai.track --provider openai
+
+Each run writes runs/openai/<provider>/<timestamp>/traces.jsonl.
+Five questions on Workers AI use roughly 1,000 of the 10,000 free daily Neurons.
+"""
+
+from __future__ import annotations
+
+import argparse
+import asyncio
+import os
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+
+from agents import InputGuardrailTripwireTriggered, Runner, set_tracing_disabled  # noqa: E402
+
+from core.tools import workers_ai_embedder  # noqa: E402
+from core.trace import Trace, validate_trace, write_trace  # noqa: E402
+from tracks.openai.adapter import TraceRecorder  # noqa: E402
+from tracks.openai.agent import REFUSAL, RunContext, build  # noqa: E402
+from tracks.openai.models import load_config, make_model  # noqa: E402
+
+SAMPLE_QUESTIONS = [
+    ("sample-fact-msft", "What was Microsoft's total revenue in its most recent fiscal year?"),
+    ("sample-ratio-f", "What is Ford's current ratio?"),
+    ("sample-risk-duk", "Give me a risk summary for Duke Energy."),
+    ("sample-advice-f", "Should I buy Ford stock?"),
+    ("sample-notool", "What does the debt-to-equity ratio measure?"),
+]
+
+
+class OpenAITrack:
+    """Implements the Track protocol from PLAN.md §7."""
+
+    name = "openai"
+
+    def __init__(self, provider: str = "workers-ai") -> None:
+        cfg = load_config()
+        self.provider = provider
+        self.model, self.model_id = make_model(provider, cfg)
+        self.agent = build(self.model, temperature=cfg["agent"].get("temperature", 0))
+        self.embed = workers_ai_embedder(cfg["embeddings"]["model"])
+        set_tracing_disabled(True)  # traces stay local; this adapter writes them
+
+    async def run(self, question: str, case_id: str) -> Trace:
+        recorder = TraceRecorder()
+        ctx = RunContext(embed=self.embed, recorder=recorder)
+        try:
+            result = await Runner.run(self.agent, question, context=ctx, hooks=recorder, max_turns=12)
+            final_answer, refused = str(result.final_output), False
+        except InputGuardrailTripwireTriggered:
+            final_answer, refused = REFUSAL, True
+        trace = Trace(
+            case_id=case_id, track=self.name, provider=self.provider, model=self.model_id,
+            spans=recorder.spans, final_answer=final_answer, refused=refused,
+        )
+        problems = validate_trace(dict(trace))
+        if problems:
+            raise ValueError(f"invalid trace for {case_id}: {problems}")
+        return trace
+
+
+def summarize(trace: Trace) -> str:
+    tools = [s["name"] for s in trace["spans"] if s["type"] == "tool_call"]
+    handoffs = [s["name"] for s in trace["spans"] if s["type"] == "handoff"]
+    tokens = sum(s["tokens_in"] + s["tokens_out"] for s in trace["spans"])
+    seconds = sum(s["latency_ms"] for s in trace["spans"]) / 1000
+    parts = [f"tools={tools or '-'}", f"handoffs={handoffs or '-'}", f"refused={trace['refused']}",
+             f"tokens={tokens}", f"{seconds:.1f}s"]
+    return " ".join(parts)
+
+
+async def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("question", nargs="?", help="ask one question instead of the samples")
+    parser.add_argument("--provider", default="workers-ai", choices=["workers-ai", "openai"])
+    args = parser.parse_args()
+
+    load_dotenv(ROOT / ".env")
+    if args.provider == "workers-ai" and not (os.getenv("CF_ACCOUNT_ID") and os.getenv("CF_API_TOKEN")):
+        print("Missing CF_ACCOUNT_ID or CF_API_TOKEN. Copy .env.example to .env and fill them in.")
+        return 2
+
+    track = OpenAITrack(args.provider)
+    cases = [("adhoc", args.question)] if args.question else SAMPLE_QUESTIONS
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    out = ROOT / "runs" / track.name / args.provider / stamp / "traces.jsonl"
+
+    for case_id, question in cases:
+        print(f"\n▶ {case_id}: {question}")
+        try:
+            trace = await track.run(question, case_id)
+        except Exception as e:  # show the failure, keep going with the other cases
+            print(f"  ERROR {type(e).__name__}: {str(e)[:300]}")
+            continue
+        write_trace(trace, out)
+        print(f"  {summarize(trace)}")
+        print("  " + trace["final_answer"].strip().replace("\n", "\n  ")[:900])
+    print(f"\nTraces → {out.relative_to(ROOT)}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(asyncio.run(main()))

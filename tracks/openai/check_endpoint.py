@@ -43,9 +43,10 @@ from agents import (
     set_tracing_disabled,
 )
 
-from workers_ai import make_client  # noqa: E402  (same folder)
-
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+
+from tracks.openai.workers_ai import make_client  # noqa: E402
 
 
 @function_tool
