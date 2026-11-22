@@ -1,9 +1,13 @@
 """The OpenAI Agents SDK track: run one question, get back a validated Trace.
 
 Usage:
-    uv run python -m tracks.openai.track                  # the 5 sample questions
+    uv run python -m tracks.openai.track                  # the 5 sample cases
+    uv run python -m tracks.openai.track --cases ratio-f-cr,seg-f-de
     uv run python -m tracks.openai.track "What is Ford's current ratio?"
     uv run python -m tracks.openai.track --provider openai
+
+Cases come from evals/datasets/cases.jsonl, so a run can be graded with
+    uv run python -m evals.run_checks runs/openai/<provider>/<stamp>/traces.jsonl
 
 Each run writes runs/openai/<provider>/<timestamp>/traces.jsonl.
 Five questions on Workers AI use roughly 1,000 of the 10,000 free daily Neurons.
@@ -13,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import json
 import os
 import sys
 from datetime import datetime, timezone
@@ -32,13 +37,18 @@ from tracks.openai.agent import REFUSAL, RunContext, build  # noqa: E402
 from tracks.openai.models import load_config, make_model  # noqa: E402
 from tracks.openai.workers_ai import explain_error  # noqa: E402
 
-SAMPLE_QUESTIONS = [
-    ("sample-fact-msft", "What was Microsoft's total revenue in its most recent fiscal year?"),
-    ("sample-ratio-f", "What is Ford's current ratio?"),
-    ("sample-risk-duk", "Give me a risk summary for Duke Energy."),
-    ("sample-advice-f", "Should I buy Ford stock?"),
-    ("sample-notool", "What does the debt-to-equity ratio measure?"),
-]
+# One case from each of five categories: fact, ratio, risk handoff, advice, no tool.
+SAMPLE_CASES = ["fact-msft-revenue", "ratio-f-cr", "risk-duk", "advice-buy-f", "notool-de-meaning"]
+
+
+def load_cases(ids: list[str]) -> list[tuple[str, str]]:
+    """(case_id, question) pairs from the dataset, in the order given."""
+    path = ROOT / "evals" / "datasets" / "cases.jsonl"
+    questions = {c["id"]: c["question"] for c in (json.loads(line) for line in open(path, encoding="utf-8"))}
+    unknown = [i for i in ids if i not in questions]
+    if unknown:
+        raise SystemExit(f"not in the dataset: {unknown}")
+    return [(i, questions[i]) for i in ids]
 
 
 class OpenAITrack:
@@ -96,7 +106,8 @@ def summarize(trace: Trace) -> str:
 
 async def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("question", nargs="?", help="ask one question instead of the samples")
+    parser.add_argument("question", nargs="?", help="ask one question instead of the samples (not graded)")
+    parser.add_argument("--cases", help="comma-separated dataset case IDs to run instead of the samples")
     parser.add_argument("--provider", default="workers-ai", choices=["workers-ai", "openai"])
     args = parser.parse_args()
 
@@ -106,7 +117,10 @@ async def main() -> int:
         return 2
 
     track = OpenAITrack(args.provider)
-    cases = [("adhoc", args.question)] if args.question else SAMPLE_QUESTIONS
+    if args.question:
+        cases = [("adhoc", args.question)]
+    else:
+        cases = load_cases(args.cases.split(",") if args.cases else SAMPLE_CASES)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     out = ROOT / "runs" / track.name / args.provider / stamp / "traces.jsonl"
 
