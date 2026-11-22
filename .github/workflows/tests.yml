@@ -1,0 +1,32 @@
+# Runs the offline test suite on every pull request and on pushes to main.
+#
+# No secrets and no model calls: the tests use the committed passage index
+# and a scripted model, so CI never spends Workers AI Neurons or OpenAI credit.
+# Forks can run it too, since nothing here needs credentials.
+name: tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+
+      # --locked fails if uv.lock is out of date with pyproject.toml,
+      # so learners get the same versions CI tested.
+      - run: uv sync --locked
+
+      - run: uv run pytest -q
