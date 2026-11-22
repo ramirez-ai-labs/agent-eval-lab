@@ -31,8 +31,8 @@ def spans(trace, kind):
 def test_ratio_question_uses_retrieve_then_ratio_calc():
     main = ScriptedModel([
         {"tool": "retrieve", "args": {"query": "Total current assets Total current liabilities", "ticker": "F"}},
-        {"tool": "ratio_calc", "args": {"ratio": "current_ratio", "numerator": 124474, "denominator": 106859}},
-        {"text": "Ford's FY2025 current ratio is 1.16 [F-FY2025-item8-017]."},
+        {"tool": "ratio_calc", "args": {"ratio": "current_ratio", "numerator": 123487, "denominator": 114890}},
+        {"text": "Ford's FY2025 current ratio is 1.07 [F-FY2025-item8-017]."},
     ])
     agent = build(main, guardrail_model=ScriptedModel([{"text": "OK"}]))
     trace = run(agent, "What is Ford's current ratio?", passage_embedder("F-FY2025-item8-017"))
@@ -41,9 +41,9 @@ def test_ratio_question_uses_retrieve_then_ratio_calc():
     assert [t["name"] for t in tools] == ["retrieve", "ratio_calc"]
     assert tools[0]["input"]["ticker"] == "F"
     assert all(pid.startswith("F-") for pid in tools[0]["output"]["passage_ids"])
-    assert tools[1]["output"] == {"ratio": "current_ratio", "value": 1.16}
+    assert tools[1]["output"] == {"ratio": "current_ratio", "value": 1.07}
     assert spans(trace, "guardrail")[0]["output"]["tripped"] is False
-    assert not trace["refused"] and "1.16" in trace["final_answer"]
+    assert not trace["refused"] and "1.07" in trace["final_answer"]
     assert len(spans(trace, "llm")) == 3
 
 

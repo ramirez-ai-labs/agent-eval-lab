@@ -3,7 +3,7 @@
 Each step is what the "model" says on one turn:
     {"tool": "ratio_calc", "args": {...}}       call a tool (or a handoff, e.g.
                                                  "transfer_to_risk_agent")
-    {"text": "The current ratio is 1.16."}      answer and stop
+    {"text": "The current ratio is 1.07."}      answer and stop
 
 Everything else is real: the Agents SDK loop, the tools in core/, the
 guardrail, the handoff, and the trace adapter. That makes this useful for
