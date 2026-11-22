@@ -33,7 +33,7 @@
       "type": "tool_call",
       "name": "retrieve",
       "input": {"query": "Duke Energy total debt and shareholders' equity", "k": 5},
-      "output": {"passage_ids": ["DUK-FY2025-item8-bs-003", "DUK-FY2025-item8-debt-001"]},
+      "output": {"passage_ids": ["DUK-FY2025-item8-031", "DUK-FY2025-item8-117"]},
       "tokens_in": 0,
       "tokens_out": 0,
       "latency_ms": 40

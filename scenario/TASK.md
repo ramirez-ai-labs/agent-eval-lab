@@ -29,18 +29,25 @@ The most recent 10-K for each company, from [SEC EDGAR](https://www.sec.gov/edga
 
 ## 3. What gets extracted
 
-Only these sections are committed to `scenario/filings/`, as plain text. Full 10-Ks are not committed.
+`scenario/extract.py` downloads each 10-K from EDGAR and commits three full Items to `scenario/filings/{TICKER}/`, as plain text. Full 10-Ks are not committed. Raw downloads go to `scenario/raw/`, which is gitignored.
 
-| Section | Why |
-|---|---|
-| Item 1A — Risk Factors | Source for risk summaries (handoff) |
-| Item 7 — MD&A, liquidity and capital resources subsection | Context for debt and cash questions |
-| Item 8 — Consolidated balance sheet | Debt, equity, current assets and liabilities |
-| Item 8 — Consolidated income statement | Revenue, operating income, interest expense, net income |
-| Item 8 — Debt note | Definition and breakdown of total debt |
-| **Ford only:** Item 8 — Segment note | Automotive vs Ford Credit split |
+| Section | File | What it's used for |
+|---|---|---|
+| Item 1A — Risk Factors | `item1a.txt` | Risk summaries (handoff), risk fact lookups |
+| Item 7 — MD&A | `item7.txt` | Liquidity, debt and cash questions |
+| Item 8 — Financial Statements and notes | `item8.txt` | Balance sheet, income statement, debt note; Ford's segment split |
 
-**Passage IDs:** each extracted section is split into passages with stable IDs, `{ticker}-{fy}-{section}-{nnn}`, for example `F-FY2025-item8-debt-007`. Labels in the dataset point to these IDs. **Never renumber passages after the dataset is labeled.** Add new passages at the end.
+Tables become one line per row, with cells separated by ` | `, so the financial statements stay readable. For example: `Total current assets | 207,710 | 191,131`.
+
+**Why full Items rather than smaller excerpts:** the agent has to find the debt note inside the full financial statements, so retrieval is tested realistically. The full text is about 3.7 MB, or roughly 1,400 passages. Embedding it costs about 3,000 Neurons, done once.
+
+**Two filings need special handling:**
+- **Ford:** Item 8 only points to the statements, which follow the signature pages. The extractor starts at the last auditor's report heading.
+- **Duke Energy:** the combined filing makes Item 8 large (about 560k characters), because it includes statements for each subsidiary. Labels point only to passages from Duke Energy Corporation's own statements.
+
+**Passage IDs:** each Item is split into passages of about 1,500 characters on line boundaries, so table rows stay whole. IDs follow `{ticker}-{fy}-{section}-{nnn}`, for example `F-FY2025-item8-042`, and all passages are in `scenario/filings/passages.jsonl`. Labels in the dataset point to these IDs.
+
+**Keep IDs stable.** The same filing and the same settings always produce the same IDs. **After the dataset is labeled, don't change the passage size or the extraction rules.** If you must, relabel the dataset.
 
 ## 4. Ratio formulas
 
