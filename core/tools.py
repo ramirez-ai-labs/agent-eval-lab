@@ -117,6 +117,8 @@ class _BM25:
 @lru_cache(maxsize=1)
 def _load_bm25() -> _BM25:
     _, passages = _load_index()
+    # Text only, the same as the vectors. Adding each passage's context line
+    # made no measurable difference to keyword search (see evals/README.md).
     return _BM25([p["text"] for p in passages])
 
 
@@ -172,6 +174,7 @@ def retrieve(
         "ticker": passages[i]["ticker"],
         "fiscal_year": passages[i]["fiscal_year"],
         "section": passages[i]["section"],
+        "context": passages[i].get("context", ""),
         "score": round(fused[i], 5),
         "text": passages[i]["text"],
     } for i in top]
