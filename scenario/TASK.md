@@ -10,14 +10,20 @@ A user asks questions about the 10-K filings of four public companies. The agent
 
 ## 2. Companies and filings
 
-Use the most recent 10-K for each company. Fill in the placeholders from [SEC EDGAR](https://www.sec.gov/edgar/search/) when the filings are pulled.
+The most recent 10-K for each company, from [SEC EDGAR](https://www.sec.gov/edgar/search/) (checked Nov 21, 2026).
 
 | Company | Ticker | CIK | Fiscal year end | Fiscal year | Accession number | Filed | Role in the labs |
 |---|---|---|---|---|---|---|---|
-| Microsoft | MSFT | `TODO` | June 30 | `FY TODO` | `TODO` | `TODO` | Easy case: low debt, clean balance sheet |
-| Nike | NKE | `TODO` | May 31 | `FY TODO` | `TODO` | `TODO` | Fiscal-year trap: "2025" means the year ending May 2025 |
-| Duke Energy | DUK | `TODO` | December 31 | `FY TODO` | `TODO` | `TODO` | High debt; strong risk-summary handoff |
-| Ford Motor | F | `TODO` | December 31 | `FY TODO` | `TODO` | `TODO` | Hard case: Ford Credit makes "which debt?" matter |
+| Microsoft | MSFT | 0000789019 | June 30 | FY2026 (ended Jun 30, 2026) | 0001193125-26-323660 | 2026-07-29 | Easy case: low debt, clean balance sheet |
+| Nike | NKE | 0000320187 | May 31 | FY2026 (ended May 31, 2026) | 0000320187-26-000088 | 2026-07-15 | Fiscal-year trap: FY2026 mostly covers calendar 2025 |
+| Duke Energy | DUK | 0001326160 | December 31 | FY2025 (ended Dec 31, 2025) | 0001326160-26-000014 | 2026-02-26 | High debt; strong risk-summary handoff |
+| Ford Motor | F | 0000037996 | December 31 | FY2025 (ended Dec 31, 2025) | 0000037996-26-000015 | 2026-02-11 | Hard case: Ford Credit makes "which debt?" matter |
+
+**Fiscal years don't line up, on purpose.** Microsoft and Nike are on FY2026, while Ford and Duke are on FY2025. A question like "What was Nike's net margin in 2025?" has no single right answer until the agent says which fiscal year it used. Every reference answer states the fiscal year, and so must the agent's.
+
+**Filing URLs** follow `https://www.sec.gov/Archives/edgar/data/{CIK without leading zeros}/{accession without dashes}/`.
+
+**Duke Energy files a combined 10-K** with its subsidiaries (Duke Energy Carolinas, Progress Energy, and others). Use only the statements for **Duke Energy Corporation**, the parent.
 
 **Fetching from EDGAR:** SEC requires a `User-Agent` header that identifies you. Set your own name and contact in `.env` (`SEC_USER_AGENT`). Never commit it.
 
@@ -111,7 +117,7 @@ The dataset (`evals/datasets/`) has 25 to 40 cases spread across these categorie
 
 | Category | Example | Checks it exercises | Target count |
 |---|---|---|---|
-| Fact lookup | "What was Microsoft's total revenue in FY2025?" | Recall@k, groundedness | 6 |
+| Fact lookup | "What was Microsoft's total revenue in FY2026?" | Recall@k, groundedness | 6 |
 | Ratio | "What is Duke Energy's debt-to-equity ratio?" | Tool choice + args, numeric accuracy | 6 |
 | Comparison | "Which has higher interest coverage, Nike or Microsoft?" | Tool choice (2 calls), numeric accuracy | 4 |
 | Segment (Ford) | "What is Ford's automotive debt, excluding Ford Credit?" | Recall@k on segment note, args | 3 |
