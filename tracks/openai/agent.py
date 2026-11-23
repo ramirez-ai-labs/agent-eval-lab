@@ -143,13 +143,14 @@ REFUSAL = (
 # ------------------------------------------------------------------ agents
 
 
-def build(model, temperature: float = 0.0, guardrail_model=None, risk_model=None) -> Agent[RunContext]:
+def build(model, temperature: float = 0.0, guardrail_model=None, risk_model=None,
+          max_tokens: int | None = None) -> Agent[RunContext]:
     """Build the main agent, with its handoff and guardrail, on the given model.
 
     guardrail_model and risk_model default to `model`. Offline tests pass
     separate scripted models so each agent's turns can be scripted on their own.
     """
-    settings = ModelSettings(temperature=temperature)
+    settings = ModelSettings(temperature=temperature, max_tokens=max_tokens)
 
     classifier = Agent(name="investment_advice_classifier", instructions=GUARDRAIL_INSTRUCTIONS,
                        model=guardrail_model or model, model_settings=settings)

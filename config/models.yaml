@@ -23,6 +23,9 @@ agent:
   openai_model: TODO            # a small, pinned snapshot; pick at the M2 reference run
   openai_api: responses
   temperature: 0
+  # gpt-oss is a reasoning model: hidden reasoning counts toward this limit.
+  # Without it, Workers AI's small default cut off the risk summary (finish_reason=length).
+  max_tokens: 4096
 
 judge:
   provider: workers-ai
@@ -30,6 +33,9 @@ judge:
   # Free-tier eligible (not on Cloudflare's paid-only list).
   model: "@cf/google/gemma-4-26b-a4b-it"
   temperature: 0
+  # Gemma 4 reasons before it answers. At 300 tokens the reasoning used the whole
+  # limit and the reply came back empty (measured Nov 23, 2026).
+  max_tokens: 2048
 
 embeddings:
   provider: workers-ai

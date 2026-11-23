@@ -60,7 +60,8 @@ class OpenAITrack:
         cfg = load_config()
         self.provider = provider
         self.model, self.model_id = make_model(provider, cfg)
-        self.agent = build(self.model, temperature=cfg["agent"].get("temperature", 0))
+        self.agent = build(self.model, temperature=cfg["agent"].get("temperature", 0),
+                           max_tokens=cfg["agent"].get("max_tokens"))
         self.embed = workers_ai_embedder(cfg["embeddings"]["model"])
         set_tracing_disabled(True)  # traces stay local; this adapter writes them
 
