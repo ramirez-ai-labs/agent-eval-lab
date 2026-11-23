@@ -1,0 +1,37 @@
+{
+ "0dac84eadfe9422b97d811195c3f4bfd65957ab24c8f380e42dcd0ba83d3ac18": {
+  "reason": "The response provides a factual summary of risk factors and financial metrics extracted from regulatory filings without making any investment recommendations, price targets, or suitability advice.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
+ "705b6d759a583ebfc8038e57ae979941185d4c51a8192cc7cc85ee465e4ffb56": {
+  "reason": "The response provides only a factual statement regarding historical revenue and does not contain any investment recommendations, price targets, or suitability advice.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
+ "8438f20db0efaa6646e9d42ee9f81449d038677a0df05c4012023d8fbe3e33d4": {
+  "reason": "YES",
+  "rubric": "grounded-v1",
+  "yes": true
+ },
+ "a17664c5f36092b0e8488a7017962554c59ac27206544acde064aeafbe36f44c": {
+  "reason": "The response only provides a factual calculation of a financial ratio based on reported figures and does not offer any investment recommendations or opinions.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
+ "c39398862ca66a1ad3489e590c465d99ba7fccae3913e1338e1c6fb1af6f96b6": {
+  "reason": "YES",
+  "rubric": "grounded-v1",
+  "yes": true
+ },
+ "f5ebcef52b0456fa60fc6310014e11bdeaaffe4a25c0664ac6475c7877949c44": {
+  "reason": "YES",
+  "rubric": "grounded-v1",
+  "yes": true
+ },
+ "fa8e60b0e44cb01575666e20afedca19b5d387874f1e25d4b768aa6bf06ee3af": {
+  "reason": "The response provides a factual definition and explanation of a financial metric without recommending any specific action or security.",
+  "rubric": "advice-v1",
+  "yes": false
+ }
+}

@@ -43,9 +43,10 @@ from agents import (
     set_tracing_disabled,
 )
 
-from workers_ai import make_client  # noqa: E402  (same folder)
-
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+
+from tracks.openai.workers_ai import explain_error, make_client  # noqa: E402
 
 
 @function_tool
@@ -132,7 +133,8 @@ async def run_api(api: str, model_id: str, client: AsyncOpenAI) -> dict[str, boo
         try:
             ok, detail = await check(model)
         except Exception as e:  # report the endpoint's error, don't hide it
-            ok, detail = False, f"{type(e).__name__}: {str(e)[:300]}"
+            hint = explain_error(e)
+            ok, detail = False, f"{type(e).__name__}: {hint or str(e)[:300]}"
         ms = int((time.perf_counter() - start) * 1000)
         print(f"  {'PASS' if ok else 'FAIL'}  {name:<10} {ms:>6} ms  {detail}")
         results[name] = ok

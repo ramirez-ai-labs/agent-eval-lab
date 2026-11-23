@@ -180,7 +180,7 @@ def judge_from_config() -> Judge:
     load_dotenv(ROOT / ".env")
     with open(ROOT / "config" / "models.yaml", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)["judge"]
-    return Judge(workers_ai_complete(cfg["model"], cfg.get("temperature", 0)), cfg["model"])
+    return Judge(workers_ai_complete(cfg["model"], cfg.get("temperature", 0), cfg.get("max_tokens", 2048)), cfg["model"])
 
 
 # --------------------------------------------------------- applying the verdicts
