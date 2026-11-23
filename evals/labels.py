@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import json
 import re
-from functools import lru_cache
+from functools import cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,7 +22,7 @@ def _norm(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-@lru_cache(maxsize=1)
+@cache  # load once per process
 def _passages() -> list[tuple[str, str, str]]:
     rows = (json.loads(line) for line in open(PASSAGES, encoding="utf-8"))
     return [(p["id"], p["ticker"], _norm(p["text"])) for p in rows]

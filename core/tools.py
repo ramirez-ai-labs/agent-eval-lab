@@ -13,7 +13,7 @@ import math
 import os
 import re
 from collections import Counter
-from functools import lru_cache
+from functools import cache
 from pathlib import Path
 from typing import Callable, Literal
 
@@ -54,7 +54,7 @@ def ratio_calc(ratio: Ratio, numerator: float, denominator: float) -> dict:
 Embedder = Callable[[str], np.ndarray]
 
 
-@lru_cache(maxsize=1)
+@cache  # load once per process
 def _load_index() -> tuple[np.ndarray, list[dict]]:
     meta = json.loads((INDEX / "meta.json").read_text(encoding="utf-8"))
     digest = hashlib.sha256(PASSAGES.read_bytes()).hexdigest()
@@ -114,7 +114,7 @@ class _BM25:
         return out
 
 
-@lru_cache(maxsize=1)
+@cache  # load once per process
 def _load_bm25() -> _BM25:
     _, passages = _load_index()
     # Text only, the same as the vectors. Adding each passage's context line
