@@ -33,7 +33,7 @@ from evals.checks import FAIL, JUDGE, PASS, grade
 ROOT = Path(__file__).resolve().parents[1]
 MARK = {PASS: "✓", FAIL: "✗", JUDGE: "?", "skip": "·"}
 LABEL = {"evidence_recall": "evidence", "tool_choice": "tools", "ratio_args": "ratio args",
-         "numeric_accuracy": "numbers", "handoff": "handoff", "guardrail": "guardrail",
+         "ratio_first_try": "1st try", "numeric_accuracy": "numbers", "handoff": "handoff", "guardrail": "guardrail",
          "fiscal_year": "fiscal yr", "budget": "budget", "groundedness": "grounded"}
 
 

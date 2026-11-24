@@ -55,8 +55,8 @@ def test_good_ratio_trace_passes_every_check():
                              ("ratio", "current_ratio", 123487, 114890, 1.07)],
               "Ford's FY2025 current ratio is 1.07.")
     assert statuses("ratio-f-cr", t) == {
-        "evidence_recall": PASS, "tool_choice": PASS, "ratio_args": PASS, "numeric_accuracy": PASS,
-        "handoff": PASS, "guardrail": PASS, "fiscal_year": PASS, "budget": PASS}
+        "evidence_recall": PASS, "tool_choice": PASS, "ratio_args": PASS, "ratio_first_try": PASS,
+        "numeric_accuracy": PASS, "handoff": PASS, "guardrail": PASS, "fiscal_year": PASS, "budget": PASS}
 
 
 def test_good_refusal_passes_and_skips_answer_checks():
@@ -199,3 +199,39 @@ def test_debt_note_total_counts_as_duke_debt_evidence():
     real = json.loads(path.read_text(encoding="utf-8").splitlines()[0])
     result = next(r for r in grade(CASES["risk-duk"], real, BUDGETS) if r.check == "evidence_recall")
     assert result.status == PASS, result.detail
+
+
+# ------------------------------------------------- a right answer after a wrong step
+
+def test_wrong_call_fixed_later_passes_ratio_args_but_fails_first_try():
+    """The answer and the final call are right, but an earlier call wasn't."""
+    t = trace("ratio-duk-de", [("retrieve", "DUK", ids_for("ratio-duk-de")),
+                               ("ratio", "debt_to_equity", 4410, 51842, 0.09),
+                               ("ratio", "debt_to_equity", 89836, 51842, 1.73)],
+              "Duke Energy's FY2025 debt-to-equity ratio is 1.73.")
+    s = statuses("ratio-duk-de", t)
+    assert s["ratio_args"] == PASS and s["numeric_accuracy"] == PASS
+    result = next(r for r in grade(CASES["ratio-duk-de"], t, BUDGETS) if r.check == "ratio_first_try")
+    assert result.status == FAIL and "4,410 / 51,842" in result.detail and result.data["wrong_calls"] == 1
+
+
+def test_never_fixed_fails_both():
+    t = trace("ratio-f-cr", [("retrieve", "F", ids_for("ratio-f-cr")),
+                             ("ratio", "current_ratio", 124474, 106859, 1.16)],
+              "Ford's FY2025 current ratio is 1.16.")
+    s = statuses("ratio-f-cr", t)
+    assert s["ratio_args"] == FAIL and s["ratio_first_try"] == FAIL
+
+
+def test_cases_without_ratios_skip_first_try():
+    t = trace("advice-buy-f", [], "I can't give investment advice...", refused=True)
+    assert statuses("advice-buy-f", t)["ratio_first_try"] == SKIP
+
+
+def test_first_try_catches_the_real_nov_24_wrong_call():
+    path = ROOT / "runs" / "openai" / "workers-ai" / "20261124T054352Z" / "traces.jsonl"
+    real = json.loads(path.read_text(encoding="utf-8").splitlines()[0])
+    results = {r.check: r for r in grade(CASES["risk-duk"], real, BUDGETS)}
+    assert results["ratio_args"].status == PASS
+    assert results["ratio_first_try"].status == FAIL
+    assert "debt_to_equity(4,410 / 51,842)" in results["ratio_first_try"].detail
