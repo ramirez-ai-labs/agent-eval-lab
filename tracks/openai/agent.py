@@ -38,7 +38,11 @@ from core import tools as core_tools
 # factors, debt, equity, operating income and interest), so five leaves one
 # to rephrase. Confirm on the next live run.
 MAX_SEARCHES = 5
-MAX_K = 5
+# Passages per search. Each passage adds about 600 tokens to every later model
+# call. In the Nov 24 Duke risk run, every passage the case needed ranked 4th or
+# better (risk factor 4, equity 3, debt 2, operating income 1), and on the
+# retrieval set Recall@4 equals Recall@5 (0.59). k=3 would have lost the risk factor.
+MAX_K = 4
 SEARCH_LIMIT_MESSAGE = (
     f"Search limit reached ({MAX_SEARCHES} per question). Answer with the passages you "
     "already have, and say which figures you couldn't find."
@@ -65,7 +69,7 @@ def retrieve(ctx: RunContextWrapper[RunContext], query: str, ticker: str, k: int
         query: What to look for. Use the wording a filing would use, e.g.
             "Total current liabilities" or "risk factors interest rates".
         ticker: One of MSFT, NKE, DUK, F.
-        k: How many passages to return (1-5).
+        k: How many passages to return (1-4).
     """
     if ctx.context.searches >= MAX_SEARCHES:
         return json.dumps({"limit_reached": True, "message": SEARCH_LIMIT_MESSAGE})
@@ -145,6 +149,8 @@ You write risk summaries for one company from its most recent 10-K.
    shows. If you find two "Total debt" rows with different values, they are different
    years: say which one you used and that its year is uncertain. Don't guess.
 2. Compute debt_to_equity and, where meaningful, interest_coverage with `ratio_calc`.
+   Find all the inputs first, then call `ratio_calc` for both ratios in the same
+   turn. Each extra turn re-sends every passage retrieved so far.
 3. Reply with:
    - the top 3 risks, each in one or two sentences, each citing at least one passage ID
    - the leverage metrics you computed, with the fiscal year

@@ -50,5 +50,14 @@ tracing: local                  # traces are written to runs/; no hosted exporte
 budgets:                        # per case; used by the cost and latency check
   max_tokens: 8000              # provisional; tighten after the first baseline run
   max_latency_ms: 30000         # provisional
+  # Categories that need more, by design. A risk summary searches 4-5 times and
+  # every later model call re-sends the passages, so its cost grows with each
+  # search. Nov 24 Duke run: 84,917 tokens over 10 calls. Replaying that trace
+  # with k=4, both ratios in one turn and no extra search: ~36,500 tokens over
+  # 7 calls (~1,200 Neurons). Provisional until a live run confirms it.
+  by_category:
+    risk:
+      max_tokens: 40000
+      max_latency_ms: 60000
 
 tested_on: TODO                 # date of the last live run on each provider
