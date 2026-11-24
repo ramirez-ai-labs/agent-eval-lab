@@ -243,8 +243,15 @@ def check_fiscal_year(case, trace) -> Result:
     return Result("fiscal_year", FAIL, f"doesn't state {fy}{hint}")
 
 
+def budget_for(case, budgets: dict) -> dict:
+    """The case's budget: the default, with its category's limits on top."""
+    limits = {k: v for k, v in budgets.items() if k != "by_category"}
+    return limits | (budgets.get("by_category") or {}).get(case["category"], {})
+
+
 def check_budget(case, trace, budgets: dict) -> Result:
     """Tokens and time within the configured budget (config/models.yaml)."""
+    budgets = budget_for(case, budgets)
     tokens = sum(s["tokens_in"] + s["tokens_out"] for s in trace["spans"])
     ms = sum(s["latency_ms"] for s in trace["spans"])
     over = []

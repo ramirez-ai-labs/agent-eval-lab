@@ -235,3 +235,31 @@ def test_first_try_catches_the_real_nov_24_wrong_call():
     assert results["ratio_args"].status == PASS
     assert results["ratio_first_try"].status == FAIL
     assert "debt_to_equity(4,410 / 51,842)" in results["ratio_first_try"].detail
+
+
+# ------------------------------------------------------------- budgets by category
+
+def test_risk_cases_get_their_own_budget():
+    from evals.checks import budget_for
+
+    budgets = {"max_tokens": 8000, "max_latency_ms": 30000,
+               "by_category": {"risk": {"max_tokens": 40000, "max_latency_ms": 60000}}}
+    assert budget_for(CASES["risk-duk"], budgets) == {"max_tokens": 40000, "max_latency_ms": 60000}
+    assert budget_for(CASES["ratio-f-cr"], budgets) == {"max_tokens": 8000, "max_latency_ms": 30000}
+
+    t = trace("risk-duk", [("handoff", "risk_agent")], "Top risks: ...", tokens=20000, latency_ms=45000)
+    by_check = {r.check: r for r in grade(CASES["risk-duk"], t, budgets)}
+    assert by_check["budget"].status == PASS
+    t = trace("risk-duk", [("handoff", "risk_agent")], "Top risks: ...", tokens=84917, latency_ms=86791)
+    assert {r.check: r for r in grade(CASES["risk-duk"], t, budgets)}["budget"].status == FAIL
+
+
+def test_configured_budgets_still_fail_the_nov_24_risk_run():
+    """The Nov 24 run (84,917 tokens, 87 s) is over even the risk budget."""
+    import yaml
+
+    budgets = yaml.safe_load((ROOT / "config" / "models.yaml").read_text(encoding="utf-8"))["budgets"]
+    path = ROOT / "runs" / "openai" / "workers-ai" / "20261124T054352Z" / "traces.jsonl"
+    real = json.loads(path.read_text(encoding="utf-8").splitlines()[0])
+    result = {r.check: r for r in grade(CASES["risk-duk"], real, budgets)}["budget"]
+    assert result.status == FAIL and "84917 tokens > 40000" in result.detail
