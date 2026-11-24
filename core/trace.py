@@ -45,11 +45,13 @@ class Trace(TypedDict):
     refused: bool
     neurons: NotRequired[float]
     """Workers AI cost of the run, measured (core/cost.py). Absent when the provider doesn't report it."""
+    planted: NotRequired[str]
+    """Mock track only: the name of the failure planted in this replayed trace (tracks/mock/plants.py)."""
 
 
 # Keys a trace may leave out. Listed by hand: with `from __future__ import
 # annotations`, TypedDict can't see NotRequired, so __required_keys__ is wrong.
-OPTIONAL_TRACE_KEYS: frozenset[str] = frozenset({"neurons"})
+OPTIONAL_TRACE_KEYS: frozenset[str] = frozenset({"neurons", "planted"})
 
 
 def validate_trace(trace: dict[str, Any]) -> list[str]:

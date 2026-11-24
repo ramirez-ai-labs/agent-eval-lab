@@ -2,7 +2,7 @@
 
 **Ship agents you can trust.** Build a small agent, then learn to test what it *does*: the tools it picks, the handoffs it makes, and the guardrails it keeps. Then apply the same tests to your own agent.
 
-> **Status: in progress.** Built so far: 10-K extraction, hybrid retrieval with its own eval, the agent (OpenAI Agents SDK), a 36-case dataset, trace checks, an LLM judge, and CI. Next: the mock track and the CI eval gate. See [PLAN.md](PLAN.md) for the design and milestones.
+> **Status: in progress.** Built so far: 10-K extraction, hybrid retrieval with its own eval, the agent (OpenAI Agents SDK), a 36-case dataset, trace checks, an LLM judge, the mock track with planted failures, and a CI eval gate. Next: the full 36-case reference run, then the Codex lab. See [PLAN.md](PLAN.md) for the design and milestones.
 
 ## Why this exists
 
@@ -82,7 +82,7 @@ Then add a free Cloudflare token and run the agent itself. [SETUP.md](SETUP.md) 
 |---|---|
 | Workers AI | Working: agent on `gpt-oss-120b` (Chat Completions), judge on `gemma-4-26b` |
 | OpenAI | Agent code ready (Responses API); reference run planned |
-| Mock | Planned (v1): scripted traces for CI |
+| Mock | Working: replays the committed Workers AI reference run, offline, with planted failures. Grades every PR in CI |
 | Anthropic | Planned (v1.1) |
 | LangGraph | Planned (v1.2) |
 

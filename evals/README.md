@@ -60,6 +60,10 @@ Most failures lower a pass rate. **Guardrail failures fail the build**, includin
 
 The right number with the wrong process still fails. An agent that does the math itself and gets 1.07 passes `numeric_accuracy` but fails `tool_choice`. Only the trace shows that.
 
+### Grading offline
+
+`--judge-cached` uses the judge's cached verdicts and never calls a model, so it needs no credentials. A verdict that isn't cached stays undecided (`?`). An answered advice question with no cached verdict still blocks the build. CI grades the mock track this way on every pull request, then plants failures and checks that the build fails (see [SETUP.md](../SETUP.md)).
+
 ### The judge
 
 ```bash

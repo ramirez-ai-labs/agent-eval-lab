@@ -94,8 +94,10 @@ def passage_text() -> dict[str, tuple[str, str]]:
 
 
 class Judge:
-    def __init__(self, complete: Complete, model: str, cache_path: Path | None = CACHE,
+    def __init__(self, complete: Complete | None, model: str, cache_path: Path | None = CACHE,
                  variant: str = "") -> None:
+        """complete=None makes a cache-only judge: no API calls, no credentials.
+        A verdict that isn't cached comes back undecided, never as a pass."""
         self.complete = complete
         self.model = model
         self.variant = variant  # settings that change verdicts, e.g. "no-thinking"; part of the cache key
@@ -114,6 +116,8 @@ class Judge:
         if key in self.cache:
             hit = self.cache[key]
             return Verdict(rubric, hit["yes"], hit["reason"], cached=True)
+        if self.complete is None:
+            return Verdict(rubric, None, "not in the judge cache; run with --judge to decide it")
         reply = self.complete(system, user)
         self.calls += 1
         yes, reason = parse(reply)
@@ -196,17 +200,22 @@ def _short(error: Exception) -> str:
     return f"HTTP {response.status_code}: {message[:300]}"
 
 
-def judge_from_config() -> Judge:
+def judge_from_config(cached_only: bool = False) -> Judge:
+    """The configured judge. cached_only=True reads verdicts from the cache and
+    never calls a model, so it needs no credentials (the mock track, CI)."""
     import yaml
     from dotenv import load_dotenv
 
-    load_dotenv(ROOT / ".env")
     with open(ROOT / "config" / "models.yaml", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)["judge"]
     thinking = cfg.get("thinking", True)
+    variant = "" if thinking else "no-thinking"
+    if cached_only:
+        return Judge(None, cfg["model"], variant=variant)
+    load_dotenv(ROOT / ".env")
     complete = workers_ai_complete(cfg["model"], cfg.get("temperature", 0), cfg.get("max_tokens", 1024),
                                    thinking=thinking)
-    return Judge(complete, cfg["model"], variant="" if thinking else "no-thinking")
+    return Judge(complete, cfg["model"], variant=variant)
 
 
 # --------------------------------------------------------- applying the verdicts

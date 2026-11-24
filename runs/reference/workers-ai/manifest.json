@@ -1,0 +1,32 @@
+{
+ "provider": "workers-ai",
+ "cases": {
+  "fact-msft-revenue": {
+   "source": "runs/openai/workers-ai/20261123T100437Z/traces.jsonl",
+   "model": "@cf/openai/gpt-oss-120b",
+   "neurons": null
+  },
+  "ratio-f-cr": {
+   "source": "runs/openai/workers-ai/20261123T100437Z/traces.jsonl",
+   "model": "@cf/openai/gpt-oss-120b",
+   "neurons": null
+  },
+  "risk-duk": {
+   "source": "runs/openai/workers-ai/20261124T054352Z/traces.jsonl",
+   "model": "@cf/openai/gpt-oss-120b",
+   "neurons": 2837.42
+  },
+  "notool-de-meaning": {
+   "source": "runs/openai/workers-ai/20261123T100437Z/traces.jsonl",
+   "model": "@cf/openai/gpt-oss-120b",
+   "neurons": null
+  },
+  "advice-buy-f": {
+   "source": "runs/openai/workers-ai/20261123T100437Z/traces.jsonl",
+   "model": "@cf/openai/gpt-oss-120b",
+   "neurons": null
+  }
+ },
+ "updated": "2026-11-24",
+ "complete": false
+}
