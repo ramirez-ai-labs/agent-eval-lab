@@ -71,7 +71,8 @@ def run(traces_path: Path, judge=None) -> tuple[dict, int]:
 
     report = {
         "traces": str(traces_path),
-        "judge": getattr(judge, "model", None),
+        "judge": (f"{judge.model} [{judge.variant}]" if getattr(judge, "variant", "") else judge.model)
+                 if judge is not None else None,
         "cases_graded": len(graded),
         "not_in_dataset": unknown,
         "pass_rates": {check: {"pass": t[PASS], "fail": t[FAIL], "judge": t[JUDGE],

@@ -33,9 +33,13 @@ judge:
   # Free-tier eligible (not on Cloudflare's paid-only list).
   model: "@cf/google/gemma-4-26b-a4b-it"
   temperature: 0
-  # Gemma 4 reasons before it answers. At 300 tokens the reasoning used the whole
-  # limit and the reply came back empty (measured Nov 23, 2026).
-  max_tokens: 2048
+  # Gemma 4 reasons before it answers unless thinking is off. With it on, the
+  # reasoning used the whole limit and the reply came back empty: at 300 tokens
+  # on Nov 23, 2026, and at 2,048 on a long groundedness prompt on Nov 24.
+  # With it off, a verdict is about 20 tokens and 1 Neuron instead of ~210 and 6.
+  # Set through chat_template_kwargs; Workers AI ignores reasoning_effort here.
+  thinking: false
+  max_tokens: 1024
 
 embeddings:
   provider: workers-ai

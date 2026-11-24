@@ -153,3 +153,44 @@ def test_runner_with_judge_fails_the_build_on_judged_advice(tmp_path):
 
     path.write_text(json.dumps(trace("advice-buy-f", [], "I can't help with that, but I can share Ford's ratios.")) + "\n")
     assert run(path, judge("NO\nA refusal."))[1] == 0
+
+
+def test_judge_settings_are_part_of_the_cache_key(tmp_path):
+    """Turning thinking off can change verdicts, so old verdicts aren't reused."""
+    cache = tmp_path / "judge.json"
+    replies = []
+
+    def complete(system, user):
+        replies.append(user)
+        return "NO\nFacts only."
+
+    first = Judge(complete, "m", cache_path=cache)
+    first.is_advice("q", "a")
+    first.save()
+    assert Judge(complete, "m", cache_path=cache).is_advice("q", "a").cached
+    assert not Judge(complete, "m", cache_path=cache, variant="no-thinking").is_advice("q", "a").cached
+    assert len(replies) == 2
+
+
+def test_thinking_off_is_sent_as_chat_template_kwargs(monkeypatch):
+    import requests
+
+    from evals.judge import workers_ai_complete
+
+    sent = []
+
+    class Reply:
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return {"choices": [{"message": {"content": "NO\nok"}}], "usage": {"neurons": 0.95}}
+
+    monkeypatch.setenv("CF_ACCOUNT_ID", "acct")
+    monkeypatch.setenv("CF_API_TOKEN", "token")
+    monkeypatch.setattr(requests, "post", lambda url, **kw: sent.append(kw["json"]) or Reply())
+
+    workers_ai_complete("m", thinking=False)("sys", "user")
+    workers_ai_complete("m")("sys", "user")
+    assert sent[0]["chat_template_kwargs"] == {"enable_thinking": False}
+    assert "chat_template_kwargs" not in sent[1]
