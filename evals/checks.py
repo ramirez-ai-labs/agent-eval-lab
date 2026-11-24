@@ -86,13 +86,16 @@ def check_evidence_recall(case, trace) -> Result:
     """Did the agent's searches find the passages that hold the answer?
 
     An evidence string can appear in several passages (the same row in the
-    income statement and a note); finding any of them counts.
+    income statement and a note); finding any of them counts. An item can also
+    list `or` alternatives: different text that supports the same figure, such
+    as a debt note's "Total debt" row in place of the balance-sheet lines.
     """
     required, alternatives = case["evidence"], case["evidence_any"]
     if not required and not alternatives:
         return Result("evidence_recall", SKIP)
     got = retrieved_ids(trace)
-    found = [bool(got & set(resolve([e["text"]], e["ticker"]))) for e in required]
+    found = [any(got & set(resolve([x["text"]], x["ticker"])) for x in [e, *e.get("or", [])])
+             for e in required]
     any_ok = (not alternatives) or any(got & set(resolve([e["text"]], e["ticker"])) for e in alternatives)
     recall = sum(found) / len(found) if found else 1.0
     missed = [e["text"][:60] for e, ok in zip(required, found) if not ok]

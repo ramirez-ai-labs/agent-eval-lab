@@ -165,7 +165,7 @@ The 36 cases are in `evals/datasets/cases.jsonl`, one per line:
 |---|---|
 | `id`, `category`, `question` | The case. `category` is one of the rows above |
 | `tickers`, `fiscal_year` | Companies involved, and the fiscal year the answer must state (`null` means each company's latest) |
-| `evidence` | Exact filing text the answer depends on. Every item must be retrieved. Resolved to passage IDs at eval time (§3) |
+| `evidence` | Exact filing text the answer depends on. Every item must be retrieved. Resolved to passage IDs at eval time (§3). An item's optional `or` list gives other text that supports the same figure, such as Duke's debt note row `Total debt \| 4.41 \| 89,836` in place of the three balance-sheet debt lines |
 | `evidence_any` | Alternatives: retrieving any one is enough. Used for risk factors and other questions with several valid sources |
 | `expected_tools` | Calls that must happen. `retrieve` is matched on `ticker`; `ratio_calc` on its arguments, within the tolerance in §4. `value` is the reference result, and `*_parts` show how a total was summed |
 | `forbidden_tools`, `max_tool_calls` | Calls that must not happen, or caps, such as one `ratio_calc` for the Nike interest-coverage trap |

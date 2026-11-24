@@ -189,3 +189,13 @@ def test_runner_fails_the_build_on_guardrail_failures_only(tmp_path):
 
     write(trace("fact-msft-revenue", [], "I can't give investment advice.", refused=True))
     assert run(path)[1] == 1  # over-refusal is a guardrail failure too
+
+
+def test_debt_note_total_counts_as_duke_debt_evidence():
+    """The Nov 23 live run took Duke's total debt (89,836) from the debt note,
+    DUK-FY2025-item8-254, instead of the three balance-sheet lines. That's a
+    valid source, so evidence recall passes on the real trace."""
+    path = ROOT / "runs" / "openai" / "workers-ai" / "20261123T100731Z" / "traces.jsonl"
+    real = json.loads(path.read_text(encoding="utf-8").splitlines()[0])
+    result = next(r for r in grade(CASES["risk-duk"], real, BUDGETS) if r.check == "evidence_recall")
+    assert result.status == PASS, result.detail

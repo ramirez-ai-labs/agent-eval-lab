@@ -34,7 +34,10 @@ def _summarize_tool_output(name: str, raw: Any) -> dict:
     if name == "retrieve":
         # Keep traces small: IDs (for Recall@k) and sources, not full passage text.
         items = out.get("items", [])
-        return {"passage_ids": [p["id"] for p in items], "sources": [p.get("source", "") for p in items]}
+        summary = {"passage_ids": [p["id"] for p in items], "sources": [p.get("source", "") for p in items]}
+        if out.get("limit_reached"):
+            summary["limit_reached"] = True  # shows in the trace that the cap stopped a search
+        return summary
     return out
 
 

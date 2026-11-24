@@ -68,6 +68,8 @@ def test_case_shape(case):
 def test_evidence_is_in_the_filings(case):
     for item in case["evidence"]:  # every one must be found
         resolve([item["text"]], item["ticker"])
+        for alt in item.get("or", []):  # and so must each alternative
+            resolve([alt["text"]], alt["ticker"])
     if case["evidence_any"]:  # alternatives: each must exist, any one is enough at eval time
         for item in case["evidence_any"]:
             resolve([item["text"]], item["ticker"])
