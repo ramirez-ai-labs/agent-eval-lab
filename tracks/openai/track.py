@@ -10,7 +10,9 @@ Cases come from evals/datasets/cases.jsonl, so a run can be graded with
     uv run python -m evals.run_checks runs/openai/<provider>/<stamp>/traces.jsonl
 
 Each run writes runs/openai/<provider>/<timestamp>/traces.jsonl.
-Five questions on Workers AI use roughly 1,000 of the 10,000 free daily Neurons.
+Each case's Neuron cost is measured from the API and printed, and saved in
+the trace. The first live run of the 5 samples (Nov 23, 2026) used about
+6,500 of the 10,000 free daily Neurons, most of it on one runaway case.
 """
 
 from __future__ import annotations
@@ -30,6 +32,7 @@ sys.path.insert(0, str(ROOT))
 
 from agents import InputGuardrailTripwireTriggered, Runner, set_tracing_disabled  # noqa: E402
 
+from core.cost import metering  # noqa: E402
 from core.tools import workers_ai_embedder  # noqa: E402
 from core.trace import Trace, validate_trace, write_trace  # noqa: E402
 from tracks.openai.adapter import TraceRecorder  # noqa: E402
@@ -80,15 +83,19 @@ async def run_agent(agent, question: str, case_id: str, embed, *, track: str, pr
     set_tracing_disabled(True)  # traces stay local; never sent to a hosted dashboard
     recorder = TraceRecorder()
     ctx = RunContext(embed=embed, recorder=recorder)
-    try:
-        result = await Runner.run(agent, question, context=ctx, hooks=recorder, max_turns=max_turns)
-        final_answer, refused = str(result.final_output), False
-    except InputGuardrailTripwireTriggered:
-        final_answer, refused = REFUSAL, True
+    with metering(recorder.meter):
+        try:
+            result = await Runner.run(agent, question, context=ctx, hooks=recorder, max_turns=max_turns)
+            final_answer, refused = str(result.final_output), False
+        except InputGuardrailTripwireTriggered:
+            final_answer, refused = REFUSAL, True
     trace = Trace(
         case_id=case_id, track=track, provider=provider, model=model_id,
         spans=recorder.spans, final_answer=final_answer, refused=refused,
     )
+    neurons = recorder.total_neurons()
+    if neurons is not None:
+        trace["neurons"] = neurons
     problems = validate_trace(dict(trace))
     if problems:
         raise ValueError(f"invalid trace for {case_id}: {problems}")
@@ -102,6 +109,8 @@ def summarize(trace: Trace) -> str:
     seconds = sum(s["latency_ms"] for s in trace["spans"]) / 1000
     parts = [f"tools={tools or '-'}", f"handoffs={handoffs or '-'}", f"refused={trace['refused']}",
              f"tokens={tokens}", f"{seconds:.1f}s"]
+    if "neurons" in trace:
+        parts.append(f"neurons={trace['neurons']:.0f}")
     return " ".join(parts)
 
 
@@ -125,6 +134,7 @@ async def main() -> int:
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     out = ROOT / "runs" / track.name / args.provider / stamp / "traces.jsonl"
 
+    spent = []
     for case_id, question in cases:
         print(f"\n▶ {case_id}: {question}")
         try:
@@ -136,8 +146,13 @@ async def main() -> int:
                 break  # every remaining case would fail the same way
             continue
         write_trace(trace, out)
+        if "neurons" in trace:
+            spent.append(trace["neurons"])
         print(f"  {summarize(trace)}")
         print("  " + trace["final_answer"].strip().replace("\n", "\n  ")[:900])
+    if spent:
+        print(f"\nNeurons: {sum(spent):,.0f} for {len(spent)} case(s), measured "
+              f"(free allowance: 10,000 per day)")
     print(f"\nTraces → {out.relative_to(ROOT)}")
     return 0
 

@@ -5,6 +5,9 @@ Workers AI's Chat Completions endpoint rejects assistant messages whose
 only contains tool calls, and the Agents SDK sends it after every tool call.
 This client rewrites null content to "" before the request goes out.
 
+It also meters cost: after each Chat Completions response it reads
+`usage.neurons` and adds it to the current run's meter (core/cost.py).
+
 Everything Workers AI-specific lives here, so the agent code stays the same
 for every provider.
 
@@ -20,6 +23,8 @@ import json
 import httpx2 as httpx
 from openai import AsyncOpenAI
 
+from core import cost
+
 BASE_URL = "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1"
 
 
@@ -33,8 +38,8 @@ def _fix_null_content(body: dict) -> bool:
 
 
 class _CompatTransport(httpx.AsyncBaseTransport):
-    def __init__(self) -> None:
-        self._inner = httpx.AsyncHTTPTransport()
+    def __init__(self, inner: httpx.AsyncBaseTransport | None = None) -> None:
+        self._inner = inner or httpx.AsyncHTTPTransport()
 
     async def handle_async_request(self, request: httpx.Request) -> httpx.Response:
         if request.url.path.endswith("/chat/completions") and request.content:
@@ -43,10 +48,26 @@ class _CompatTransport(httpx.AsyncBaseTransport):
                 content = json.dumps(body).encode()
                 headers = {k: v for k, v in request.headers.items() if k.lower() != "content-length"}
                 request = httpx.Request(request.method, request.url, headers=headers, content=content)
-        return await self._inner.handle_async_request(request)
+        response = await self._inner.handle_async_request(request)
+        if request.url.path.endswith("/chat/completions") and response.status_code == 200:
+            response = await _metered(response, request)
+        return response
 
     async def aclose(self) -> None:
         await self._inner.aclose()
+
+
+async def _metered(response: httpx.Response, request: httpx.Request) -> httpx.Response:
+    """Read usage.neurons from the body, then hand back an equivalent response."""
+    body = await response.aread()  # decoded, so drop the encoding headers below
+    try:
+        cost.record(cost.neurons_in(json.loads(body)))
+    except ValueError:
+        pass  # not JSON; the client will report it
+    headers = [(k, v) for k, v in response.headers.items()
+               if k.lower() not in ("content-encoding", "content-length", "transfer-encoding")]
+    return httpx.Response(response.status_code, headers=headers, content=body,
+                          request=request, extensions=response.extensions)
 
 
 def explain_error(error: Exception) -> str | None:

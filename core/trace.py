@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any, Literal, TypedDict
+from typing import Any, Literal, NotRequired, TypedDict
 
 SpanType = Literal["llm", "tool_call", "handoff", "guardrail"]
 SPAN_TYPES: frozenset[str] = frozenset({"llm", "tool_call", "handoff", "guardrail"})
@@ -43,6 +43,13 @@ class Trace(TypedDict):
     spans: list[Span]
     final_answer: str
     refused: bool
+    neurons: NotRequired[float]
+    """Workers AI cost of the run, measured (core/cost.py). Absent when the provider doesn't report it."""
+
+
+# Keys a trace may leave out. Listed by hand: with `from __future__ import
+# annotations`, TypedDict can't see NotRequired, so __required_keys__ is wrong.
+OPTIONAL_TRACE_KEYS: frozenset[str] = frozenset({"neurons"})
 
 
 def validate_trace(trace: dict[str, Any]) -> list[str]:
@@ -54,10 +61,13 @@ def validate_trace(trace: dict[str, Any]) -> list[str]:
     problems: list[str] = []
 
     for key in Trace.__annotations__:
-        if key not in trace:
+        if key not in trace and key not in OPTIONAL_TRACE_KEYS:
             problems.append(f"trace is missing '{key}'")
     if problems:
         return problems
+
+    if "neurons" in trace and (not isinstance(trace["neurons"], (int, float)) or trace["neurons"] < 0):
+        problems.append("trace 'neurons' must be a non-negative number")
 
     ids: set[str] = set()
     for i, span in enumerate(trace["spans"]):

@@ -47,8 +47,10 @@ def run(traces_path: Path, judge=None) -> tuple[dict, int]:
     with open(ROOT / "config" / "models.yaml", encoding="utf-8") as f:
         budgets = yaml.safe_load(f)["budgets"]
 
-    graded, unknown, review = {}, [], []
+    graded, unknown, review, neurons = {}, [], [], {}
     for trace in load_traces(traces_path):
+        if "neurons" in trace:
+            neurons[trace["case_id"]] = trace["neurons"]
         case = cases.get(trace["case_id"])
         if case is None:
             unknown.append(trace["case_id"])
@@ -78,6 +80,12 @@ def run(traces_path: Path, judge=None) -> tuple[dict, int]:
         "hard_failures": [{"case": cid, "check": r.check, "status": r.status, "detail": r.detail}
                           for cid, r in hard_failures],
         "review": review,
+        "neurons": {
+            "agent": round(sum(neurons.values()), 2) if neurons else None,
+            "agent_per_case": neurons,
+            "judge": round(judge.meter.total, 2) if getattr(judge, "meter", None) and judge.meter.calls else None,
+            "judge_new_calls": getattr(judge, "calls", 0),
+        },
         "cases": {cid: [asdict(r) for r in results] for cid, results in graded.items()},
     }
     return report, (1 if hard_failures else 0)
@@ -99,6 +107,15 @@ def print_report(report: dict) -> None:
         for r in results:
             if r["status"] in (FAIL, JUDGE) and r["detail"]:
                 print(f"  {MARK[r['status']]} {cid} · {r['check']}: {r['detail']}")
+    n = report.get("neurons") or {}
+    if n.get("agent") is not None or n.get("judge") is not None:
+        print("\nNeurons (measured)")
+        if n.get("agent") is not None:
+            top = max(n["agent_per_case"].items(), key=lambda kv: kv[1])
+            print(f"  agent  {n['agent']:>8,.0f}  over {len(n['agent_per_case'])} case(s); "
+                  f"most: {top[0]} ({top[1]:,.0f})")
+        if n.get("judge") is not None:
+            print(f"  judge  {n['judge']:>8,.0f}  over {n['judge_new_calls']} new call(s); cached verdicts are free")
     if report["review"]:
         print("\nfor human review: the phrase flags and the judge disagree")
         for item in report["review"]:

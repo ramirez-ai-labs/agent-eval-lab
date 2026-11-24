@@ -40,6 +40,8 @@ happened.
 uv run python -m evals.run_checks runs/openai/workers-ai/<stamp>/traces.jsonl
 ```
 
+On Workers AI, the report also shows the **measured Neuron cost**: the agent's total, the most expensive case, and the judge's new calls (cached verdicts are free). Each Chat Completions response includes `usage.neurons`, and [core/cost.py](../core/cost.py) records it per model call, so cost comes from the API, not an estimate. The first live run used about 6,500 Neurons for 5 cases, against an estimate of 1,000.
+
 `evals/checks.py` grades each trace against its case with code. Each check returns **pass**, **fail**, **skip** (doesn't apply), or **judge** (code can't decide):
 
 | Check | Fails when |

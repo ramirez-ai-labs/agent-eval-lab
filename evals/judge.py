@@ -102,6 +102,7 @@ class Judge:
         if cache_path and cache_path.exists():
             self.cache = json.loads(cache_path.read_text(encoding="utf-8"))
         self.calls = 0
+        self.meter = getattr(complete, "meter", None)  # Neurons for new calls, if the backend reports them
         self._changed = False
 
     def ask(self, rubric: str, user: str) -> Verdict:
@@ -134,8 +135,15 @@ class Judge:
 
 
 def workers_ai_complete(model: str, temperature: float = 0.0, max_tokens: int = 300) -> Complete:
-    """A Complete function backed by Workers AI's OpenAI-compatible Chat Completions."""
+    """A Complete function backed by Workers AI's OpenAI-compatible Chat Completions.
+
+    Its `meter` attribute adds up the Neurons each call reports (core/cost.py).
+    """
     import requests
+
+    from core.cost import Meter, neurons_in
+
+    meter = Meter()
 
     account_id, token = os.environ["CF_ACCOUNT_ID"], os.environ["CF_API_TOKEN"]
     url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1/chat/completions"
@@ -146,8 +154,13 @@ def workers_ai_complete(model: str, temperature: float = 0.0, max_tokens: int = 
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
         })
         r.raise_for_status()
-        return r.json()["choices"][0]["message"]["content"] or ""
+        body = r.json()
+        neurons = neurons_in(body)
+        if neurons is not None:
+            meter.add(neurons)
+        return body["choices"][0]["message"]["content"] or ""
 
+    complete.meter = meter
     return complete
 
 
