@@ -30,6 +30,20 @@ from core import tools as core_tools
 
 # ----------------------------------------------------------------- context
 
+# Searches allowed per run, across the main agent and the risk agent.
+# Every search result stays in the conversation and is re-sent on each later
+# model call, so input tokens grow with every search. On Nov 23, 2026 the
+# Duke Energy risk summary searched 7 times (twice at k=10) and used 129,771
+# tokens, about 4,500 Neurons. A risk summary needs about four searches (risk
+# factors, debt, equity, operating income and interest), so five leaves one
+# to rephrase. Confirm on the next live run.
+MAX_SEARCHES = 5
+MAX_K = 5
+SEARCH_LIMIT_MESSAGE = (
+    f"Search limit reached ({MAX_SEARCHES} per question). Answer with the passages you "
+    "already have, and say which figures you couldn't find."
+)
+
 
 @dataclass
 class RunContext:
@@ -37,6 +51,7 @@ class RunContext:
     embed: core_tools.Embedder
     recorder: object = None
     guardrail: dict = field(default_factory=dict)
+    searches: int = 0
 
 
 # ------------------------------------------------------------------- tools
@@ -50,9 +65,12 @@ def retrieve(ctx: RunContextWrapper[RunContext], query: str, ticker: str, k: int
         query: What to look for. Use the wording a filing would use, e.g.
             "Total current liabilities" or "risk factors interest rates".
         ticker: One of MSFT, NKE, DUK, F.
-        k: How many passages to return (1-10).
+        k: How many passages to return (1-5).
     """
-    result = core_tools.retrieve(query, ctx.context.embed, k=max(1, min(k, 10)), ticker=ticker)
+    if ctx.context.searches >= MAX_SEARCHES:
+        return json.dumps({"limit_reached": True, "message": SEARCH_LIMIT_MESSAGE})
+    ctx.context.searches += 1
+    result = core_tools.retrieve(query, ctx.context.embed, k=max(1, min(k, MAX_K)), ticker=ticker)
     return json.dumps([
         {"id": p["id"], "source": p["context"], "text": p["text"]} for p in result["passages"]
     ])
@@ -115,6 +133,13 @@ RISK_INSTRUCTIONS = f"""\
 You write risk summaries for one company from its most recent 10-K.
 
 1. Call `retrieve` for the company's risk factors (Item 1A) and its debt and liquidity.
+   You have at most {MAX_SEARCHES} searches, so search by line-item name:
+   - the balance sheet: "Notes payable and commercial paper", "Current maturities of
+     long-term debt", "Long-Term Debt", and total stockholders' equity
+   - or the debt note's "Total debt" row
+   - the income statement: "Operating Income" and "Interest Expense"
+   Balance sheets have no "Total debt" line, so a search for "total debt" alone
+   usually misses them.
 2. Compute debt_to_equity and, where meaningful, interest_coverage with `ratio_calc`.
 3. Reply with:
    - the top 3 risks, each in one or two sentences, each citing at least one passage ID

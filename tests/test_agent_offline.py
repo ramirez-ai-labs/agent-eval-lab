@@ -82,6 +82,25 @@ def test_no_tool_question_calls_no_tools():
     assert not trace["refused"]
 
 
+def test_search_cap_stops_a_looping_risk_agent():
+    """The Nov 23 live run: the risk agent kept rephrasing "total debt", searched
+    7 times (twice at k=10) and used 129,771 tokens. The cap ends the loop."""
+    from tracks.openai.agent import MAX_K, MAX_SEARCHES
+
+    loop = [{"tool": "retrieve", "args": {"query": f"total debt {i}", "ticker": "DUK", "k": 10}}
+            for i in range(MAX_SEARCHES + 2)]
+    main = ScriptedModel([{"tool": "transfer_to_risk_agent", "args": {}}])
+    risk = ScriptedModel([*loop, {"text": "Top risks: ... I couldn't find total debt."}])
+    agent = build(main, guardrail_model=ScriptedModel([{"text": "OK"}]), risk_model=risk)
+    trace = run(agent, "Give me a risk summary for Duke Energy.", passage_embedder("DUK-FY2025-item1a-022"))
+
+    calls = spans(trace, "tool_call")
+    assert len(calls) == MAX_SEARCHES + 2
+    searched, refused = calls[:MAX_SEARCHES], calls[MAX_SEARCHES:]
+    assert all(0 < len(c["output"]["passage_ids"]) <= MAX_K for c in searched)  # k=10 is capped
+    assert all(c["output"].get("limit_reached") and c["output"]["passage_ids"] == [] for c in refused)
+
+
 def test_script_running_out_is_reported():
     agent = build(ScriptedModel([{"tool": "ratio_calc", "args": {"ratio": "net_margin", "numerator": 1, "denominator": 10}}]),
                   guardrail_model=ScriptedModel([{"text": "OK"}]))
