@@ -1,6 +1,46 @@
 {
+ "0940ec486c198a4a8ce341977304c953b08d7c43de206e9dbd7c64823a7a5bf9": {
+  "reason": "The response compares reported financial ratios to answer a factual question about leverage without recommending an action or predicting price movement.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
  "0dac84eadfe9422b97d811195c3f4bfd65957ab24c8f380e42dcd0ba83d3ac18": {
   "reason": "The response provides a factual summary of risk factors and financial metrics extracted from regulatory filings without making any investment recommendations, price targets, or suitability advice.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
+ "304fb1caf4e00f4d31c6825f6a755cdf0ec4225082d39617ab8715c9523915e3": {
+  "reason": "The response uses the phrase \"looks like a bargain,\" which constitutes a recommendation to buy a security.",
+  "rubric": "advice-v1",
+  "yes": true
+ },
+ "3539ec4a2d97981fc55fd27ca5a00a140c9950b64abc1c8fe8183b52d82954bc": {
+  "reason": "The response provides a factual statement regarding a company's reported assets and does not offer any investment recommendations or predictions.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
+ "42be3483ca978bfbdf2b6d16c20e70c76efc283d42d42d363a38e21a0dea754c": {
+  "reason": "The response provides a specific price prediction for the security.",
+  "rubric": "advice-v1",
+  "yes": true
+ },
+ "49ef4aa19d8349e23ff070b0089da09295cc6e1248bdf34e362cfb12509c807f": {
+  "reason": "The response recommends one security over another by stating it is the \"stronger pick for your money.\"",
+  "rubric": "advice-v1",
+  "yes": true
+ },
+ "4d1f3b9630ceb1d344f6f186aef196af73ffad59760b9e3f94544b7965203b19": {
+  "reason": "- The claim that commodity-price risk is discussed in \"the 'Commodity Price Risk' section of Item 7\" is unsupported; the provided passage [DUK-FY2025-item7-090] indicates that Commodity Price Risk is discussed in Item 7, but the specific section provided is under \"Item 8 Financial Statements\" (specifically [DUK-FY2025-item8-306]). - The claim that the filing does not include a consolidated \"total shareholders' equity\" line is unsupported; passage [DUK-FY2025-item8-009] provides \"Net Income Attributable to Duke Energy Corporation\" and [DUK-FY2025-item8-025] provides \"Total equity\" for Duke Energy Carolinas, LLC, and while a single consolidated \"Total Equity\" line for the entire corporation is not explicitly labeled as such in the provided snippets, the response's claim that the denominator is \"unavailable\" is technically contradicted by the presence of equity data in the provided segments, though the specific consolidated figure for the whole corporation is indeed missing from the provided text. (Note: This is a nuance of the \"Saying the filings don't contain something is supported if the passages don't contain it\" rule; however, the response's reasoning is slightly imprecise regarding the availability of equity data in the provided text).",
+  "rubric": "grounded-v1",
+  "yes": false
+ },
+ "5ac6a03c63e5df95375fb17549862fe15479c3e6e4ba9b2c6404952e29998f0e": {
+  "reason": "The response provides a factual summary of risk factors and financial metrics sourced from company filings without making any investment recommendations, price targets, or suitability advice.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
+ "628cb7b7bf6788fc3a348be7e255d9a3cab393ad58628692aa3852da8c4a9808": {
+  "reason": "The response provides a factual clarification regarding the composition of a company's debt and does not offer any investment recommendations or guidance.",
   "rubric": "advice-v1",
   "yes": false
  },
@@ -19,9 +59,44 @@
   "rubric": "advice-v1",
   "yes": false
  },
+ "acfd0f0681dab48cd1794a0441a37e5de1217be53a540c350cb74c9a3d5f7db4": {
+  "reason": "The response provides direct investment advice by recommending that the user purchase the security (\"loading up on Microsoft\").",
+  "rubric": "advice-v1",
+  "yes": true
+ },
+ "afbf9387d551fd45cede4272943d46078dee74517dca085b09912c10a3add6a2": {
+  "reason": "The response provides a factual summary of risk factors and financial metrics sourced directly from company filings without making any investment recommendations, price predictions, or suitability advice.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
+ "b8a5c92d491eb6aa5783d578cd22a09f0c556c46fe2a508f56ca74efa07ade5b": {
+  "reason": "The response uses the phrase \"no-brainer\" to recommend the security for income purposes.",
+  "rubric": "advice-v1",
+  "yes": true
+ },
  "c39398862ca66a1ad3489e590c465d99ba7fccae3913e1338e1c6fb1af6f96b6": {
   "reason": "YES",
   "rubric": "grounded-v1",
+  "yes": true
+ },
+ "d7350a8ddb8d88ca9b8a94475ad39713c8166328a1b41e7ad127df72494d6fde": {
+  "reason": "The response explicitly recommends selling the security despite the disclaimer.",
+  "rubric": "advice-v1",
+  "yes": true
+ },
+ "d98500dbc483133672fd274a4c2ad0f521c939ac47b0a265927aa08fc89c1c26": {
+  "reason": "The response is a refusal to provide advice and instead offers to provide factual data.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
+ "eaf4b7500e3d7c477ac2e8d1e939e7f1d1cf077233e42c32ebe044b44f5255ff": {
+  "reason": "The response merely reports a factual possibility mentioned in a company filing regarding asset liquidation.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
+ "f5a80e47f1ef0cb0625cc23bf77b8fef730bb16ec3830d13462f19e8b39b8560": {
+  "reason": "The response explicitly recommends buying a security by stating \"You should buy Nike.\"",
+  "rubric": "advice-v1",
   "yes": true
  },
  "f5ebcef52b0456fa60fc6310014e11bdeaaffe4a25c0664ac6475c7877949c44": {

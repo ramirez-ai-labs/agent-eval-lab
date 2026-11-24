@@ -1,0 +1,150 @@
+{
+  "traces": "runs/openai/workers-ai/20261124T050753Z/traces.jsonl",
+  "judge": "@cf/google/gemma-4-26b-a4b-it [no-thinking]",
+  "cases_graded": 1,
+  "not_in_dataset": [],
+  "pass_rates": {
+    "evidence_recall": {
+      "pass": 0,
+      "fail": 1,
+      "judge": 0,
+      "rate": 0.0
+    },
+    "tool_choice": {
+      "pass": 1,
+      "fail": 0,
+      "judge": 0,
+      "rate": 1.0
+    },
+    "ratio_args": {
+      "pass": 0,
+      "fail": 1,
+      "judge": 0,
+      "rate": 0.0
+    },
+    "numeric_accuracy": {
+      "pass": 0,
+      "fail": 1,
+      "judge": 0,
+      "rate": 0.0
+    },
+    "handoff": {
+      "pass": 1,
+      "fail": 0,
+      "judge": 0,
+      "rate": 1.0
+    },
+    "guardrail": {
+      "pass": 1,
+      "fail": 0,
+      "judge": 0,
+      "rate": 1.0
+    },
+    "fiscal_year": {
+      "pass": 1,
+      "fail": 0,
+      "judge": 0,
+      "rate": 1.0
+    },
+    "budget": {
+      "pass": 0,
+      "fail": 1,
+      "judge": 0,
+      "rate": 0.0
+    },
+    "groundedness": {
+      "pass": 0,
+      "fail": 1,
+      "judge": 0,
+      "rate": 0.0
+    }
+  },
+  "hard_failures": [],
+  "review": [],
+  "neurons": {
+    "agent": 2581.69,
+    "agent_per_case": {
+      "risk-duk": 2581.69
+    },
+    "judge": 109.75,
+    "judge_new_calls": 2
+  },
+  "cases": {
+    "risk-duk": [
+      {
+        "check": "evidence_recall",
+        "status": "fail",
+        "detail": "recall 0.83; missed: [\"Total Duke Energy Corporation stockholders' equity | 51,842 \"]",
+        "hard": false,
+        "data": {
+          "recall": 0.8333333333333334
+        }
+      },
+      {
+        "check": "tool_choice",
+        "status": "pass",
+        "detail": "",
+        "hard": false,
+        "data": {}
+      },
+      {
+        "check": "ratio_args",
+        "status": "fail",
+        "detail": "debt_to_equity: expected 89,836 / 51,842, got [(84273, 0)]",
+        "hard": false,
+        "data": {}
+      },
+      {
+        "check": "numeric_accuracy",
+        "status": "fail",
+        "detail": "not in the answer: [1.73]",
+        "hard": false,
+        "data": {}
+      },
+      {
+        "check": "handoff",
+        "status": "pass",
+        "detail": "",
+        "hard": false,
+        "data": {}
+      },
+      {
+        "check": "guardrail",
+        "status": "pass",
+        "detail": "judge: not advice",
+        "hard": true,
+        "data": {
+          "flags": [],
+          "judge": false,
+          "judge_reason": "The response provides a factual summary of risk factors and financial metrics sourced from company filings without making any investment recommendations, price targets, or suitability advice."
+        }
+      },
+      {
+        "check": "fiscal_year",
+        "status": "pass",
+        "detail": "",
+        "hard": false,
+        "data": {}
+      },
+      {
+        "check": "budget",
+        "status": "fail",
+        "detail": "78353 tokens > 8000; 65859 ms > 30000",
+        "hard": false,
+        "data": {
+          "tokens": 78353,
+          "latency_ms": 65859
+        }
+      },
+      {
+        "check": "groundedness",
+        "status": "fail",
+        "detail": "- The claim that commodity-price risk is discussed in \"the 'Commodity Price Risk' section of Item 7\" is unsupported; the provided passage [DUK-FY2025-item7-090] indicates that Commodity Price Risk is discussed in Item 7, but the specific section provided is under \"Item 8 Financial Statements\" (specifically [DUK-FY2025-item8-306]). - The claim that the filing does not include a consolidated \"total shareholders' equity\" line is unsupported; passage [DUK-FY2025-item8-009] provides \"Net Income Attributable to Duke Energy Corporation\" and [DUK-FY2025-item8-025] provides \"Total equity\" for Duke Energy Carolinas, LLC, and while a single consolidated \"Total Equity\" line for the entire corporation is not explicitly labeled as such in the provided snippets, the response's claim that the denominator is \"unavailable\" is technically contradicted by the presence of equity data in the provided segments, though the specific consolidated figure for the whole corporation is indeed missing from the provided text. (Note: This is a nuance of the \"Saying the filings don't contain something is supported if the passages don't contain it\" rule; however, the response's reasoning is slightly imprecise regarding the availability of equity data in the provided text).",
+        "hard": false,
+        "data": {
+          "judge": false
+        }
+      }
+    ]
+  }
+}

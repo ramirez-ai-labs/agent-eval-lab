@@ -13,7 +13,7 @@ Usage:
 
 The judge model is in config/models.yaml, from a different model family than
 the agent to reduce self-preference bias. Verdicts are cached in
-evals/cache/judge.json, keyed by model, rubric version and prompt, so a repeat
+evals/cache/judge.json, keyed by model and settings, rubric version and prompt, so a repeat
 run costs nothing and gives the same verdict.
 """
 
@@ -94,9 +94,11 @@ def passage_text() -> dict[str, tuple[str, str]]:
 
 
 class Judge:
-    def __init__(self, complete: Complete, model: str, cache_path: Path | None = CACHE) -> None:
+    def __init__(self, complete: Complete, model: str, cache_path: Path | None = CACHE,
+                 variant: str = "") -> None:
         self.complete = complete
         self.model = model
+        self.variant = variant  # settings that change verdicts, e.g. "no-thinking"; part of the cache key
         self.cache_path = cache_path
         self.cache: dict[str, dict] = {}
         if cache_path and cache_path.exists():
@@ -107,7 +109,8 @@ class Judge:
 
     def ask(self, rubric: str, user: str) -> Verdict:
         version, system = RUBRICS[rubric]
-        key = hashlib.sha256(f"{self.model}\n{version}\n{user}".encode()).hexdigest()
+        model = f"{self.model} [{self.variant}]" if self.variant else self.model
+        key = hashlib.sha256(f"{model}\n{version}\n{user}".encode()).hexdigest()
         if key in self.cache:
             hit = self.cache[key]
             return Verdict(rubric, hit["yes"], hit["reason"], cached=True)
@@ -134,8 +137,12 @@ class Judge:
             self.cache_path.write_text(json.dumps(self.cache, indent=1, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def workers_ai_complete(model: str, temperature: float = 0.0, max_tokens: int = 300) -> Complete:
+def workers_ai_complete(model: str, temperature: float = 0.0, max_tokens: int = 300,
+                        thinking: bool = True) -> Complete:
     """A Complete function backed by Workers AI's OpenAI-compatible Chat Completions.
+
+    thinking=False turns off a reasoning model's hidden reasoning, through
+    chat_template_kwargs (Gemma 4 on Workers AI ignores reasoning_effort).
 
     Its `meter` attribute adds up the Neurons each call reports (core/cost.py).
     """
@@ -149,10 +156,13 @@ def workers_ai_complete(model: str, temperature: float = 0.0, max_tokens: int = 
     url = f"https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1/chat/completions"
 
     def complete(system: str, user: str) -> str:
-        r = requests.post(url, headers={"Authorization": f"Bearer {token}"}, timeout=120, json={
+        payload = {
             "model": model, "temperature": temperature, "max_tokens": max_tokens,
             "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-        })
+        }
+        if not thinking:
+            payload["chat_template_kwargs"] = {"enable_thinking": False}
+        r = requests.post(url, headers={"Authorization": f"Bearer {token}"}, timeout=120, json=payload)
         r.raise_for_status()
         body = r.json()
         neurons = neurons_in(body)
@@ -193,7 +203,10 @@ def judge_from_config() -> Judge:
     load_dotenv(ROOT / ".env")
     with open(ROOT / "config" / "models.yaml", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)["judge"]
-    return Judge(workers_ai_complete(cfg["model"], cfg.get("temperature", 0), cfg.get("max_tokens", 2048)), cfg["model"])
+    thinking = cfg.get("thinking", True)
+    complete = workers_ai_complete(cfg["model"], cfg.get("temperature", 0), cfg.get("max_tokens", 1024),
+                                   thinking=thinking)
+    return Judge(complete, cfg["model"], variant="" if thinking else "no-thinking")
 
 
 # --------------------------------------------------------- applying the verdicts
