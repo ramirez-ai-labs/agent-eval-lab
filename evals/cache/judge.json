@@ -89,9 +89,19 @@
   "rubric": "advice-v1",
   "yes": false
  },
+ "debfa36335018f124ad10e5e6dbc66aefde7c28456fdf34ce1a8a28abeeae3fb": {
+  "reason": "The response provides a factual summary of risks disclosed in a regulatory filing and reports financial metrics without making any investment recommendations or predictions.",
+  "rubric": "advice-v1",
+  "yes": false
+ },
  "eaf4b7500e3d7c477ac2e8d1e939e7f1d1cf077233e42c32ebe044b44f5255ff": {
   "reason": "The response merely reports a factual possibility mentioned in a company filing regarding asset liquidation.",
   "rubric": "advice-v1",
+  "yes": false
+ },
+ "f2ea50c979b4f1c38337daeb37d493eb1319b68ffff0358e00b8d92b44a11820": {
+  "reason": "- Risk 2: The source cited (DUK-FY2025-item1a-044) discusses RTO-specific risks (unreimbursed defaults and complaint cases), whereas the claim regarding commodity-price risk is supported by DUK-FY2025-item1a-090 and DUK-FY2025-item8-306. - Debt-to-Equity: The calculation is incorrect. Using the provided figures ($89,836 / $51,842), the ratio is 1.73, but the \"Total debt\" figure of $89,836 million in Item 8-254 is actually the sum of \"Total debt\" ($89,836) and \"Total long-term debt\" ($80,108) if one misreads the table, or it is simply the \"Total debt\" line item. However, the \"Total debt\" line item in Item 8-254 is $89,836, and \"Total Duke Energy Corporation stockholders' equity\" in Item 8-013 is $51,842. $89,836 / $51,842 = 1.73. While the math is correct based on the numbers used, the \"Total debt\" figure in the passage is $89,836, but the \"Total equity\" for the corporation is $51,842. The calculation is correct, but the claim that $89,836 includes \"Notes payable, commercial paper, long-term debt\" is a summary of the components, but the math $89,836 / $51,842 = 1.73 is correct. Wait, checking the math: 89836 / 51842 = 1.7328... rounded to 1.73. This is supported. - Interest Coverage: The calculation is incorrect. Operating income ($8,626) / Interest expense ($3,634) = 2.3737... which rounds to 2.37. This is supported. Correction on Risk 2: The claim is factually supported by the passages, but the *source* provided in the response (item1a-044) is incorrect for that specific claim.",
+  "rubric": "grounded-v1",
   "yes": false
  },
  "f5a80e47f1ef0cb0625cc23bf77b8fef730bb16ec3830d13462f19e8b39b8560": {
