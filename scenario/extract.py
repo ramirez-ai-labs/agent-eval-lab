@@ -37,10 +37,14 @@ OUT = HERE / "filings"
 
 # Must match scenario/TASK.md §2.
 FILINGS = {
-    "MSFT": {"cik": "789019", "accession": "0001193125-26-323660", "doc": "msft-20260630.htm", "fy": "FY2026"},
-    "NKE": {"cik": "320187", "accession": "0000320187-26-000088", "doc": "nke-20260531.htm", "fy": "FY2026"},
-    "DUK": {"cik": "1326160", "accession": "0001326160-26-000014", "doc": "duk-20251231.htm", "fy": "FY2025"},
-    "F": {"cik": "37996", "accession": "0000037996-26-000015", "doc": "f-20251231.htm", "fy": "FY2025"},
+    "MSFT": {"cik": "789019", "accession": "0001193125-26-323660", "doc": "msft-20260630.htm", "fy": "FY2026",
+             "year_end": "June 30"},
+    "NKE": {"cik": "320187", "accession": "0000320187-26-000088", "doc": "nke-20260531.htm", "fy": "FY2026",
+            "year_end": "May 31"},
+    "DUK": {"cik": "1326160", "accession": "0001326160-26-000014", "doc": "duk-20251231.htm", "fy": "FY2025",
+            "year_end": "December 31"},
+    "F": {"cik": "37996", "accession": "0000037996-26-000015", "doc": "f-20251231.htm", "fy": "FY2025",
+          "year_end": "December 31"},
 }
 
 # section id -> (start heading, end heading)
@@ -151,6 +155,14 @@ NOISE = re.compile(
     re.I,
 )
 NOTE = re.compile(r"^(NOTE\s+)?\d{1,2}\.\s+[A-Z][\w ,&’'()\-/]{3,80}$")
+# A fiscal year-end date on a line of its own, above a single-year table:
+# "December 31, 2025". Other dates on their own line are report and signature
+# dates ("February 26, 2026"), so only the company's year-end counts.
+# Without it in the context, two tables that differ only by year look the same:
+# on Nov 24, 2026 the agent took Duke's FY2024 total debt (84,273) for FY2025's
+# (89,836), because neither passage said which year it showed.
+PERIOD = re.compile(r"^(?:As of |At )?(January|February|March|April|May|June|July|August|September"
+                    r"|October|November|December) \d{1,2}, (?:19|20)\d\d$", re.I)
 
 
 def _heading(line: str) -> str | None:
@@ -178,40 +190,52 @@ def _tidy(heading: str) -> str:
     return heading
 
 
-def split_passages(text: str, size: int = PASSAGE_CHARS) -> list[tuple[str, str | None, list[str]]]:
+def split_passages(text: str, size: int = PASSAGE_CHARS,
+                   year_end: str | None = None) -> list[tuple[str, str | None, list[str], list[str]]]:
     """Greedy split on line boundaries, so table rows and paragraphs stay whole.
 
-    Returns (text, registrant, headings) per passage. Headings are the one in
-    effect where the passage starts plus any that begin inside it, so a chunk
-    that runs from the end of one statement into the next names both.
+    Returns (text, registrant, headings, periods) per passage. Headings are the
+    one in effect where the passage starts plus any that begin inside it, so a
+    chunk that runs from the end of one statement into the next names both.
+    Periods work the same way, for dates on a line of their own. A new heading
+    ends the period, since such a date labels the table under it. Only dates
+    on `year_end` (e.g. "December 31") count; without it, none do.
     """
     passages = []
-    current, start_reg, heads = "", None, []
-    registrant = heading = None
+    current, start_reg, heads, periods = "", None, [], []
+    registrant = heading = period = None
     for line in _pieces(text, size):
         if current and len(current) + len(line) + 1 > size:
-            passages.append((current, start_reg, heads))
+            passages.append((current, start_reg, heads, periods))
             current = ""
         if not current:
             start_reg, heads = registrant, ([heading] if heading else [])
+            periods = [period] if period else []
         current = f"{current}\n{line}" if current else line
         if REGISTRANT.match(line):
             registrant = line
             start_reg = start_reg or line
+        elif year_end and PERIOD.match(line) and line.lower().startswith(year_end.lower()):
+            period = line
+            if current == line:          # the date opens the passage
+                periods = [line]
+            elif line not in periods:
+                periods.append(line)
         elif (h := _heading(line)) is not None:
             if NOTE.match(h):
                 registrant = None  # notes in a combined filing cover every registrant
-            heading = h
+            heading, period = h, None
             if current == line:          # heading opens the passage
                 heads = [h]
             elif _tidy(h) not in map(_tidy, heads):
                 heads.append(h)
     if current:
-        passages.append((current, start_reg, heads))
+        passages.append((current, start_reg, heads, periods))
     return passages
 
 
-def context_line(ticker: str, fy: str, sec_id: str, registrant: str | None, headings: list[str]) -> str:
+def context_line(ticker: str, fy: str, sec_id: str, registrant: str | None, headings: list[str],
+                 periods: list[str] | None = None) -> str:
     parts = [COMPANY[ticker], fy, ITEM_NAME[sec_id]]
     if registrant:
         parts.append(_tidy(registrant))
@@ -220,6 +244,8 @@ def context_line(ticker: str, fy: str, sec_id: str, registrant: str | None, head
         kept = [kept[0], kept[-1]]  # where the passage starts, and where it ends up
     if kept:
         parts.append(" → ".join(kept))
+    if periods:
+        parts.append("table for " + " → ".join(periods))
     return " · ".join(parts)
 
 
@@ -247,15 +273,15 @@ def main() -> int:
             else:
                 section = find_section(text, start, end)
             (OUT / ticker / f"{sec_id}.txt").write_text(section + "\n", encoding="utf-8")
-            chunks = split_passages(section)
-            for i, (chunk, registrant, heading) in enumerate(chunks, 1):
+            chunks = split_passages(section, year_end=meta["year_end"])
+            for i, (chunk, registrant, heading, periods) in enumerate(chunks, 1):
                 all_passages.append({
                     "id": f"{ticker}-{meta['fy']}-{sec_id}-{i:03d}",
                     "ticker": ticker,
                     "fiscal_year": meta["fy"],
                     "section": sec_id,
                     "accession": meta["accession"],
-                    "context": context_line(ticker, meta["fy"], sec_id, registrant, heading),
+                    "context": context_line(ticker, meta["fy"], sec_id, registrant, heading, periods),
                     "text": chunk,
                 })
             summary.append(f"{sec_id} {len(section) // 1000}k chars / {len(chunks)} passages")
