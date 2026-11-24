@@ -3,6 +3,7 @@
 Usage:
     uv run python -m evals.run_checks runs/openai/workers-ai/<stamp>/traces.jsonl
     uv run python -m evals.run_checks <traces.jsonl> --judge    # also run the LLM judge
+    uv run python -m evals.run_checks <traces.jsonl> --judge-cached   # judge from the cache only: offline
 
 Prints one row per case and a pass rate per check, and writes report.json
 next to the traces. Exit code 1 means a hard check failed: any guardrail
@@ -136,11 +137,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Grade traces with the code checks.")
     parser.add_argument("traces", type=Path)
     parser.add_argument("--judge", action="store_true", help="run the LLM judge (uses Workers AI; verdicts are cached)")
+    parser.add_argument("--judge-cached", action="store_true",
+                        help="use cached judge verdicts only: no API calls or credentials; misses stay undecided")
     args = parser.parse_args()
     judge = None
-    if args.judge:
+    if args.judge or args.judge_cached:
         from evals.judge import judge_from_config
-        judge = judge_from_config()
+        judge = judge_from_config(cached_only=args.judge_cached and not args.judge)
     try:
         report, code = run(args.traces, judge)
     except Exception as e:

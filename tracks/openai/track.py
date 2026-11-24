@@ -118,6 +118,11 @@ async def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("question", nargs="?", help="ask one question instead of the samples (not graded)")
     parser.add_argument("--cases", help="comma-separated dataset case IDs to run instead of the samples")
+    parser.add_argument("--all", action="store_true", help="every case in the dataset (36)")
+    parser.add_argument("--missing", action="store_true",
+                        help="only dataset cases the committed reference run doesn't have yet (tracks/mock/reference.py)")
+    parser.add_argument("--max-neurons", type=float,
+                        help="stop before the next case once this many Neurons (measured) are spent")
     parser.add_argument("--provider", default="workers-ai", choices=["workers-ai", "openai"])
     args = parser.parse_args()
 
@@ -129,6 +134,13 @@ async def main() -> int:
     track = OpenAITrack(args.provider)
     if args.question:
         cases = [("adhoc", args.question)]
+    elif args.missing:
+        from tracks.mock.reference import missing
+        cases = load_cases(missing(args.provider))
+        print(f"{len(cases)} case(s) not yet in the {args.provider} reference run")
+    elif args.all:
+        from tracks.mock.reference import dataset_ids
+        cases = load_cases(dataset_ids())
     else:
         cases = load_cases(args.cases.split(",") if args.cases else SAMPLE_CASES)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -136,6 +148,10 @@ async def main() -> int:
 
     spent = []
     for case_id, question in cases:
+        if args.max_neurons is not None and sum(spent) >= args.max_neurons:
+            print(f"\nStopped: {sum(spent):,.0f} Neurons spent, limit {args.max_neurons:,.0f}. "
+                  "Run again with --missing to continue.")
+            break
         print(f"\n▶ {case_id}: {question}")
         try:
             trace = await track.run(question, case_id)

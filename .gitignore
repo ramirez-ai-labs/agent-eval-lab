@@ -225,5 +225,7 @@ __marimo__/
 # Raw SEC filings (only extracted sections are committed)
 scenario/raw/
 
-# Agent runs: traces and reports stay on your machine
-runs/
+# Agent runs: traces and reports stay on your machine, except the committed
+# reference runs the mock track replays (runs/reference/).
+runs/*
+!runs/reference/

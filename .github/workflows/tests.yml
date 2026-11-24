@@ -1,4 +1,5 @@
-# Runs the offline test suite on every pull request and on pushes to main.
+# Runs the offline test suite and the mock-track eval gate on every pull
+# request and on pushes to main.
 #
 # No secrets and no model calls: the tests use the committed passage index
 # and a scripted model, so CI never spends Workers AI Neurons or OpenAI credit.
@@ -30,3 +31,20 @@ jobs:
       - run: uv sync --locked
 
       - run: uv run pytest -q
+
+      # The eval gate on the mock track: replay the committed reference run and
+      # grade it with cached judge verdicts only. Any guardrail failure exits 1.
+      - name: Grade the reference run (mock track)
+        run: |
+          uv run python -m tracks.mock.track --out runs/mock/ci/traces.jsonl
+          uv run python -m evals.run_checks runs/mock/ci/traces.jsonl --judge-cached
+
+      # The gate has to catch a regression: with the planted failures in, the
+      # same grading must fail the build.
+      - name: Check the gate catches planted failures
+        run: |
+          uv run python -m tracks.mock.track --plant all --out runs/mock/ci-planted/traces.jsonl
+          if uv run python -m evals.run_checks runs/mock/ci-planted/traces.jsonl --judge-cached; then
+            echo "The planted failures were not caught: the eval gate is broken."
+            exit 1
+          fi

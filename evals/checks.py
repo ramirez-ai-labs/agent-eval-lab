@@ -168,11 +168,12 @@ def check_ratio_first_try(case, trace) -> Result:
             expected.setdefault(t["args"]["ratio"], []).append(t["args"])
     if not expected:
         return Result("ratio_first_try", SKIP)
+    calls = [c["input"] for c in tool_calls(trace, "ratio_calc") if c["input"].get("ratio") in expected]
+    if not calls:
+        return Result("ratio_first_try", SKIP, "no calculator calls; ratio_args and tool_choice cover that")
     wrong = []
-    for c in (c["input"] for c in tool_calls(trace, "ratio_calc")):
-        refs = expected.get(c.get("ratio"))
-        if refs is None:
-            continue  # a ratio the case doesn't ask for; tool_choice judges that
+    for c in calls:
+        refs = expected[c["ratio"]]
         num, den = float(c.get("numerator", 0)), float(c.get("denominator", 0))
         if not any(within_tolerance(num, a["numerator"]) and within_tolerance(den, a["denominator"]) for a in refs):
             wrong.append(f"{c.get('ratio')}({num:,.0f} / {den:,.0f})")
