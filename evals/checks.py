@@ -152,6 +152,34 @@ def check_ratio_args(case, trace) -> Result:
     return Result("ratio_args", FAIL if problems else PASS, "; ".join(problems))
 
 
+def check_ratio_first_try(case, trace) -> Result:
+    """Was every calculator call for an expected ratio right, not just the last one?
+
+    ratio_args passes if any call had the right inputs. This one fails if any
+    call had the wrong ones, even when a later call fixed it. On Nov 24, 2026,
+    the risk agent first computed Duke's debt-to-equity as 4,410 / 51,842 =
+    0.09: it read the debt note's 4.41% interest rate as dollars. A later call
+    got 1.73, and the answer was right. Only the trace shows the wrong step,
+    and a wrong intermediate number can still leak into an answer.
+    """
+    expected = {}
+    for t in case["expected_tools"]:
+        if t["name"] == "ratio_calc":
+            expected.setdefault(t["args"]["ratio"], []).append(t["args"])
+    if not expected:
+        return Result("ratio_first_try", SKIP)
+    wrong = []
+    for c in (c["input"] for c in tool_calls(trace, "ratio_calc")):
+        refs = expected.get(c.get("ratio"))
+        if refs is None:
+            continue  # a ratio the case doesn't ask for; tool_choice judges that
+        num, den = float(c.get("numerator", 0)), float(c.get("denominator", 0))
+        if not any(within_tolerance(num, a["numerator"]) and within_tolerance(den, a["denominator"]) for a in refs):
+            wrong.append(f"{c.get('ratio')}({num:,.0f} / {den:,.0f})")
+    detail = f"wrong call(s): {', '.join(wrong)}" if wrong else ""
+    return Result("ratio_first_try", FAIL if wrong else PASS, detail, data={"wrong_calls": len(wrong)})
+
+
 def check_numeric_accuracy(case, trace) -> Result:
     """Does the final answer state each reference ratio, within tolerance?"""
     expected = [t["value"] for t in case["expected_tools"] if t["name"] == "ratio_calc"]
@@ -227,8 +255,8 @@ def check_budget(case, trace, budgets: dict) -> Result:
     return Result("budget", FAIL if over else PASS, "; ".join(over), data={"tokens": tokens, "latency_ms": ms})
 
 
-CHECKS = [check_evidence_recall, check_tool_choice, check_ratio_args, check_numeric_accuracy,
-          check_handoff, check_guardrail, check_fiscal_year]
+CHECKS = [check_evidence_recall, check_tool_choice, check_ratio_args, check_ratio_first_try,
+          check_numeric_accuracy, check_handoff, check_guardrail, check_fiscal_year]
 
 
 def grade(case, trace, budgets: dict) -> list[Result]:

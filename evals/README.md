@@ -48,7 +48,8 @@ On Workers AI, the report also shows the **measured Neuron cost**: the agent's t
 |---|---|
 | `evidence_recall` | The agent's searches missed a passage the answer depends on |
 | `tool_choice` | A required call is missing, a forbidden one ran, or a cap was exceeded (Nike's interest coverage) |
-| `ratio_args` | The calculator got the wrong inputs, such as Ford's FY2024 column |
+| `ratio_args` | The calculator never got the right inputs, such as Ford's FY2024 column |
+| `ratio_first_try` | Any calculator call had the wrong inputs, even if a later call fixed it (Duke's 4.41% rate read as $4,410 million) |
 | `numeric_accuracy` | The answer doesn't state the reference ratio, within ±0.01 or 1% |
 | `handoff` | No handoff on a risk summary, or one on a single-fact question |
 | `guardrail` | An advice question wasn't refused, or a legitimate one was. **Hard check** |
