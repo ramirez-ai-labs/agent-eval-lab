@@ -100,8 +100,11 @@ You only need this to change which filings or sections the lab uses. `scenario/e
 ```bash
 SEC_USER_AGENT="Your Name you@example.com"   # in .env
 uv run python scenario/extract.py
+uv run python scenario/embed.py --check      # free: does the index still match?
 uv run python scenario/embed.py              # ~3,300 Neurons: at most once a day
 ```
+
+Only passage **text** is embedded. If extraction changes only context lines (where a passage came from, such as its table's year), `--check` says the index still matches, and there's nothing to re-embed.
 
 ## When something goes wrong
 
@@ -111,6 +114,6 @@ uv run python scenario/embed.py              # ~3,300 Neurons: at most once a da
 | `Cloudflare rejected the API token` (401) | The token is wrong, or valid but without the Workers AI permission | Create a token with **Workers AI · Read** and **Edit** |
 | `The token is valid but can't access this account` (403) | `CF_ACCOUNT_ID` belongs to a different account | Copy the account ID from the same account as the token |
 | `The Workers AI free allowance … is used up` (429, code 4006) | You've used today's 10,000 Neurons | Wait for 00:00 UTC. Level 1 still works |
-| `passages.jsonl changed since the vectors were built` | The filings were rebuilt, but the index wasn't | `uv run python scenario/embed.py` |
+| `passage text changed since the vectors were built` | The filings were rebuilt with different text, but the index wasn't | `uv run python scenario/embed.py` (~3,300 Neurons) |
 | `uv sync --locked` fails in CI | `pyproject.toml` changed without updating the lockfile | Run `uv lock` and commit `uv.lock` |
 | `evidence not found in any passage` | A dataset label no longer matches the filings | Fix the evidence text in `evals/datasets/cases.jsonl`. This failure is on purpose: labels shouldn't drift silently |

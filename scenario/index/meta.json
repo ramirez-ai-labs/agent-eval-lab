@@ -2,7 +2,7 @@
  "model": "@cf/baai/bge-base-en-v1.5",
  "dimension": 768,
  "count": 1442,
- "passages_sha256": "b77f767eb2738fdf94d986b41a226fcc9e4dc376cf03128f76f255b04291c9e2",
+ "texts_sha256": "1fbc7eeb8901ac90712baea8cb098d15204526245bb7a91495df35a0eb700b06",
  "ids": [
   "MSFT-FY2026-item1a-001",
   "MSFT-FY2026-item1a-002",

@@ -54,17 +54,30 @@ def ratio_calc(ratio: Ratio, numerator: float, denominator: float) -> dict:
 Embedder = Callable[[str], np.ndarray]
 
 
+def texts_digest(passages: list[dict]) -> str:
+    """A hash of what the vectors are built from: each passage's ID and text.
+
+    Context lines and other metadata aren't embedded (embedding the context hurt
+    recall, see evals/README.md), so changing them doesn't need a re-embed.
+    That saves about 3,300 Neurons each time extraction only improves context.
+    """
+    h = hashlib.sha256()
+    for p in passages:
+        h.update(json.dumps([p["id"], p["text"]], ensure_ascii=False).encode())
+        h.update(b"\n")
+    return h.hexdigest()
+
+
 @cache  # load once per process
 def _load_index() -> tuple[np.ndarray, list[dict]]:
     meta = json.loads((INDEX / "meta.json").read_text(encoding="utf-8"))
-    digest = hashlib.sha256(PASSAGES.read_bytes()).hexdigest()
-    if digest != meta["passages_sha256"]:
+    passages = [json.loads(line) for line in open(PASSAGES, encoding="utf-8")]
+    if texts_digest(passages) != meta.get("texts_sha256"):
         raise RuntimeError(
-            "passages.jsonl changed since the vectors were built. "
+            "passage text changed since the vectors were built. "
             "Run: uv run python scenario/embed.py"
         )
     vectors = np.load(INDEX / "vectors.npy").astype(np.float32)
-    passages = [json.loads(line) for line in open(PASSAGES, encoding="utf-8")]
     if [p["id"] for p in passages] != meta["ids"]:
         raise RuntimeError("passage IDs don't match the index. Run: uv run python scenario/embed.py")
     return vectors, passages
